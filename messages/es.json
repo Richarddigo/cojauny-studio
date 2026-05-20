@@ -1,0 +1,201 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "cta": "Iniciar proyecto"
+    },
+    "hero": {
+        "label": "Cojauny Studio",
+        "headline_1": "Construimos software",
+        "headline_2": "que importa.",
+        "subheadline": "Un estudio de desarrollo enfocado en producto. Construimos apps, plataformas web y asesoramos en tecnología a empresas europeas.",
+        "cta_primary": "Iniciar proyecto",
+        "cta_secondary": "Ver proyectos",
+        "ecosystem_label": "Parte del ecosistema Cojauny"
+    },
+    "services": {
+        "section_label": "Lo que hacemos",
+        "title": "Servicios",
+        "subtitle": "De la idea a producción. Cubrimos todo el ciclo de vida del producto.",
+        "items": [
+            {
+                "number": "01",
+                "title": "Desarrollo de Apps",
+                "description": "Apps móviles nativas y multiplataforma con frameworks modernos. iOS, Android o ambos. Gestionamos arquitectura, UI y despliegue de principio a fin."
+            },
+            {
+                "number": "02",
+                "title": "Desarrollo Web",
+                "description": "Plataformas web performantes y optimizadas para SEO. Desde sitios de marketing hasta aplicaciones full-stack. Construidas con Next.js, TypeScript y herramientas modernas."
+            },
+            {
+                "number": "03",
+                "title": "Consultoría Técnica",
+                "description": "Revisiones de arquitectura, decisiones de stack tecnológico y guía de equipos. Ayudamos a startups y empresas a tomar mejores decisiones técnicas más rápido."
+            }
+        ],
+        "cta": "Ver todos los servicios"
+    },
+    "projects": {
+        "section_label": "Trabajo seleccionado",
+        "title": "Proyectos",
+        "subtitle": "Una selección de productos que hemos construido y lanzado.",
+        "cta": "Ver todos los proyectos",
+        "status_live": "En producción",
+        "status_development": "En desarrollo",
+        "status_coming_soon": "Próximamente",
+        "view_project": "Ver proyecto →",
+        "items": [
+            {
+                "id": "cojauny",
+                "title": "Cojauny",
+                "category": "App Móvil · Plataforma Web",
+                "description": "Plataforma de coordinación de transporte compartido que conecta viajeros en el mismo vuelo. Producto full-stack construido desde cero.",
+                "status": "development",
+                "tags": [
+                    "React Native",
+                    "Next.js",
+                    "TypeScript",
+                    "Node.js"
+                ],
+                "url": "https://cojauny.com"
+            },
+            {
+                "id": "cuatrosotas",
+                "title": "Cuatro Sotas",
+                "category": "Juego Móvil",
+                "description": "Juego de cartas multijugador online basado en el Guiñote español tradicional. Con IA, multijugador Bluetooth y ranking mundial.",
+                "status": "coming_soon",
+                "tags": [
+                    "Flutter",
+                    "Firebase",
+                    "Dart",
+                    "WebSocket"
+                ],
+                "url": "https://cuatrosotas.cojauny.com"
+            },
+            {
+                "id": "fcespanol",
+                "title": "FC Español Karlsruhe",
+                "category": "Sitio Web de Club",
+                "description": "Web moderna multilingüe para un club de fútbol español en Karlsruhe, Alemania. Trilingüe, gestión de contenidos y totalmente responsive.",
+                "status": "live",
+                "tags": [
+                    "Next.js",
+                    "TypeScript",
+                    "i18n",
+                    "Tailwind"
+                ],
+                "url": "https://fc-espanol.vercel.app/de/"
+            }
+        ]
+    },
+    "ecosystem": {
+        "label": "El ecosistema",
+        "title": "Detrás del studio, un producto.",
+        "description": "Cojauny Studio es el brazo de consultoría y desarrollo del ecosistema Cojauny. Nuestro producto principal — Cojauny — es una app de transporte compartido diseñada para conectar viajeros y reducir el coste y la huella de carbono del transporte al aeropuerto. Construimos para otros con el mismo estándar que nos exigimos a nosotros mismos.",
+        "cta": "Explorar Cojauny",
+        "url": "https://cojauny.com",
+        "tagline": "La forma más inteligente de viajar."
+    },
+    "sponsors": {
+        "section_label": "Socios",
+        "title": "Socios y Patrocinadores",
+        "subtitle": "Organizaciones con las que hemos colaborado o que apoyan el ecosistema Cojauny.",
+        "items": [
+            {
+                "id": "fcespanol",
+                "name": "FC Español Karlsruhe",
+                "url": "https://fc-espanol.de",
+                "description": "Patrocinador oficial del club"
+            }
+        ]
+    },
+    "cta_section": {
+        "title": "Construyamos algo juntos.",
+        "description": "Tanto si tienes una idea de producto, necesitas un socio técnico o quieres asesoramiento en arquitectura — nos encantaría escucharte.",
+        "button": "Iniciar conversación",
+        "note": "Normalmente respondemos en menos de 48 horas."
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "Cuéntanos tu proyecto y te responderemos en menos de 48 horas.",
+        "email": "studio@cojauny.com",
+        "form": {
+            "name": "Nombre completo",
+            "name_placeholder": "Tu nombre",
+            "email": "Correo electrónico",
+            "email_placeholder": "tu@empresa.com",
+            "type": "Tipo de proyecto",
+            "type_placeholder": "Selecciona un tipo",
+            "type_app": "Desarrollo de App",
+            "type_web": "Desarrollo Web",
+            "type_consulting": "Consultoría Técnica",
+            "type_other": "Otro",
+            "message": "Cuéntanos tu proyecto",
+            "message_placeholder": "Describe tu proyecto, objetivos, plazos y cualquier restricción técnica...",
+            "submit": "Enviar mensaje",
+            "sending": "Enviando...",
+            "success_title": "¡Mensaje enviado!",
+            "success_body": "Gracias por contactar. Te responderemos en menos de 48 horas.",
+            "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente."
+        },
+        "validation": {
+            "name_required": "El nombre es obligatorio",
+            "email_required": "El correo es obligatorio",
+            "email_invalid": "Introduce una dirección de correo válida",
+            "type_required": "Selecciona el tipo de proyecto",
+            "message_required": "El mensaje es obligatorio",
+            "message_min": "Por favor escribe al menos 20 caracteres"
+        }
+    },
+    "footer": {
+        "tagline": "Construyendo software que importa.",
+        "ecosystem_link": "Producto principal: Cojauny →",
+        "nav_title": "Navegación",
+        "legal_title": "Legal",
+        "contact_title": "Contacto",
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "impressum": "Impressum",
+        "privacy": "Política de Privacidad",
+        "cookies": "Política de Cookies",
+        "terms": "Términos de Servicio",
+        "disclaimer": "Aviso Legal",
+        "copyright": "© {year} Cojauny. Todos los derechos reservados.",
+        "made_in": "Hecho en Europa."
+    },
+    "legal": {
+        "back": "← Volver",
+        "last_updated": "Última actualización: {date}",
+        "impressum": {
+            "title": "Impressum",
+            "subtitle": "Aviso legal conforme al § 5 TMG (Alemania)"
+        },
+        "privacy": {
+            "title": "Política de Privacidad",
+            "subtitle": "Cómo recopilamos, usamos y protegemos tus datos."
+        },
+        "cookies": {
+            "title": "Política de Cookies",
+            "subtitle": "Cómo usamos cookies y tecnologías similares."
+        },
+        "terms": {
+            "title": "Términos de Servicio",
+            "subtitle": "Términos y condiciones para el uso de nuestros servicios."
+        },
+        "disclaimer": {
+            "title": "Aviso Legal",
+            "subtitle": "Limitación de responsabilidad y responsabilidad del contenido."
+        }
+    },
+    "not_found": {
+        "title": "Página no encontrada",
+        "description": "La página que buscas no existe o ha sido movida.",
+        "cta": "Ir al inicio"
+    }
+}

@@ -1,0 +1,203 @@
+{
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "services": "Services",
+        "contact": "Contact",
+        "cta": "Start a project"
+    },
+    "hero": {
+        "label": "Cojauny Studio",
+        "headline_1": "We build software",
+        "headline_2": "that matters.",
+        "subheadline": "A product-focused development studio. We build apps, web platforms, and consult on technology for European businesses.",
+        "cta_primary": "Start a project",
+        "cta_secondary": "See our work",
+        "ecosystem_label": "Part of the Cojauny ecosystem"
+    },
+    "services": {
+        "section_label": "What we do",
+        "title": "Services",
+        "subtitle": "From idea to production. We cover the full product lifecycle.",
+        "items": [
+            {
+                "number": "01",
+                "title": "App Development",
+                "description": "Native and cross-platform mobile apps built with modern frameworks. iOS, Android, or both. We handle architecture, UI, and deployment end-to-end."
+            },
+            {
+                "number": "02",
+                "title": "Web Development",
+                "description": "Performant, SEO-optimized web platforms. From marketing sites to full-stack applications. Built with Next.js, TypeScript, and modern tooling."
+            },
+            {
+                "number": "03",
+                "title": "Technical Consulting",
+                "description": "Architecture reviews, tech stack decisions, and team guidance. We help startups and established teams make better, faster technical choices."
+            }
+        ],
+        "cta": "View all services"
+    },
+    "projects": {
+        "section_label": "Selected work",
+        "title": "Projects",
+        "subtitle": "A selection of products we have built and shipped.",
+        "cta": "View all projects",
+        "status_live": "Live",
+        "status_development": "In development",
+        "status_coming_soon": "Coming soon",
+        "view_project": "View project →",
+        "items": [
+            {
+                "id": "cojauny",
+                "title": "Cojauny",
+                "category": "Mobile App · Web Platform",
+                "description": "A flight-sharing coordination platform connecting travelers on the same flight for shared transport. Full-stack product built from scratch.",
+                "status": "development",
+                "tags": [
+                    "Flutter",
+                    "Firebase",
+                    "Dart",
+                    "Flight APIs",
+                    "Google Cloud Platform (GCP)"
+                ],
+                "url": "https://cojauny.com"
+            },
+            {
+                "id": "cuatrosotas",
+                "title": "Cuatro Sotas",
+                "category": "Mobile Game",
+                "description": "Online multiplayer card game based on the traditional Spanish Guiñote. Features AI opponents, Bluetooth multiplayer, and global rankings.",
+                "status": "coming_soon",
+                "tags": [
+                    "Flutter",
+                    "Firebase",
+                    "Dart",
+                    "WebSocket"
+                ],
+                "url": "https://cuatrosotas.cojauny.com"
+            },
+            {
+                "id": "fcespanol",
+                "title": "FC Español Karlsruhe",
+                "category": "Club Website",
+                "description": "Modern multilingual website for a Spanish football club based in Karlsruhe, Germany. Trilingual, CMS-driven, and fully responsive.",
+                "status": "live",
+                "tags": [
+                    "React Native",
+                    "Next.js",
+                    "TypeScript",
+                    "i18n",
+                    "Tailwind"
+                ],
+                "url": "https://fc-espanol.vercel.app/de/"
+            }
+        ]
+    },
+    "ecosystem": {
+        "label": "The ecosystem",
+        "title": "Behind the studio, a product.",
+        "description": "Cojauny Studio is the consulting and development arm of the Cojauny ecosystem. Our flagship product — Cojauny — is a flight-sharing app designed to connect travelers and reduce the cost and carbon footprint of airport transport. We build for others with the same standard we hold ourselves to.",
+        "cta": "Explore Cojauny",
+        "url": "https://cojauny.com",
+        "tagline": "The smarter way to travel."
+    },
+    "sponsors": {
+        "section_label": "Partners",
+        "title": "Partners & Sponsors",
+        "subtitle": "Organisations we have worked with or that support the Cojauny ecosystem.",
+        "items": [
+            {
+                "id": "fcespanol",
+                "name": "FC Español Karlsruhe",
+                "url": "https://fc-espanol.de",
+                "description": "Official club sponsor"
+            }
+        ]
+    },
+    "cta_section": {
+        "title": "Let's build something together.",
+        "description": "Whether you have a product idea, need a technical partner, or want to consult on architecture — we would love to hear from you.",
+        "button": "Start a conversation",
+        "note": "Usually responds within 48 hours."
+    },
+    "contact": {
+        "title": "Get in touch",
+        "subtitle": "Tell us about your project and we will get back to you within 48 hours.",
+        "email": "studio@cojauny.com",
+        "form": {
+            "name": "Full name",
+            "name_placeholder": "Your name",
+            "email": "Email address",
+            "email_placeholder": "you@company.com",
+            "type": "Project type",
+            "type_placeholder": "Select a type",
+            "type_app": "App Development",
+            "type_web": "Web Development",
+            "type_consulting": "Technical Consulting",
+            "type_other": "Other",
+            "message": "Tell us about your project",
+            "message_placeholder": "Describe your project, goals, timeline, and any technical constraints...",
+            "submit": "Send message",
+            "sending": "Sending...",
+            "success_title": "Message sent!",
+            "success_body": "Thank you for reaching out. We will get back to you within 48 hours.",
+            "error": "Something went wrong. Please try again or email us directly."
+        },
+        "validation": {
+            "name_required": "Name is required",
+            "email_required": "Email is required",
+            "email_invalid": "Please enter a valid email address",
+            "type_required": "Please select a project type",
+            "message_required": "Message is required",
+            "message_min": "Please provide at least 20 characters"
+        }
+    },
+    "footer": {
+        "tagline": "Building software that matters.",
+        "ecosystem_link": "Main product: Cojauny →",
+        "nav_title": "Navigation",
+        "legal_title": "Legal",
+        "contact_title": "Contact",
+        "home": "Home",
+        "projects": "Projects",
+        "services": "Services",
+        "contact": "Contact",
+        "impressum": "Impressum",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Policy",
+        "terms": "Terms of Service",
+        "disclaimer": "Disclaimer",
+        "copyright": "© {year} Cojauny. All rights reserved.",
+        "made_in": "Made in Europe."
+    },
+    "legal": {
+        "back": "← Back",
+        "last_updated": "Last updated: {date}",
+        "impressum": {
+            "title": "Impressum",
+            "subtitle": "Legal disclosure pursuant to § 5 TMG (Germany)"
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "subtitle": "How we collect, use, and protect your data."
+        },
+        "cookies": {
+            "title": "Cookie Policy",
+            "subtitle": "How we use cookies and similar technologies."
+        },
+        "terms": {
+            "title": "Terms of Service",
+            "subtitle": "Terms and conditions for using our services."
+        },
+        "disclaimer": {
+            "title": "Disclaimer",
+            "subtitle": "Limitation of liability and content responsibility."
+        }
+    },
+    "not_found": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist or has been moved.",
+        "cta": "Go home"
+    }
+}

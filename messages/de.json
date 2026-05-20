@@ -1,0 +1,201 @@
+{
+    "nav": {
+        "home": "Start",
+        "projects": "Projekte",
+        "services": "Leistungen",
+        "contact": "Kontakt",
+        "cta": "Projekt starten"
+    },
+    "hero": {
+        "label": "Cojauny Studio",
+        "headline_1": "Wir entwickeln Software,",
+        "headline_2": "die zählt.",
+        "subheadline": "Ein produktorientiertes Entwicklungsstudio. Wir bauen Apps, Web-Plattformen und beraten Unternehmen in ganz Europa zu technologischen Fragen.",
+        "cta_primary": "Projekt starten",
+        "cta_secondary": "Unsere Projekte",
+        "ecosystem_label": "Teil des Cojauny-Ökosystems"
+    },
+    "services": {
+        "section_label": "Was wir tun",
+        "title": "Leistungen",
+        "subtitle": "Von der Idee bis zur Produktion. Wir begleiten den gesamten Produktlebenszyklus.",
+        "items": [
+            {
+                "number": "01",
+                "title": "App-Entwicklung",
+                "description": "Native und plattformübergreifende Mobile Apps mit modernen Frameworks. iOS, Android oder beides. Wir übernehmen Architektur, UI und Deployment von Anfang bis Ende."
+            },
+            {
+                "number": "02",
+                "title": "Web-Entwicklung",
+                "description": "Performante, SEO-optimierte Web-Plattformen. Von Marketing-Websites bis hin zu Full-Stack-Anwendungen. Entwickelt mit Next.js, TypeScript und modernen Tools."
+            },
+            {
+                "number": "03",
+                "title": "Technische Beratung",
+                "description": "Architektur-Reviews, Tech-Stack-Entscheidungen und Team-Begleitung. Wir helfen Start-ups und etablierten Teams, bessere technische Entscheidungen schneller zu treffen."
+            }
+        ],
+        "cta": "Alle Leistungen ansehen"
+    },
+    "projects": {
+        "section_label": "Ausgewählte Projekte",
+        "title": "Projekte",
+        "subtitle": "Eine Auswahl der Produkte, die wir gebaut und veröffentlicht haben.",
+        "cta": "Alle Projekte ansehen",
+        "status_live": "Live",
+        "status_development": "In Entwicklung",
+        "status_coming_soon": "Demnächst",
+        "view_project": "Projekt ansehen →",
+        "items": [
+            {
+                "id": "cojauny",
+                "title": "Cojauny",
+                "category": "Mobile App · Web-Plattform",
+                "description": "Eine Plattform zur Koordination von geteiltem Transport, die Reisende im selben Flug verbindet. Full-Stack-Produkt von Grund auf neu entwickelt.",
+                "status": "development",
+                "tags": [
+                    "React Native",
+                    "Next.js",
+                    "TypeScript",
+                    "Node.js"
+                ],
+                "url": "https://cojauny.com"
+            },
+            {
+                "id": "cuatrosotas",
+                "title": "Cuatro Sotas",
+                "category": "Mobile Spiel",
+                "description": "Online-Multiplayer-Kartenspiel basierend auf dem traditionellen spanischen Guiñote. Mit KI-Gegnern, Bluetooth-Multiplayer und globalem Ranking.",
+                "status": "coming_soon",
+                "tags": [
+                    "Flutter",
+                    "Firebase",
+                    "Dart",
+                    "WebSocket"
+                ],
+                "url": "https://cuatrosotas.cojauny.com"
+            },
+            {
+                "id": "fcespanol",
+                "title": "FC Español Karlsruhe",
+                "category": "Vereinswebsite",
+                "description": "Moderne mehrsprachige Website für einen spanischen Fußballverein in Karlsruhe. Dreisprachig, CMS-gesteuert und vollständig responsiv.",
+                "status": "live",
+                "tags": [
+                    "Next.js",
+                    "TypeScript",
+                    "i18n",
+                    "Tailwind"
+                ],
+                "url": "https://fc-espanol.vercel.app/de/"
+            }
+        ]
+    },
+    "ecosystem": {
+        "label": "Das Ökosystem",
+        "title": "Hinter dem Studio steckt ein Produkt.",
+        "description": "Cojauny Studio ist der Beratungs- und Entwicklungsarm des Cojauny-Ökosystems. Unser Flaggschiffprodukt — Cojauny — ist eine App für geteilten Transport, die Reisende verbindet und die Kosten sowie den CO₂-Fußabdruck des Flughafentransports reduziert. Wir bauen für andere nach denselben Standards, die wir an uns selbst anlegen.",
+        "cta": "Cojauny entdecken",
+        "url": "https://cojauny.com",
+        "tagline": "Die intelligentere Art zu reisen."
+    },
+    "sponsors": {
+        "section_label": "Partner",
+        "title": "Partner & Sponsoren",
+        "subtitle": "Organisationen, mit denen wir zusammengearbeitet haben oder die das Cojauny-Ökosystem unterstützen.",
+        "items": [
+            {
+                "id": "fcespanol",
+                "name": "FC Español Karlsruhe",
+                "url": "https://fc-espanol.de",
+                "description": "Offizieller Vereinssponsor"
+            }
+        ]
+    },
+    "cta_section": {
+        "title": "Lassen Sie uns gemeinsam etwas aufbauen.",
+        "description": "Ob Sie eine Produktidee haben, einen technischen Partner suchen oder Architekturberatung benötigen — wir freuen uns auf Ihre Nachricht.",
+        "button": "Gespräch starten",
+        "note": "Antwort in der Regel innerhalb von 48 Stunden."
+    },
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Erzählen Sie uns von Ihrem Projekt und wir melden uns innerhalb von 48 Stunden.",
+        "email": "studio@cojauny.com",
+        "form": {
+            "name": "Vollständiger Name",
+            "name_placeholder": "Ihr Name",
+            "email": "E-Mail-Adresse",
+            "email_placeholder": "sie@unternehmen.de",
+            "type": "Projektart",
+            "type_placeholder": "Art auswählen",
+            "type_app": "App-Entwicklung",
+            "type_web": "Web-Entwicklung",
+            "type_consulting": "Technische Beratung",
+            "type_other": "Sonstiges",
+            "message": "Beschreiben Sie Ihr Projekt",
+            "message_placeholder": "Beschreiben Sie Ihr Projekt, Ihre Ziele, den Zeitplan und technische Anforderungen...",
+            "submit": "Nachricht senden",
+            "sending": "Wird gesendet...",
+            "success_title": "Nachricht gesendet!",
+            "success_body": "Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 48 Stunden.",
+            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt."
+        },
+        "validation": {
+            "name_required": "Name ist erforderlich",
+            "email_required": "E-Mail ist erforderlich",
+            "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+            "type_required": "Bitte wählen Sie eine Projektart aus",
+            "message_required": "Nachricht ist erforderlich",
+            "message_min": "Bitte geben Sie mindestens 20 Zeichen ein"
+        }
+    },
+    "footer": {
+        "tagline": "Software entwickeln, die zählt.",
+        "ecosystem_link": "Hauptprodukt: Cojauny →",
+        "nav_title": "Navigation",
+        "legal_title": "Rechtliches",
+        "contact_title": "Kontakt",
+        "home": "Start",
+        "projects": "Projekte",
+        "services": "Leistungen",
+        "contact": "Kontakt",
+        "impressum": "Impressum",
+        "privacy": "Datenschutzerklärung",
+        "cookies": "Cookie-Richtlinie",
+        "terms": "Nutzungsbedingungen",
+        "disclaimer": "Haftungsausschluss",
+        "copyright": "© {year} Cojauny. Alle Rechte vorbehalten.",
+        "made_in": "Hergestellt in Europa."
+    },
+    "legal": {
+        "back": "← Zurück",
+        "last_updated": "Letzte Aktualisierung: {date}",
+        "impressum": {
+            "title": "Impressum",
+            "subtitle": "Angaben gemäß § 5 TMG"
+        },
+        "privacy": {
+            "title": "Datenschutzerklärung",
+            "subtitle": "Wie wir Ihre Daten erheben, verwenden und schützen."
+        },
+        "cookies": {
+            "title": "Cookie-Richtlinie",
+            "subtitle": "Wie wir Cookies und ähnliche Technologien verwenden."
+        },
+        "terms": {
+            "title": "Nutzungsbedingungen",
+            "subtitle": "Bedingungen für die Nutzung unserer Dienstleistungen."
+        },
+        "disclaimer": {
+            "title": "Haftungsausschluss",
+            "subtitle": "Haftungsbeschränkung und Verantwortlichkeit für Inhalte."
+        }
+    },
+    "not_found": {
+        "title": "Seite nicht gefunden",
+        "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "cta": "Zur Startseite"
+    }
+}

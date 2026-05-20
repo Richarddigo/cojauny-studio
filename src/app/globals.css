@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+/* ─── Cojauny Studio Design Tokens ─────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --bg: #0C1120;
+  --surface: #1C2336;
+  --surface-2: #2A3550;
+  --surface-3: #333F60;
+  --accent: #5B7BFF;
+  --accent-dim: #3A59D9;
+  --accent-glow: rgba(91, 123, 255, 0.18);
+
+  /* Light-section palette */
+  --light-bg: #F8FAFC;
+  --light-surface: #FFFFFF;
+  --light-border: #E2E8F0;
+
+  /* Text */
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --faint: #475569;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  /* Transition */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 200ms;
+}
+
+/* ─── Tailwind v4 Theme Registration ───────────────────────────────── */
+@theme inline {
+  /* Fonts — set by next/font in layout */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Brand colors */
+  --color-bg: #0C1120;
+  --color-surface: #1C2336;
+  --color-surface-2: #2A3550;
+  --color-surface-3: #333F60;
+  --color-accent: #5B7BFF;
+  --color-accent-dim: #3A59D9;
+
+  --color-text: #F1F5F9;
+  --color-muted: #94A3B8;
+  --color-faint: #475569;
+
+  /* Light palette */
+  --color-light-bg: #F8FAFC;
+  --color-light-card: #FFFFFF;
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+}
+
+/* ─── Base Styles (inside @layer base so @layer components can override) ── */
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ─── Utility Compositions ──────────────────────────────────────────── */
+@layer components {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  .container-studio {
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1.25rem, 5vw, 3rem);
+    padding-right: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .section-label::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .card-dark {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--duration) var(--ease),
+      transform var(--duration) var(--ease),
+      box-shadow var(--duration) var(--ease);
+  }
+
+  .card-dark:hover {
+    border-color: rgba(91, 123, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(91, 123, 255, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .card-light {
+    background: var(--light-card, #fff);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius);
+    transition: border-color var(--duration) var(--ease),
+      transform var(--duration) var(--ease),
+      box-shadow var(--duration) var(--ease);
+  }
+
+  .card-light:hover {
+    border-color: #A5B4FC;
+    transform: translateY(-4px);
+    box-shadow:
+      0 16px 48px rgba(91, 123, 255, 0.12),
+      0 0 0 1px rgba(91, 123, 255, 0.1);
+  }
+
+  /* Status badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  .badge-live {
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ADE80;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  .badge-development {
+    background: rgba(251, 191, 36, 0.12);
+    color: #FCD34D;
+    border: 1px solid rgba(251, 191, 36, 0.25);
+  }
+
+  .badge-coming-soon {
+    background: rgba(148, 163, 184, 0.12);
+    color: #94A3B8;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  /* Focus ring */
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Tech tag */
+  .tech-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    background: rgba(91, 123, 255, 0.1);
+    color: #93A8FF;
+    border: 1px solid rgba(91, 123, 255, 0.2);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 999px;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(91, 123, 255, 0.3);
+  color: var(--text);
+}
+
+/* ─── Keyframe Animations ───────────────────────────────────────────── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* ─── Animation Utilities ───────────────────────────────────────────── */
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+/* ─── Gradient Text ─────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #5B7BFF 0%, #93A8FF 60%, #C4B5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Effects ──────────────────────────────────────────────────── */
+.glow-accent {
+  box-shadow:
+    0 0 20px rgba(91, 123, 255, 0.25),
+    0 0 60px rgba(91, 123, 255, 0.10);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(91, 123, 255, 0.5);
+}
