@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { LegalLayout, H2, P, MailLink } from "@/components/legal/LegalLayout";
+import { buildAlternates } from "@/lib/seo";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateMetadata({
     params,
@@ -9,7 +13,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "legal" });
-    return { title: t("cookies.title") };
+    return {
+        title: t("cookies.title"),
+        alternates: buildAlternates(locale, "/legal/cookies"),
+    };
 }
 
 export default async function CookiesPage({

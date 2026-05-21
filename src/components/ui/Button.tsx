@@ -19,7 +19,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const variantStyles: Record<Variant, string> = {
     primary:
-        "bg-accent text-white hover:bg-accent-dim active:scale-[0.97] shadow-[0_0_28px_rgba(91,123,255,0.35)] hover:shadow-[0_0_40px_rgba(91,123,255,0.5)] group",
+        "bg-accent-dim text-white hover:bg-[#2A49C9] active:scale-[0.97] shadow-[0_0_28px_rgba(91,123,255,0.35)] hover:shadow-[0_0_40px_rgba(91,123,255,0.5)] group",
     secondary:
         "bg-[rgba(255,255,255,0.06)] text-text border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.2)]",
     ghost:

@@ -13,7 +13,21 @@
         "subheadline": "Ein produktorientiertes Entwicklungsstudio. Wir bauen Apps, Web-Plattformen und beraten Unternehmen in ganz Europa zu technologischen Fragen.",
         "cta_primary": "Projekt starten",
         "cta_secondary": "Unsere Projekte",
-        "ecosystem_label": "Teil des Cojauny-Ökosystems"
+        "ecosystem_label": "Teil des Cojauny-Ökosystems",
+        "stats": [
+            {
+                "value": "3+",
+                "label": "Aktive Produkte"
+            },
+            {
+                "value": "EU",
+                "label": "Sitz in Europa"
+            },
+            {
+                "value": "100%",
+                "label": "Ergebnisorientiert"
+            }
+        ]
     },
     "services": {
         "section_label": "Was wir tun",
@@ -104,6 +118,7 @@
         "section_label": "Partner",
         "title": "Partner & Sponsoren",
         "subtitle": "Organisationen, mit denen wir zusammengearbeitet haben oder die das Cojauny-Ökosystem unterstützen.",
+        "placeholder": "Ihre Marke hier",
         "items": [
             {
                 "id": "fcespanol",
@@ -117,7 +132,8 @@
         "title": "Lassen Sie uns gemeinsam etwas aufbauen.",
         "description": "Ob Sie eine Produktidee haben, einen technischen Partner suchen oder Architekturberatung benötigen — wir freuen uns auf Ihre Nachricht.",
         "button": "Gespräch starten",
-        "note": "Antwort in der Regel innerhalb von 48 Stunden."
+        "note": "Antwort in der Regel innerhalb von 48 Stunden.",
+        "pill": "Offen für neue Projekte"
     },
     "contact": {
         "title": "Kontakt",
@@ -140,7 +156,8 @@
             "sending": "Wird gesendet...",
             "success_title": "Nachricht gesendet!",
             "success_body": "Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 48 Stunden.",
-            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt."
+            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.",
+            "send_another": "Weitere Nachricht senden"
         },
         "validation": {
             "name_required": "Name ist erforderlich",

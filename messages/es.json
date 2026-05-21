@@ -13,7 +13,21 @@
         "subheadline": "Un estudio de desarrollo enfocado en producto. Construimos apps, plataformas web y asesoramos en tecnología a empresas europeas.",
         "cta_primary": "Iniciar proyecto",
         "cta_secondary": "Ver proyectos",
-        "ecosystem_label": "Parte del ecosistema Cojauny"
+        "ecosystem_label": "Parte del ecosistema Cojauny",
+        "stats": [
+            {
+                "value": "3+",
+                "label": "Productos en activo"
+            },
+            {
+                "value": "EU",
+                "label": "Con sede en Europa"
+            },
+            {
+                "value": "100%",
+                "label": "Orientados a resultados"
+            }
+        ]
     },
     "services": {
         "section_label": "Lo que hacemos",
@@ -104,6 +118,7 @@
         "section_label": "Socios",
         "title": "Socios y Patrocinadores",
         "subtitle": "Organizaciones con las que hemos colaborado o que apoyan el ecosistema Cojauny.",
+        "placeholder": "Tu marca aquí",
         "items": [
             {
                 "id": "fcespanol",
@@ -117,7 +132,8 @@
         "title": "Construyamos algo juntos.",
         "description": "Tanto si tienes una idea de producto, necesitas un socio técnico o quieres asesoramiento en arquitectura — nos encantaría escucharte.",
         "button": "Iniciar conversación",
-        "note": "Normalmente respondemos en menos de 48 horas."
+        "note": "Normalmente respondemos en menos de 48 horas.",
+        "pill": "Abiertos a nuevos proyectos"
     },
     "contact": {
         "title": "Contacto",
@@ -140,7 +156,8 @@
             "sending": "Enviando...",
             "success_title": "¡Mensaje enviado!",
             "success_body": "Gracias por contactar. Te responderemos en menos de 48 horas.",
-            "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente."
+            "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente.",
+            "send_another": "Enviar otro mensaje"
         },
         "validation": {
             "name_required": "El nombre es obligatorio",

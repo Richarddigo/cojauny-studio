@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cojauny Studio
 
-## Getting Started
+Studio site for [Cojauny](https://cojauny.com) — software engineering, web development and consulting. Built with the Next.js App Router and `next-intl`, deployed on Vercel.
 
-First, run the development server:
+**Live:** https://studio.cojauny.com
 
-```bash
+## Stack
+
+- Next.js 16 (App Router, Turbopack) · React 19 · TypeScript strict
+- next-intl 4 (locales: `en`, `es`, `de`, `localePrefix: "always"`)
+- Tailwind v4 + design tokens in `src/app/globals.css`
+- Resend for transactional email · Zod 4 · React Hook Form
+- Vercel Analytics
+
+## Development
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 — the middleware redirects `/` to the negotiated locale.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local` with:
 
-## Learn More
+```
+RESEND_API_KEY=re_...
+# Optional — distributed rate limit (falls back to in-memory when missing)
+UPSTASH_REDIS_REST_URL=https://....upstash.io
+UPSTASH_REDIS_REST_TOKEN=AY...
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Script | What it does |
+|---|---|
+| `npm run dev` | Dev server with Turbopack |
+| `npm run build` | Production build (typecheck + lint included) |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint (strict: `unused-imports`, `jsx-a11y`) |
+| `npm run analyze` | Build with `@next/bundle-analyzer` enabled |
+| `npm run test:e2e` | Playwright smoke + axe-core a11y suites |
+| `npm run test:e2e:ui` | Playwright in interactive UI mode |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Testing
 
-## Deploy on Vercel
+End-to-end tests live in `tests/e2e/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `smoke.spec.ts` — locale routing (`/en`, `/es`, `/de`), nav, hreflang, key pages, 404, `/api/health`.
+- `a11y.spec.ts` — axe-core scan of every locale's main routes (WCAG 2 A/AA), fails on `critical` or `serious` violations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+One-time setup downloads browser binaries (~150 MB):
+
+```powershell
+npx playwright install --with-deps
+```
+
+Then run:
+
+```powershell
+npm run test:e2e        # headless run
+npm run test:e2e:ui     # interactive UI mode
+```
+
+`playwright.config.ts` boots `npm run build && npm run start` against `http://localhost:3000` automatically. Override with `PLAYWRIGHT_BASE_URL=https://...` to run against a deployed environment.
+
+## Project layout
+
+```
+src/
+├── app/
+│   ├── [locale]/         # localised routes (force-static)
+│   ├── api/
+│   │   ├── contact/      # form endpoint (Resend + rate limit)
+│   │   └── health/       # GET /api/health (edge runtime)
+│   ├── sitemap.ts
+│   └── robots.ts
+├── components/
+│   ├── contact/          # ContactForm (RHF + Zod, honeypot)
+│   ├── layout/           # Header, Footer, LanguageSwitcher
+│   ├── legal/            # LegalLayout + content blocks
+│   ├── sections/         # Hero, Services, Projects, CTA, Sponsors…
+│   ├── seo/              # JsonLd (Organization + WebSite schemas)
+│   └── ui/               # Button, Icon, AnimateIn, logos
+├── i18n/                 # next-intl routing + request config
+├── lib/                  # seo, email, ratelimit helpers
+├── locales/
+└── messages/             # en.json · es.json · de.json
+tests/e2e/                # Playwright specs
+```
+
+## Deployment
+
+Vercel auto-builds on push to `main`. Required environment variables in **Project → Settings → Environment Variables**: `RESEND_API_KEY` (and optionally the `UPSTASH_REDIS_REST_*` pair).
+
+Post-deploy smoke:
+
+```powershell
+curl.exe https://studio.cojauny.com/api/health
+```
+
+Should return `200 OK` with `{"status":"ok",...}`.
+
+See [AUDIT.md](AUDIT.md) for the architectural audit and [AUDIT2.md](AUDIT2.md) for the remaining backlog (split between automatable and manual actions).

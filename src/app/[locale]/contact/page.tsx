@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/ui/AnimateIn";
 import ContactForm from "@/components/contact/ContactForm";
+import Icon from "@/components/ui/Icon";
+import { buildAlternates } from "@/lib/seo";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateMetadata({
     params,
@@ -13,6 +18,7 @@ export async function generateMetadata({
     return {
         title: t("title"),
         description: t("subtitle"),
+        alternates: buildAlternates(locale, "/contact"),
     };
 }
 
@@ -45,7 +51,7 @@ export default async function ContactPage({
                             <div className="mt-10 space-y-5">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <img src="/icons/mail.svg" width={16} height={16} alt="" aria-hidden="true" />
+                                        <Icon name="mail" size={16} className="text-muted" />
                                     </div>
                                     <div>
                                         <p className="text-xs text-faint uppercase tracking-wider">Email</p>
@@ -60,7 +66,7 @@ export default async function ContactPage({
 
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <img src="/icons/clock.svg" width={16} height={16} alt="" aria-hidden="true" />
+                                        <Icon name="clock" size={16} className="text-muted" />
                                     </div>
                                     <div>
                                         <p className="text-xs text-faint uppercase tracking-wider">Response time</p>
@@ -70,7 +76,7 @@ export default async function ContactPage({
 
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <img src="/icons/user.svg" width={16} height={16} alt="" aria-hidden="true" />
+                                        <Icon name="user" size={16} className="text-muted" />
                                     </div>
                                     <div>
                                         <p className="text-xs text-faint uppercase tracking-wider">Location</p>

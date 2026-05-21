@@ -1,4 +1,3 @@
-"use client";
 import { useTranslations } from "next-intl";
 import AnimateIn from "@/components/ui/AnimateIn";
 import { Link } from "@/i18n/navigation";
@@ -14,20 +13,10 @@ function ServiceCard({ item, index }: { item: ServiceItem; index: number }) {
     return (
         <AnimateIn delay={index * 0.1} direction="up">
             <div
-                className="relative group h-full p-8 rounded-2xl border bg-white transition-all duration-300 cursor-default"
+                className="relative group h-full p-8 rounded-2xl border bg-white cursor-default hover-lift hover-lift-service"
                 style={{
                     borderColor: "#E2E8F0",
                     boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
-                }}
-                onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "#A5B4FC";
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(91,123,255,0.12), 0 0 0 1px rgba(91,123,255,0.1)";
-                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-                }}
-                onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "#E2E8F0";
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = "0 1px 4px rgba(0,0,0,0.05)";
-                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
                 }}
             >
                 {/* Number */}
@@ -36,7 +25,7 @@ function ServiceCard({ item, index }: { item: ServiceItem; index: number }) {
                         className="text-[0.65rem] font-mono font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full"
                         style={{
                             background: "rgba(91,123,255,0.1)",
-                            color: "#4F6EF7",
+                            color: "#1E3A8A",
                             border: "1px solid rgba(91,123,255,0.18)",
                         }}
                     >
@@ -58,7 +47,7 @@ function ServiceCard({ item, index }: { item: ServiceItem; index: number }) {
                     style={{ color: "#0F172A" }}>
                     {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>{item.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>{item.description}</p>
             </div>
         </AnimateIn>
     );
@@ -81,10 +70,17 @@ export default function ServicesSection({ variant = "home" }: { variant?: "home"
                         <span className="section-label">
                             {t("section_label")}
                         </span>
-                        <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight"
-                            style={{ color: "#0F172A", letterSpacing: "-0.03em" }}>
-                            {t("title")}
-                        </h2>
+                        {variant === "page" ? (
+                            <h1 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight"
+                                style={{ color: "#0F172A", letterSpacing: "-0.03em" }}>
+                                {t("title")}
+                            </h1>
+                        ) : (
+                            <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight"
+                                style={{ color: "#0F172A", letterSpacing: "-0.03em" }}>
+                                {t("title")}
+                            </h2>
+                        )}
                         <p className="mt-4 text-lg leading-relaxed" style={{ color: "#64748B" }}>{t("subtitle")}</p>
                     </div>
                 </AnimateIn>

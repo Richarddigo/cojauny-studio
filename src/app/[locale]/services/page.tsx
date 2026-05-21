@@ -3,6 +3,10 @@ import { getTranslations } from "next-intl/server";
 import ServicesSection from "@/components/sections/ServicesSection";
 import CTASection from "@/components/sections/CTASection";
 import AnimateIn from "@/components/ui/AnimateIn";
+import { buildAlternates } from "@/lib/seo";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateMetadata({
     params,
@@ -14,6 +18,7 @@ export async function generateMetadata({
     return {
         title: t("title"),
         description: t("subtitle"),
+        alternates: buildAlternates(locale, "/services"),
     };
 }
 
@@ -23,7 +28,6 @@ export default async function ServicesPage({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: "services" });
 
     const process = [
         {

@@ -6,16 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 import AnimateIn from "@/components/ui/AnimateIn";
 
-const schema = z.object({
-    name: z.string().min(1),
-    email: z.string().min(1).email(),
-    type: z.string().min(1),
-    message: z.string().min(20),
-});
-
-type FormData = z.infer<typeof schema>;
+type FormData = {
+    name: string;
+    email: string;
+    type: string;
+    message: string;
+    company?: string;
+};
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -36,8 +36,10 @@ export default function ContactForm() {
                 email: z.string().min(1, t("validation.email_required")).email(t("validation.email_invalid")),
                 type: z.string().min(1, t("validation.type_required")),
                 message: z.string().min(20, t("validation.message_min")),
+                company: z.string().max(0).optional(),
             })
         ),
+        defaultValues: { company: "" },
     });
 
     async function onSubmit(data: FormData) {
@@ -62,13 +64,14 @@ export default function ContactForm() {
         "w-full bg-surface border border-[var(--border)] rounded-[var(--radius-sm)] px-4 py-3 text-sm text-text placeholder:text-faint transition-all duration-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-[var(--accent-glow)]";
     const labelBase = "block text-sm font-medium text-muted mb-1.5";
     const errorClass = "mt-1.5 text-xs text-error";
+    const errorProps = { role: "alert" as const, "aria-live": "polite" as const };
 
     if (status === "success") {
         return (
             <AnimateIn>
                 <div className="card-dark p-10 text-center">
                     <div className="w-12 h-12 rounded-full bg-success/10 border border-success/20 flex items-center justify-center mx-auto mb-5">
-                        <img src="/icons/check-success.svg" width={20} height={20} alt="" aria-hidden="true" />
+                        <Icon name="check-success" size={20} className="text-success" />
                     </div>
                     <h3 className="text-xl font-bold text-text mb-2">{t("form.success_title")}</h3>
                     <p className="text-muted text-sm">{t("form.success_body")}</p>
@@ -76,7 +79,7 @@ export default function ContactForm() {
                         onClick={() => setStatus("idle")}
                         className="mt-6 text-xs text-accent hover:text-accent-dim transition-colors underline focus-ring rounded"
                     >
-                        Send another message
+                        {t("form.send_another")}
                     </button>
                 </div>
             </AnimateIn>
@@ -85,6 +88,18 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+            {/* Honeypot — hidden from real users, bots will fill it. */}
+            <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] w-px h-px overflow-hidden">
+                <label htmlFor="company">Company</label>
+                <input
+                    id="company"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...register("company")}
+                />
+            </div>
+
             {/* Name */}
             <div>
                 <label htmlFor="name" className={labelBase}>{t("form.name")}</label>
@@ -96,7 +111,7 @@ export default function ContactForm() {
                     className={`${inputBase} ${errors.name ? "border-error" : ""}`}
                     {...register("name")}
                 />
-                {errors.name && <p className={errorClass}>{errors.name.message}</p>}
+                {errors.name && <p className={errorClass} {...errorProps}>{errors.name.message}</p>}
             </div>
 
             {/* Email */}
@@ -110,7 +125,7 @@ export default function ContactForm() {
                     className={`${inputBase} ${errors.email ? "border-error" : ""}`}
                     {...register("email")}
                 />
-                {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+                {errors.email && <p className={errorClass} {...errorProps}>{errors.email.message}</p>}
             </div>
 
             {/* Type */}
@@ -127,7 +142,7 @@ export default function ContactForm() {
                     <option value="consulting">{t("form.type_consulting")}</option>
                     <option value="other">{t("form.type_other")}</option>
                 </select>
-                {errors.type && <p className={errorClass}>{errors.type.message}</p>}
+                {errors.type && <p className={errorClass} {...errorProps}>{errors.type.message}</p>}
             </div>
 
             {/* Message */}
@@ -140,11 +155,15 @@ export default function ContactForm() {
                     className={`${inputBase} resize-none ${errors.message ? "border-error" : ""}`}
                     {...register("message")}
                 />
-                {errors.message && <p className={errorClass}>{errors.message.message}</p>}
+                {errors.message && <p className={errorClass} {...errorProps}>{errors.message.message}</p>}
             </div>
 
             {status === "error" && (
-                <p className="text-sm text-error bg-error/8 border border-error/20 rounded-[var(--radius-sm)] px-4 py-3">
+                <p
+                    role="alert"
+                    aria-live="assertive"
+                    className="text-sm text-error bg-error/8 border border-error/20 rounded-[var(--radius-sm)] px-4 py-3"
+                >
                     {errorMsg}
                 </p>
             )}

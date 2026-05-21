@@ -13,12 +13,24 @@ interface ProjectItem {
     url: string;
 }
 
-function StatusBadge({ status }: { status: ProjectItem["status"] }) {
+function StatusBadge({ status, cardVariant = "dark" }: { status: ProjectItem["status"]; cardVariant?: "dark" | "light" }) {
     const t = useTranslations("projects");
     const config: Record<ProjectItem["status"], { label: string; className: string; dot: string }> = {
-        live: { label: t("status_live"), className: "badge-live", dot: "bg-[#4ADE80]" },
-        development: { label: t("status_development"), className: "badge-development", dot: "bg-[#FCD34D]" },
-        coming_soon: { label: t("status_coming_soon"), className: "badge-coming-soon", dot: "bg-[#94A3B8]" },
+        live: {
+            label: t("status_live"),
+            className: cardVariant === "light" ? "badge-live-light" : "badge-live",
+            dot: cardVariant === "light" ? "bg-[#166534]" : "bg-[#4ADE80]",
+        },
+        development: {
+            label: t("status_development"),
+            className: cardVariant === "light" ? "badge-development-light" : "badge-development",
+            dot: cardVariant === "light" ? "bg-[#92400E]" : "bg-[#FCD34D]",
+        },
+        coming_soon: {
+            label: t("status_coming_soon"),
+            className: cardVariant === "light" ? "badge-coming-soon-light" : "badge-coming-soon",
+            dot: cardVariant === "light" ? "bg-[#334155]" : "bg-[#94A3B8]",
+        },
     };
     const { label, className, dot } = config[status];
     return (
@@ -57,14 +69,14 @@ function ProjectCard({
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4">
                     <div>
-                        <p className={`text-xs font-semibold uppercase tracking-[0.1em] mb-1.5 ${variant === "dark" ? "text-faint" : "text-[#94A3B8]"}`}>
+                        <p className={`text-xs font-semibold uppercase tracking-[0.1em] mb-1.5 ${variant === "dark" ? "text-faint" : "text-[#475569]"}`}>
                             {item.category}
                         </p>
                         <h3 className={`text-xl font-bold tracking-tight ${variant === "dark" ? "text-text" : "text-[#0F172A]"}`}>
                             {item.title}
                         </h3>
                     </div>
-                    <StatusBadge status={item.status} />
+                    <StatusBadge status={item.status} cardVariant={variant} />
                 </div>
 
                 {/* Description */}
@@ -75,7 +87,7 @@ function ProjectCard({
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5">
                     {item.tags.map((tag) => (
-                        <span key={tag} className="tech-tag">{tag}</span>
+                        <span key={tag} className={variant === "light" ? "tech-tag-light" : "tech-tag"}>{tag}</span>
                     ))}
                 </div>
 
@@ -84,7 +96,7 @@ function ProjectCard({
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-dim transition-all focus-ring rounded group mt-1 w-fit"
+                    className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit ${variant === "light" ? "text-[#2D3FC0] hover:text-[#1E3A8A]" : "text-accent hover:text-accent-dim"}`}
                 >
                     {t("view_project")}
                     <Icon name="external-link" size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -113,11 +125,23 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
             <div className="container-studio">
                 <AnimateIn>
                     <div className="mb-14 max-w-xl">
-                        <span className="section-label">{t("section_label")}</span>
-                        <h2 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
-                            {t("title")}
-                        </h2>
-                        <p className={`mt-4 text-lg leading-relaxed max-w-xl ${subColor}`}>{t("subtitle")}</p>
+                        <span
+                            className="section-label"
+                            style={variant === "page" ? { color: "#2D3FC0" } : undefined}
+                        >{t("section_label")}</span>
+                        {variant === "page" ? (
+                            <h1 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
+                                {t("title")}
+                            </h1>
+                        ) : (
+                            <h2 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
+                                {t("title")}
+                            </h2>
+                        )}
+                        <p
+                            className={`mt-4 text-lg leading-relaxed max-w-xl ${subColor}`}
+                            style={variant === "page" ? { color: "#475569" } : undefined}
+                        >{t("subtitle")}</p>
                     </div>
                 </AnimateIn>
 

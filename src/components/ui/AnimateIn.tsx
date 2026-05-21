@@ -1,51 +1,54 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 interface AnimateInProps {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
+    /** Seconds to delay the reveal animation. */
     delay?: number;
-    duration?: number;
-    once?: boolean;
+    /** Kept for backwards compatibility; ignored (always uses fade-up). */
     direction?: "up" | "down" | "left" | "right" | "none";
+    /** Kept for backwards compatibility; ignored. */
+    duration?: number;
+    /** Kept for backwards compatibility; ignored (always once). */
+    once?: boolean;
 }
 
-export default function AnimateIn({
-    children,
-    className,
-    delay = 0,
-    duration = 0.6,
-    once = true,
-    direction = "up",
-}: AnimateInProps) {
+/**
+ * Reveals its children when they scroll into view.
+ *
+ * Implementation: CSS keyframes + IntersectionObserver.
+ * Replaces the previous framer-motion implementation; zero JS animation cost.
+ * Respects `prefers-reduced-motion`.
+ */
+export default function AnimateIn({ children, className = "", delay = 0 }: AnimateInProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, { once, amount: 0.05 });
+    const [seen, setSeen] = useState(false);
 
-    const directionMap = {
-        up: { y: 28, x: 0 },
-        down: { y: -28, x: 0 },
-        left: { y: 0, x: 28 },
-        right: { y: 0, x: -28 },
-        none: { y: 0, x: 0 },
-    };
-
-    const { x, y } = directionMap[direction];
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const io = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setSeen(true);
+                    io.disconnect();
+                }
+            },
+            { rootMargin: "0px 0px -5% 0px", threshold: 0.05 }
+        );
+        io.observe(el);
+        return () => io.disconnect();
+    }, []);
 
     return (
-        <motion.div
+        <div
             ref={ref}
-            className={className}
-            initial={{ opacity: 0, y, x }}
-            animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y, x }}
-            transition={{
-                duration,
-                delay,
-                ease: [0.25, 0.1, 0.25, 1],
-            }}
+            className={`${seen ? "reveal-in" : "reveal-init"} ${className}`}
+            style={seen && delay > 0 ? { animationDelay: `${delay}s` } : undefined}
         >
             {children}
-        </motion.div>
+        </div>
     );
 }

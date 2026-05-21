@@ -13,7 +13,21 @@
         "subheadline": "A product-focused development studio. We build apps, web platforms, and consult on technology for European businesses.",
         "cta_primary": "Start a project",
         "cta_secondary": "See our work",
-        "ecosystem_label": "Part of the Cojauny ecosystem"
+        "ecosystem_label": "Part of the Cojauny ecosystem",
+        "stats": [
+            {
+                "value": "3+",
+                "label": "Live products"
+            },
+            {
+                "value": "EU",
+                "label": "Based in Europe"
+            },
+            {
+                "value": "100%",
+                "label": "Outcome-focused"
+            }
+        ]
     },
     "services": {
         "section_label": "What we do",
@@ -106,6 +120,7 @@
         "section_label": "Partners",
         "title": "Partners & Sponsors",
         "subtitle": "Organisations we have worked with or that support the Cojauny ecosystem.",
+        "placeholder": "Your brand here",
         "items": [
             {
                 "id": "fcespanol",
@@ -119,7 +134,8 @@
         "title": "Let's build something together.",
         "description": "Whether you have a product idea, need a technical partner, or want to consult on architecture — we would love to hear from you.",
         "button": "Start a conversation",
-        "note": "Usually responds within 48 hours."
+        "note": "Usually responds within 48 hours.",
+        "pill": "Open for new projects"
     },
     "contact": {
         "title": "Get in touch",
@@ -142,7 +158,8 @@
             "sending": "Sending...",
             "success_title": "Message sent!",
             "success_body": "Thank you for reaching out. We will get back to you within 48 hours.",
-            "error": "Something went wrong. Please try again or email us directly."
+            "error": "Something went wrong. Please try again or email us directly.",
+            "send_another": "Send another message"
         },
         "validation": {
             "name_required": "Name is required",

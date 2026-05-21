@@ -1,4 +1,3 @@
-"use client";
 import { useTranslations } from "next-intl";
 import AnimateIn from "@/components/ui/AnimateIn";
 import CojaunyLogo from "@/components/ui/CojaunyLogo";
@@ -55,19 +54,8 @@ export default function EcosystemBanner() {
                                     href={t("url")}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-bold text-bg transition-all focus-ring group"
-                                    style={{
-                                        background: "white",
-                                        boxShadow: "0 0 24px rgba(255,255,255,0.1)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 40px rgba(255,255,255,0.25)";
-                                        (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 24px rgba(255,255,255,0.1)";
-                                        (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                                    }}
+                                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-bold text-bg focus-ring group hover-glow-light"
+                                    style={{ background: "white" }}
                                 >
                                     <Icon name="mountain-black" size={24} className="text-bg" />
                                     {t("cta")}

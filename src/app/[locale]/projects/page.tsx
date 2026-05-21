@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import CTASection from "@/components/sections/CTASection";
+import { buildAlternates } from "@/lib/seo";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateMetadata({
     params,
@@ -13,6 +17,7 @@ export async function generateMetadata({
     return {
         title: t("title"),
         description: t("subtitle"),
+        alternates: buildAlternates(locale, "/projects"),
     };
 }
 

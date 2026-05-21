@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { LegalLayout, H2, P, MailLink, ExternalLink } from "@/components/legal/LegalLayout";
+import { buildAlternates } from "@/lib/seo";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateMetadata({
     params,
@@ -9,7 +13,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "legal" });
-    return { title: t("impressum.title") };
+    return {
+        title: t("impressum.title"),
+        alternates: buildAlternates(locale, "/legal/impressum"),
+    };
 }
 
 export default async function ImpressumPage({

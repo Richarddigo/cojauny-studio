@@ -38,7 +38,7 @@ export default function CTASection() {
                             }}
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow" />
-                            Open for new projects
+                            {t("pill")}
                         </span>
 
                         <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-text tracking-[-0.03em] leading-tight">

@@ -19,7 +19,8 @@
   /* Text */
   --text: #F1F5F9;
   --muted: #94A3B8;
-  --faint: #475569;
+  --faint: #6B7FA0;
+  /* was #475569 — raised for WCAG AA contrast on dark bg */
 
   /* Borders */
   --border: rgba(255, 255, 255, 0.07);
@@ -39,7 +40,7 @@
 @theme inline {
   /* Fonts — set by next/font in layout */
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Brand colors */
   --color-bg: #0C1120;
@@ -51,7 +52,8 @@
 
   --color-text: #F1F5F9;
   --color-muted: #94A3B8;
-  --color-faint: #475569;
+  --color-faint: #6B7FA0;
+  /* was #475569 — raised for WCAG AA contrast on dark bg */
 
   /* Light palette */
   --color-light-bg: #F8FAFC;
@@ -74,8 +76,25 @@
   }
 
   html {
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   body {
@@ -242,6 +261,39 @@
     border-radius: 4px;
     font-family: var(--font-mono);
   }
+
+  /* Tech tag on light card backgrounds (WCAG AA: #2D3FC0 on #EFF2FF = 6.6:1) */
+  .tech-tag-light {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    background: rgba(91, 123, 255, 0.08);
+    color: #2D3FC0;
+    border: 1px solid rgba(91, 123, 255, 0.15);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+  }
+
+  /* Development badge on light card backgrounds (WCAG AA: #92400E on white = 6.4:1) */
+  .badge-development-light {
+    background: rgba(120, 80, 0, 0.08);
+    color: #92400E;
+    border: 1px solid rgba(120, 80, 0, 0.2);
+  }
+
+  /* Live badge on light card backgrounds (WCAG AA: #166534 on white = 6.8:1) */
+  .badge-live-light {
+    background: rgba(22, 163, 74, 0.08);
+    color: #166534;
+    border: 1px solid rgba(22, 163, 74, 0.2);
+  }
+
+  /* Coming-soon badge on light card backgrounds (WCAG AA: #334155 on white = 10.1:1) */
+  .badge-coming-soon-light {
+    background: rgba(100, 116, 139, 0.08);
+    color: #334155;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+  }
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────────────── */
@@ -353,6 +405,167 @@
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+/* ─── Hero decor (CSS-only orbs / particles / scroll hint) ─────────── */
+@keyframes hero-orb-pulse-1 {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-orb-pulse-2 {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes hero-particle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-line-grow {
+
+  0%,
+  100% {
+    width: 20px;
+  }
+
+  50% {
+    width: 28px;
+  }
+}
+
+@keyframes hero-scroll-dot {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.hero-orb {
+  animation: hero-orb-pulse-1 8s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  animation: hero-orb-pulse-2 10s ease-in-out infinite 2s;
+}
+
+.hero-particle {
+  animation-name: hero-particle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.hero-ecosystem-line {
+  display: inline-block;
+  height: 1px;
+  background: currentColor;
+  border-radius: 9999px;
+  width: 20px;
+  animation: hero-line-grow 3s ease-in-out infinite;
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-dot 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-orb,
+  .hero-orb-2,
+  .hero-particle,
+  .hero-ecosystem-line,
+  .hero-scroll-dot {
+    animation: none !important;
+  }
+}
+
+/* ─── Reveal on scroll (CSS + IntersectionObserver toggle) ─────────── */
+.reveal-init {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  animation: fade-in-up 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+/* Light "hover lift" shared by sponsor / ecosystem CTAs / service cards */
+.hover-lift {
+  transition:
+    border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-lift-sponsor:hover {
+  border-color: rgba(91, 123, 255, 0.25);
+  box-shadow: 0 12px 32px rgba(91, 123, 255, 0.1);
+}
+
+.hover-lift-service:hover {
+  border-color: #A5B4FC;
+  box-shadow:
+    0 16px 48px rgba(91, 123, 255, 0.12),
+    0 0 0 1px rgba(91, 123, 255, 0.1);
+}
+
+.hover-glow-light {
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.1);
+}
+
+.hover-glow-light:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal-init,
+  .reveal-in {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
 
 /* ─── Gradient Text ─────────────────────────────────────────────────── */

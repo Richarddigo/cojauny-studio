@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({
@@ -15,15 +17,15 @@ const inter = Inter({
     display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-    subsets: ["latin"],
-    variable: "--font-jetbrains-mono",
-    display: "swap",
-});
-
 export async function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+    themeColor: "#0C1120",
+    width: "device-width",
+    initialScale: 1,
+};
 
 export async function generateMetadata({
     params,
@@ -33,49 +35,24 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "hero" });
 
-    const baseUrl = "https://studio.cojauny.com";
-    const localeUrls: Record<string, string> = {
-        en: `${baseUrl}/en`,
-        es: `${baseUrl}/es`,
-        de: `${baseUrl}/de`,
-    };
-
     return {
         title: {
             default: "Cojauny Studio — We build software that matters.",
             template: "%s | Cojauny Studio",
         },
         description: t("subheadline"),
-        metadataBase: new URL(baseUrl),
-        alternates: {
-            canonical: localeUrls[locale] ?? `${baseUrl}/en`,
-            languages: {
-                en: `${baseUrl}/en`,
-                es: `${baseUrl}/es`,
-                de: `${baseUrl}/de`,
-                "x-default": `${baseUrl}/en`,
-            },
-        },
+        metadataBase: new URL(SITE_URL),
         openGraph: {
             type: "website",
             siteName: "Cojauny Studio",
             title: "Cojauny Studio — We build software that matters.",
             description: t("subheadline"),
-            url: localeUrls[locale] ?? baseUrl,
-            images: [
-                {
-                    url: "/og-image.png",
-                    width: 1200,
-                    height: 630,
-                    alt: "Cojauny Studio",
-                },
-            ],
+            locale,
         },
         twitter: {
             card: "summary_large_image",
             title: "Cojauny Studio",
             description: t("subheadline"),
-            images: ["/og-image.png"],
         },
         robots: {
             index: true,
@@ -110,7 +87,7 @@ export default async function LocaleLayout({
     return (
         <html
             lang={locale}
-            className={`${inter.variable} ${jetbrainsMono.variable}`}
+            className={inter.variable}
         >
             <body className="min-h-screen flex flex-col antialiased">
                 <NextIntlClientProvider messages={messages}>
@@ -118,6 +95,7 @@ export default async function LocaleLayout({
                     <main className="flex-1">{children}</main>
                     <Footer />
                 </NextIntlClientProvider>
+                <JsonLd locale={locale} />
                 <Analytics />
             </body>
         </html>

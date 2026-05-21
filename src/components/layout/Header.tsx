@@ -1,14 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import Button from "@/components/ui/Button";
 import StudioLogo from "@/components/ui/StudioLogo";
 import Icon from "@/components/ui/Icon";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { de } from "zod/locales";
+import type { Locale } from "@/locales/config";
 
 // ── Logo ─────────────────────────────────────────────────────────────────
 // To use your real PNG: save it to public/logo.png
@@ -33,6 +32,7 @@ const navLinks = [
 
 export default function Header() {
     const t = useTranslations("nav");
+    const locale = useLocale();
     const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,10 +44,7 @@ export default function Header() {
         return () => window.removeEventListener("scroll", handler);
     }, []);
 
-    // Close mobile menu on route change
-    useEffect(() => {
-        setMobileOpen(false);
-    }, [pathname]);
+    const handleNavClick = () => setMobileOpen(false);
 
     return (
         <header
@@ -97,64 +94,68 @@ export default function Header() {
 
                     {/* Right side */}
                     <div className="flex items-center gap-3">
-                        <LanguageSwitcher currentLocale={"en"} />
+                        <LanguageSwitcher currentLocale={locale as Locale} />
                         <Button href="/contact" size="sm" className="hidden md:inline-flex">
                             {t("cta")}
                         </Button>
-                        {/* Mobile menu toggle */}
-                        <button
-                            onClick={() => setMobileOpen((v) => !v)}
-                            aria-expanded={mobileOpen}
-                            aria-label="Toggle menu"
-                            className="md:hidden p-2 rounded-lg text-muted hover:text-text hover:bg-[rgba(255,255,255,0.06)] transition-all focus-ring"
-                        >
-                            {mobileOpen
-                                ? <Icon name="close" size={20} />
-                                : <Icon name="hamburger" size={20} />
-                            }
-                        </button>
+                        {/* Mobile nav landmark — always in accessibility tree on mobile */}
+                        <nav className="md:hidden" aria-label="Main navigation">
+                            <button
+                                onClick={() => setMobileOpen((v) => !v)}
+                                aria-expanded={mobileOpen}
+                                aria-controls="mobile-menu"
+                                aria-label="Toggle menu"
+                                className="p-2 rounded-lg text-muted hover:text-text hover:bg-[rgba(255,255,255,0.06)] transition-all focus-ring"
+                            >
+                                {mobileOpen
+                                    ? <Icon name="close" size={20} />
+                                    : <Icon name="hamburger" size={20} />
+                                }
+                            </button>
+                        </nav>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile menu */}
-            <AnimatePresence>
-                {mobileOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="md:hidden overflow-hidden bg-[rgba(12,17,32,0.98)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.06)]"
-                    >
-                        <div className="container-studio py-4 flex flex-col gap-1">
-                            {navLinks.map(({ key, href }) => {
-                                const isActive =
-                                    href === "/"
-                                        ? pathname === "/"
-                                        : pathname.startsWith(href);
-                                return (
-                                    <Link
-                                        key={key}
-                                        href={href}
-                                        className={`px-4 py-3.5 text-sm font-medium rounded-lg transition-all ${isActive
-                                            ? "text-text bg-[rgba(91,123,255,0.12)] border border-[rgba(91,123,255,0.2)]"
-                                            : "text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)]"
-                                            }`}
-                                    >
-                                        {t(key)}
-                                    </Link>
-                                );
-                            })}
-                            <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
-                                <Button href="/contact" size="sm" className="w-full justify-center">
-                                    {t("cta")}
-                                </Button>
-                            </div>
+            {/* Mobile menu (CSS grid-rows collapse, no framer-motion) */}
+            <div
+                id="mobile-menu"
+                className={`md:hidden grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out ${mobileOpen
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                    }`}
+                aria-hidden={!mobileOpen}
+            >
+                <div className="min-h-0 overflow-hidden bg-[rgba(12,17,32,0.98)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.06)]">
+                    <div className="container-studio py-4 flex flex-col gap-1">
+                        {navLinks.map(({ key, href }) => {
+                            const isActive =
+                                href === "/"
+                                    ? pathname === "/"
+                                    : pathname.startsWith(href);
+                            return (
+                                <Link
+                                    key={key}
+                                    href={href}
+                                    onClick={handleNavClick}
+                                    className={`px-4 py-3.5 text-sm font-medium rounded-lg transition-all ${isActive
+                                        ? "text-text bg-[rgba(91,123,255,0.12)] border border-[rgba(91,123,255,0.2)]"
+                                        : "text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)]"
+                                        }`}
+                                    tabIndex={mobileOpen ? 0 : -1}
+                                >
+                                    {t(key)}
+                                </Link>
+                            );
+                        })}
+                        <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
+                            <Button href="/contact" size="sm" className="w-full justify-center" tabIndex={mobileOpen ? 0 : -1}>
+                                {t("cta")}
+                            </Button>
                         </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 }
