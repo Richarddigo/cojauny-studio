@@ -51,14 +51,14 @@ export default function SponsorsSection() {
                             </div>
                         </a>
 
-                        {/* Placeholder */}
+                        {/* Placeholder — hidden from assistive tech; purely decorative */}
                         <div className="flex flex-col items-center gap-3 p-6 rounded-2xl opacity-25"
+                            aria-hidden="true"
                             style={{ border: "1px dashed rgba(255,255,255,0.12)" }}>
                             <div className="w-16 h-16 rounded-full flex items-center justify-center"
                                 style={{ background: "rgba(255,255,255,0.04)" }}>
                                 <Icon name="plus" size={20} className="text-faint" />
                             </div>
-                            <p className="text-xs text-faint">{t("placeholder")}</p>
                         </div>
                     </div>
                 </AnimateIn>

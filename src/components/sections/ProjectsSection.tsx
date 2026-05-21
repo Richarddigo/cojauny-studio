@@ -96,7 +96,7 @@ function ProjectCard({
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit ${variant === "light" ? "text-[#2D3FC0] hover:text-[#1E3A8A]" : "text-accent hover:text-accent-dim"}`}
+                    className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit ${variant === "light" ? "text-[#2D3FC0] hover:text-[#1E3A8A]" : "text-[#93A8FF] hover:text-[#7B9EFF]"}`}
                 >
                     {t("view_project")}
                     <Icon name="external-link" size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -127,7 +127,7 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                     <div className="mb-14 max-w-xl">
                         <span
                             className="section-label"
-                            style={variant === "page" ? { color: "#2D3FC0" } : undefined}
+                            style={variant === "page" ? { color: "#2D3FC0" } : variant === "home" ? { color: "#93A8FF" } : undefined}
                         >{t("section_label")}</span>
                         {variant === "page" ? (
                             <h1 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
@@ -160,7 +160,7 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                     <AnimateIn delay={0.35} className="mt-12">
                         <Link
                             href="/projects"
-                            className="inline-flex items-center gap-2.5 text-sm font-semibold text-accent hover:text-accent-dim transition-all focus-ring rounded group"
+                            className="inline-flex items-center gap-2.5 text-sm font-semibold text-[#93A8FF] hover:text-[#7B9EFF] transition-all focus-ring rounded group"
                         >
                             {t("cta")}
                             <Icon name="arrow-right" size={16} className="group-hover:translate-x-1 transition-transform duration-200" />

@@ -19,8 +19,8 @@
   /* Text */
   --text: #F1F5F9;
   --muted: #94A3B8;
-  --faint: #6B7FA0;
-  /* was #475569 — raised for WCAG AA contrast on dark bg */
+  --faint: #8B9DBF;
+  /* raised for WCAG AA on card-dark (#1c2336): 6.0:1 */
 
   /* Borders */
   --border: rgba(255, 255, 255, 0.07);
@@ -52,8 +52,8 @@
 
   --color-text: #F1F5F9;
   --color-muted: #94A3B8;
-  --color-faint: #6B7FA0;
-  /* was #475569 — raised for WCAG AA contrast on dark bg */
+  --color-faint: #8B9DBF;
+  /* raised for WCAG AA on card-dark (#1c2336): 6.0:1 */
 
   /* Light palette */
   --color-light-bg: #F8FAFC;

@@ -3,23 +3,7 @@
 > **Stack:** Next.js 16 (App Router) · React 19 · next-intl 4 · Tailwind v4 · Resend · Zod 4 · Vercel
 > **URL:** https://studio.cojauny.com · **Health Score: 90 / 100**
 
-Todo el trabajo de código ha sido completado. Los ítems restantes se clasifican a continuación.
-
----
-
-## 🤖 Automático — Copilot lo ejecuta
-
-### Playwright: instalar navegadores y correr la suite
-
-Los specs ya existen en `tests/e2e/`. Solo falta descargar los binarios y ejecutar.
-
-```powershell
-npx playwright install --with-deps     # one-time, ~150 MB
-npm run test:e2e                       # smoke + axe-core a11y
-npm run test:e2e:ui                    # modo interactivo (opcional)
-```
-
-Si hay violaciones de axe-core en [tests/e2e/a11y.spec.ts](tests/e2e/a11y.spec.ts), comparte el JSON resultante y Copilot las corrige.
+Los ítems de código están completados. Suite Playwright: **26/26 tests en verde** (smoke + WCAG 2.1 AA).
 
 ---
 

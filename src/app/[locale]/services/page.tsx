@@ -103,7 +103,7 @@ export default async function ServicesPage({
                         {process.map((item, i) => (
                             <AnimateIn key={item.step} delay={i * 0.08}>
                                 <div className="card-dark p-7 flex gap-5">
-                                    <span className="text-[0.7rem] font-mono font-bold tracking-widest text-accent shrink-0 pt-1">
+                                    <span className="text-[0.7rem] font-mono font-bold tracking-widest text-[#93A8FF] shrink-0 pt-1">
                                         {item.step}
                                     </span>
                                     <div>
