@@ -4,10 +4,13 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimateIn from "@/components/ui/AnimateIn";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
 type FormData = {
     name: string;
@@ -15,6 +18,7 @@ type FormData = {
     type: string;
     message: string;
     company?: string;
+    cfTurnstileResponse?: string;
 };
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -23,6 +27,8 @@ export default function ContactForm() {
     const t = useTranslations("contact");
     const [status, setStatus] = useState<Status>("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [turnstileToken, setTurnstileToken] = useState("");
+    const turnstileRef = useRef<TurnstileInstance>(null);
 
     const {
         register,
@@ -49,14 +55,18 @@ export default function ContactForm() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
+                body: JSON.stringify({ ...data, cfTurnstileResponse: turnstileToken }),
             });
             if (!res.ok) throw new Error("server error");
             setStatus("success");
             reset();
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
         } catch {
             setStatus("error");
             setErrorMsg(t("form.error"));
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
         }
     }
 
@@ -168,12 +178,24 @@ export default function ContactForm() {
                 </p>
             )}
 
+            {TURNSTILE_SITE_KEY && (
+                <Turnstile
+                    ref={turnstileRef}
+                    siteKey={TURNSTILE_SITE_KEY}
+                    onSuccess={setTurnstileToken}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                    options={{ theme: "dark", size: "normal" }}
+                />
+            )}
+
             <Button
                 as="button"
                 type="submit"
                 size="lg"
                 className="w-full justify-center"
                 loading={status === "loading"}
+                disabled={TURNSTILE_SITE_KEY !== "" && turnstileToken === ""}
             >
                 {status === "loading" ? t("form.sending") : t("form.submit")}
             </Button>

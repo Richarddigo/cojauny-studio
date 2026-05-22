@@ -13,6 +13,8 @@ const schema = z.object({
   message: z.string().min(20).max(4000),
   // Honeypot — must be empty. Bots fill all visible inputs.
   company: z.string().max(0).optional().or(z.literal("")),
+  // Turnstile token — optional for graceful degradation when secret not configured.
+  cfTurnstileResponse: z.string().optional(),
 });
 
 // Rate-limit primitive — per-process in-memory store (good enough for hobby scale)
@@ -88,7 +90,30 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
-  const { name, email, type, message } = parsed.data;
+  const { name, email, type, message, cfTurnstileResponse } = parsed.data;
+
+  // Turnstile bot verification — enforced only when secret key is configured.
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    if (!cfTurnstileResponse) {
+      return NextResponse.json({ error: "Bot verification required." }, { status: 400 });
+    }
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        body: new URLSearchParams({
+          secret: turnstileSecret,
+          response: cfTurnstileResponse,
+          remoteip: ip,
+        }),
+      }
+    );
+    const verifyData = await verifyRes.json() as { success: boolean };
+    if (!verifyData.success) {
+      return NextResponse.json({ error: "Bot verification failed. Please try again." }, { status: 400 });
+    }
+  }
 
   // Send via Resend
   const apiKey = process.env.RESEND_API_KEY;
