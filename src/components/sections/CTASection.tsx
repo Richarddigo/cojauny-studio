@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import AnimateIn from "@/components/ui/AnimateIn";
 import Button from "@/components/ui/Button";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import AnimateIn from "@/components/ui/AnimateIn";
 import { Link } from "@/i18n/navigation";

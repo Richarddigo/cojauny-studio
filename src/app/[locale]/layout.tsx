@@ -88,9 +88,10 @@ export default async function LocaleLayout({
         <html
             lang={locale}
             className={inter.variable}
+            data-scroll-behavior="smooth"
         >
             <body className="min-h-screen flex flex-col antialiased">
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider locale={locale} messages={messages}>
                     <Header />
                     <main className="flex-1">{children}</main>
                     <Footer />
