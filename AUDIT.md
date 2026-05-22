@@ -1,9 +1,22 @@
 # Cojauny Studio — Auditoría Técnica · Pendientes
 
 > **Stack:** Next.js 16 (App Router) · React 19 · next-intl 4 · Tailwind v4 · Resend · Zod 4 · Vercel
-> **URL:** https://studio.cojauny.com · **Health Score: 90 / 100**
+> **URL:** https://studio.cojauny.com · **Health Score: 95 / 100**
 
 Los ítems de código están completados. Suite Playwright: **26/26 tests en verde** (smoke + WCAG 2.1 AA).
+
+---
+
+## 📋 Pending Tasks
+
+- [x] **`fr` añadido a `sitemap.ts`** — `["en", "es", "de", "fr"]` ✅
+- [ ] **Set env vars on Vercel** (deploy blocker) — `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. Without these, the contact form returns `503`.
+- [ ] **Configure custom domain** — Vercel → Settings → Domains → `studio.cojauny.com` + DNS CNAME.
+- [ ] **Turnstile bot protection** — Get Cloudflare Turnstile keys, then ask Copilot to implement: widget in `ContactForm.tsx`, schema validation, server-side verification in `/api/contact/route.ts`, CSP update. See Step 4 below.
+- [ ] **Upstash Redis for distributed rate limiting** — Create free DB at console.upstash.com, add `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` to Vercel. Code already handles it automatically. See Step 3 below.
+- [ ] **Submit sitemap to Google Search Console** — `https://studio.cojauny.com/sitemap.xml`. Also Bing Webmaster Tools.
+- [ ] **Validate OG image for `/fr` route** — Run opengraph.xyz on `/fr` once deployed.
+- [ ] **Run Lighthouse post-deploy** — target Performance ≥ 95 · Accessibility ≥ 95 · SEO = 100.
 
 ---
 
@@ -144,3 +157,15 @@ El sitio funciona sin estos ítems. Son mejoras de seguridad, observabilidad y v
 | Páginas con canonical correcto | ~30 % | 100 % |
 | `npm run lint` | errores + warnings | 0 / 0 |
 | Framer Motion en bundle | ~55 KB gzip | eliminado |
+| Locales soportados | en / es / de | en / es / de / **fr** |
+
+---
+
+## Cambios del refactor multi-idioma (sesión actual)
+
+- **Francés añadido**: `messages/fr.json` creado con traducciones completas para todas las claves.
+- `src/i18n/routing.ts` actualizado: `locales: ["en", "es", "de", "fr"]`.
+- `src/locales/config.ts` actualizado: `localeValues = ['es', 'en', 'de', 'fr']`.
+- `src/components/layout/LanguageSwitcher.tsx` actualizado: flag 🇫🇷 y etiqueta `Français` añadidos.
+- `src/app/sitemap.ts` actualizado: `fr` añadido al array de locales.
+
