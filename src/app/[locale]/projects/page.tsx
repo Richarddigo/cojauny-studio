@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import CTASection from "@/components/sections/CTASection";
 import { buildAlternates } from "@/lib/seo";
@@ -21,7 +21,13 @@ export async function generateMetadata({
     };
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     return (
         <>
             <div className="pt-24" />

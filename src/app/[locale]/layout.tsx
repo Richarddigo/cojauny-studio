@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
@@ -81,6 +81,11 @@ export default async function LocaleLayout({
     if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
         notFound();
     }
+
+    // Required for static rendering with generateStaticParams:
+    // sets the locale in the async context so getMessages() / useTranslations()
+    // can read the correct locale during build-time static generation.
+    setRequestLocale(locale);
 
     const messages = await getMessages();
 

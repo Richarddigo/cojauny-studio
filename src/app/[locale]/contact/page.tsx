@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import AnimateIn from "@/components/ui/AnimateIn";
 import ContactForm from "@/components/contact/ContactForm";
 import Icon from "@/components/ui/Icon";
@@ -69,8 +69,8 @@ export default async function ContactPage({
                                         <Icon name="clock" size={16} className="text-muted" />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-faint uppercase tracking-wider">Response time</p>
-                                        <p className="text-sm font-medium text-text">Within 48 hours</p>
+                                        <p className="text-xs text-faint uppercase tracking-wider">{t("response_time_label")}</p>
+                                        <p className="text-sm font-medium text-text">{t("response_time_value")}</p>
                                     </div>
                                 </div>
 
@@ -79,8 +79,8 @@ export default async function ContactPage({
                                         <Icon name="user" size={16} className="text-muted" />
                                     </div>
                                     <div>
-                                        <p className="text-xs text-faint uppercase tracking-wider">Location</p>
-                                        <p className="text-sm font-medium text-text">Europe</p>
+                                        <p className="text-xs text-faint uppercase tracking-wider">{t("location_label")}</p>
+                                        <p className="text-sm font-medium text-text">{t("location_value")}</p>
                                     </div>
                                 </div>
                             </div>

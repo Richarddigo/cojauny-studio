@@ -50,7 +50,30 @@
                 "description": "Architektur-Reviews, Tech-Stack-Entscheidungen und Team-Begleitung. Wir helfen Start-ups und etablierten Teams, bessere technische Entscheidungen schneller zu treffen."
             }
         ],
-        "cta": "Alle Leistungen ansehen"
+        "cta": "Alle Leistungen ansehen",
+        "process": {
+            "section_label": "Unser Prozess",
+            "title": "Wie wir arbeiten",
+            "subtitle": "Strukturiert, transparent und auf Lieferung ausgerichtet.",
+            "steps": [
+                {
+                    "title": "Entdeckung",
+                    "description": "Wir verstehen Ihre Ziele, Einschr\u00e4nkungen und Benutzer. Keine Annahmen."
+                },
+                {
+                    "title": "Architektur",
+                    "description": "Wir entwerfen das richtige System f\u00fcr Ihren Anwendungsfall \u2014 nicht f\u00fcr den n\u00e4chsten."
+                },
+                {
+                    "title": "Entwicklung",
+                    "description": "Sauberer, typisierter, getesteter Code. Regelm\u00e4\u00dfige Lieferungen. Volle Transparenz."
+                },
+                {
+                    "title": "Lieferung & Support",
+                    "description": "Deployment, Dokumentation und \u00dcbergabe. Wir sind auch danach noch da."
+                }
+            ]
+        }
     },
     "projects": {
         "section_label": "Ausgewählte Projekte",
@@ -139,6 +162,10 @@
         "title": "Kontakt",
         "subtitle": "Erzählen Sie uns von Ihrem Projekt und wir melden uns innerhalb von 48 Stunden.",
         "email": "studio@cojauny.com",
+        "response_time_label": "Antwortzeit",
+        "response_time_value": "Innerhalb von 48 Stunden",
+        "location_label": "Standort",
+        "location_value": "Europa",
         "form": {
             "name": "Vollständiger Name",
             "name_placeholder": "Ihr Name",

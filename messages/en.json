@@ -50,7 +50,30 @@
                 "description": "Architecture reviews, tech stack decisions, and team guidance. We help startups and established teams make better, faster technical choices."
             }
         ],
-        "cta": "View all services"
+        "cta": "View all services",
+        "process": {
+            "section_label": "How we work",
+            "title": "Our process",
+            "subtitle": "Structured, transparent, and delivery-focused.",
+            "steps": [
+                {
+                    "title": "Discovery",
+                    "description": "We understand your goals, constraints, and users. No assumptions."
+                },
+                {
+                    "title": "Architecture",
+                    "description": "We design the right system for your use case \u2014 not for the next one."
+                },
+                {
+                    "title": "Development",
+                    "description": "Clean, typed, tested code. Regular deliveries. Full transparency."
+                },
+                {
+                    "title": "Delivery & Support",
+                    "description": "Deployment, documentation, and handover. We stay available after."
+                }
+            ]
+        }
     },
     "projects": {
         "section_label": "Selected work",
@@ -141,6 +164,10 @@
         "title": "Get in touch",
         "subtitle": "Tell us about your project and we will get back to you within 48 hours.",
         "email": "studio@cojauny.com",
+        "response_time_label": "Response time",
+        "response_time_value": "Within 48 hours",
+        "location_label": "Location",
+        "location_value": "Europe",
         "form": {
             "name": "Full name",
             "name_placeholder": "Your name",

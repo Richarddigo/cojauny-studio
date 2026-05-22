@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LegalLayout, H2, P, MailLink, ExternalLink } from "@/components/legal/LegalLayout";
 import { buildAlternates } from "@/lib/seo";
 
@@ -25,6 +25,7 @@ export default async function ImpressumPage({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: "legal" });
 
     return (

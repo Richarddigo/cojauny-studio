@@ -50,7 +50,30 @@
                 "description": "Revisiones de arquitectura, decisiones de stack tecnológico y guía de equipos. Ayudamos a startups y empresas a tomar mejores decisiones técnicas más rápido."
             }
         ],
-        "cta": "Ver todos los servicios"
+        "cta": "Ver todos los servicios",
+        "process": {
+            "section_label": "Nuestro proceso",
+            "title": "Cómo trabajamos",
+            "subtitle": "Estructurado, transparente y orientado a la entrega.",
+            "steps": [
+                {
+                    "title": "Descubrimiento",
+                    "description": "Entendemos tus objetivos, restricciones y usuarios. Sin suposiciones."
+                },
+                {
+                    "title": "Arquitectura",
+                    "description": "Diseñamos el sistema correcto para tu caso de uso \u2014 no para el siguiente."
+                },
+                {
+                    "title": "Desarrollo",
+                    "description": "Código limpio, tipado y probado. Entregas regulares. Transparencia total."
+                },
+                {
+                    "title": "Entrega y soporte",
+                    "description": "Despliegue, documentación y transferencia. Seguimos disponibles después."
+                }
+            ]
+        }
     },
     "projects": {
         "section_label": "Trabajo seleccionado",
@@ -139,6 +162,10 @@
         "title": "Contacto",
         "subtitle": "Cuéntanos tu proyecto y te responderemos en menos de 48 horas.",
         "email": "studio@cojauny.com",
+        "response_time_label": "Tiempo de respuesta",
+        "response_time_value": "En menos de 48 horas",
+        "location_label": "Ubicación",
+        "location_value": "Europa",
         "form": {
             "name": "Nombre completo",
             "name_placeholder": "Tu nombre",
