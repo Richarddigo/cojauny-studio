@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 import { localeValues, type Locale } from "@/locales/config";
-import { SpainFlag, UKFlag, GermanyFlag } from "./FlagIcons";
+import { SpainFlag, UKFlag, GermanyFlag, FranceFlag } from "./FlagIcons";
 import Icon from "../ui/Icon";
 
 interface LanguageSwitcherProps {
@@ -21,18 +21,21 @@ const languageLabels: Record<Locale, string> = {
     es: "Español",
     en: "English",
     de: "Deutsch",
+    fr: "Français",
 };
 
 const languageFlags: Record<Locale, React.ComponentType<{ className?: string }>> = {
     es: SpainFlag,
     en: UKFlag,
     de: GermanyFlag,
+    fr: FranceFlag,
 };
 
 const languageCodes: Record<Locale, string> = {
     es: "ES",
     en: "EN",
     de: "DE",
+    fr: "FR",
 };
 
 type Option = {

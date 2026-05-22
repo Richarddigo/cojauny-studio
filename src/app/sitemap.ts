@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://studio.cojauny.com";
-const locales = ["en", "es", "de"] as const;
+const locales = ["en", "es", "de", "fr"] as const;
 
 const routes = [
   "",

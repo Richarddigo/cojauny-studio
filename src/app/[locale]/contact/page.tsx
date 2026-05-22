@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import AnimateIn from "@/components/ui/AnimateIn";
 import ContactForm from "@/components/contact/ContactForm";
 import Icon from "@/components/ui/Icon";
