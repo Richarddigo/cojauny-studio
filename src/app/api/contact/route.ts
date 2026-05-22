@@ -132,7 +132,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: "Cojauny Studio <noreply@studio.cojauny.com>",
+      from: "Cojauny Studio <noreply@cojauny.com>",
       to:   ["studio@cojauny.com"],
       replyTo: sanitizeHeader(email),
       subject: sanitizeHeader(`[Studio] New enquiry from ${name} — ${typeLabels[type]}`),
