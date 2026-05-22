@@ -59,13 +59,13 @@ export default function Header() {
                     <Link
                         href="/"
                         className="group focus-ring rounded-lg"
-                        aria-label="Cojauny Studio — Home"
+                        aria-label={t("home_aria")}
                     >
                         <BrandLogo />
                     </Link>
 
                     {/* Desktop nav */}
-                    <nav className="hidden md:flex items-center gap-0.5" aria-label="Main navigation">
+                    <nav className="hidden md:flex items-center gap-0.5" aria-label={t("main_nav")}>
                         {navLinks.map(({ key, href }) => {
                             const isActive =
                                 href === "/"

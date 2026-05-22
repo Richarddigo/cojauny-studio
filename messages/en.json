@@ -4,7 +4,9 @@
         "projects": "Projects",
         "services": "Services",
         "contact": "Contact",
-        "cta": "Start a project"
+        "cta": "Start a project",
+        "home_aria": "Cojauny Studio — Home",
+        "main_nav": "Main navigation"
     },
     "hero": {
         "label": "Cojauny Studio",
