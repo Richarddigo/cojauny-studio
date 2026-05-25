@@ -17,7 +17,7 @@ function BrandLogo() {
     return (
         <span className="flex items-center gap-2.5 leading-none">
             <span className="text-accent shrink-0 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(91,123,255,0.7)]">
-                <StudioLogo size={150} />
+                <StudioLogo size={150} className="h-7 min-[900px]:h-9 w-auto" />
             </span>
         </span>
     );
@@ -48,13 +48,13 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled
-                ? "bg-[rgba(12,17,32,0.95)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.06)] shadow-[0_2px_32px_rgba(0,0,0,0.5)]"
-                : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-40 transition-shadow duration-300 bg-[rgb(12,17,32)] backdrop-blur-xl ${scrolled
+                ? "border-b border-[rgba(255,255,255,0.06)] shadow-[0_2px_32px_rgba(0,0,0,0.5)]"
+                : ""
                 }`}
         >
             <div className="container-studio">
-                <div className="flex items-center justify-between h-18" style={{ height: "70px" }}>
+                <div className="flex items-center justify-between h-14 min-[900px]:h-[70px]">
                     {/* Logo */}
                     <Link
                         href="/"
@@ -64,8 +64,8 @@ export default function Header() {
                         <BrandLogo />
                     </Link>
 
-                    {/* Desktop nav */}
-                    <nav className="hidden md:flex items-center gap-0.5" aria-label={t("main_nav")}>
+                    {/* Desktop nav — visible at ≥900px */}
+                    <nav className="hidden min-[900px]:flex items-center gap-0.5" aria-label={t("main_nav")}>
                         {navLinks.map(({ key, href }) => {
                             const isActive =
                                 href === "/"
@@ -93,13 +93,19 @@ export default function Header() {
                     </nav>
 
                     {/* Right side */}
-                    <div className="flex items-center gap-3">
-                        <LanguageSwitcher currentLocale={locale as Locale} />
-                        <Button href="/contact" size="sm" className="hidden md:inline-flex">
-                            {t("cta")}
-                        </Button>
-                        {/* Mobile nav landmark — always in accessibility tree on mobile */}
-                        <nav className="md:hidden" aria-label="Main navigation">
+                    <div className="flex items-center gap-2 min-[900px]:gap-3">
+                        {/* LanguageSwitcher — visible in header only at ≥900px */}
+                        <span className="hidden min-[900px]:block">
+                            <LanguageSwitcher currentLocale={locale as Locale} />
+                        </span>
+                        {/* CTA button — visible in header only at ≥900px */}
+                        <span className="hidden min-[900px]:inline-flex">
+                            <Button href="/contact" size="sm">
+                                {t("cta")}
+                            </Button>
+                        </span>
+                        {/* Hamburger — visible at <900px */}
+                        <nav className="min-[900px]:hidden" aria-label="Main navigation">
                             <button
                                 onClick={() => setMobileOpen((v) => !v)}
                                 aria-expanded={mobileOpen}
@@ -117,10 +123,10 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Mobile menu (CSS grid-rows collapse, no framer-motion) */}
+            {/* Mobile menu — visible at <900px */}
             <div
                 id="mobile-menu"
-                className={`md:hidden grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out ${mobileOpen
+                className={`min-[900px]:hidden grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out ${mobileOpen
                     ? "grid-rows-[1fr] opacity-100"
                     : "grid-rows-[0fr] opacity-0"
                     }`}
@@ -148,8 +154,9 @@ export default function Header() {
                                 </Link>
                             );
                         })}
-                        <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
-                            <Button href="/contact" size="sm" className="w-full justify-center" tabIndex={mobileOpen ? 0 : -1}>
+                        <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between gap-3">
+                            <LanguageSwitcher currentLocale={locale as Locale} />
+                            <Button href="/contact" size="sm" className="flex-1 justify-center" tabIndex={mobileOpen ? 0 : -1}>
                                 {t("cta")}
                             </Button>
                         </div>

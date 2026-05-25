@@ -1,15 +1,19 @@
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import StudioLogo from "@/components/ui/StudioLogo";
+import LanguageSwitcher from "./LanguageSwitcher";
+import type { Locale } from "@/locales/config";
 
 export default function Footer() {
     const t = useTranslations("footer");
+    const locale = useLocale();
     const year = new Date().getFullYear();
 
     return (
         <footer className="bg-bg mt-auto" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
             <div className="container-studio py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
                     {/* Brand */}
                     <div className="md:col-span-1">
                         <Link
@@ -98,6 +102,14 @@ export default function Footer() {
                         >
                             studio@cojauny.com
                         </a>
+                    </div>
+
+                    {/* Language */}
+                    <div>
+                        <h3 className="text-xs font-semibold uppercase tracking-widest text-faint mb-4">
+                            {t("language_title")}
+                        </h3>
+                        <LanguageSwitcher currentLocale={locale as Locale} dropdownDirection="up" />
                     </div>
                 </div>
 

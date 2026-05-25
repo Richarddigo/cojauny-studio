@@ -97,7 +97,7 @@ export default function ContactForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+        <form onSubmit={(e) => { void handleSubmit(onSubmit)(e); }} noValidate className="space-y-5">
             {/* Honeypot — hidden from real users, bots will fill it. */}
             <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] w-px h-px overflow-hidden">
                 <label htmlFor="company">Company</label>

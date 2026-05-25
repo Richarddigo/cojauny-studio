@@ -113,7 +113,7 @@ export default function Hero() {
                 </div>
 
                 {/* Stats row */}
-                <div className="mt-14 md:mt-20 pt-6 md:pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-wrap gap-x-10 gap-y-4">
+                <div className="mt-14 md:mt-20 pt-6 md:pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-wrap gap-x-6 gap-y-3 sm:gap-x-10 sm:gap-y-4">
                     {stats.map((stat) => (
                         <div key={stat.label}>
                             <div className="text-2xl font-extrabold text-text tracking-tight">
