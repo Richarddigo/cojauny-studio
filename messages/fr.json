@@ -6,7 +6,10 @@
         "contact": "Contact",
         "cta": "Démarrer un projet",
         "home_aria": "Cojauny Studio — Accueil",
-        "main_nav": "Navigation principale"
+        "main_nav": "Navigation principale",
+        "main_menu": "Menu principal",
+        "open_menu": "Ouvrir le menu",
+        "close_menu": "Fermer le menu"
     },
     "hero": {
         "label": "Cojauny Studio",
@@ -246,5 +249,12 @@
         "title": "Page introuvable",
         "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
         "cta": "Retour à l'accueil"
+    },
+    "cookieBanner": {
+        "message": "Nous utilisons des cookies essentiels et d'analyse pour comprendre l'utilisation de Cojauny Studio. Vous pouvez les accepter ou continuer avec les essentiels uniquement.",
+        "acceptAll": "Accepter",
+        "reject": "Nécessaires seulement",
+        "moreInfo": "Plus d'infos",
+        "ariaLabel": "Consentement aux cookies"
     }
 }

@@ -58,7 +58,7 @@ export default async function CookiesPage({
 
             <H2>Third-party scripts</H2>
             <P>
-                We do not load any third-party scripts (Google Analytics, Facebook Pixel, etc.) that could
+                We do not load any third-party scripts (analytics trackers, ad pixels, etc.) that could
                 set cookies on your device.
             </P>
 
@@ -68,7 +68,7 @@ export default async function CookiesPage({
             </P>
 
             <P>
-                <span className="text-faint text-xs">{t("last_updated", { date: "2026-01-01" })}</span>
+                <span className="text-faint text-xs">{t("last_updated", { date: "2026-05-25" })}</span>
             </P>
         </LegalLayout>
     );

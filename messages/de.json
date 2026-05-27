@@ -6,7 +6,10 @@
         "contact": "Kontakt",
         "cta": "Projekt starten",
         "home_aria": "Cojauny Studio — Start",
-        "main_nav": "Hauptnavigation"
+        "main_nav": "Hauptnavigation",
+        "main_menu": "Hauptmenü",
+        "open_menu": "Menü öffnen",
+        "close_menu": "Menü schließen"
     },
     "hero": {
         "label": "Cojauny Studio",
@@ -244,5 +247,12 @@
         "title": "Seite nicht gefunden",
         "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
         "cta": "Zur Startseite"
+    },
+    "cookieBanner": {
+        "message": "Wir verwenden essenzielle und optionale Analyse-Cookies, um zu verstehen, wie Cojauny Studio genutzt wird. Sie k\u00f6nnen diese akzeptieren oder nur mit den essenziellen fortfahren.",
+        "acceptAll": "Akzeptieren",
+        "reject": "Nur notwendige",
+        "moreInfo": "Mehr Info",
+        "ariaLabel": "Cookie-Einwilligung"
     }
 }

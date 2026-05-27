@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import JsonLd from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
@@ -48,11 +49,6 @@ export async function generateMetadata({
             title: "Cojauny Studio — We build software that matters.",
             description: t("subheadline"),
             locale,
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Cojauny Studio",
-            description: t("subheadline"),
         },
         robots: {
             index: true,
@@ -96,10 +92,17 @@ export default async function LocaleLayout({
             data-scroll-behavior="smooth"
         >
             <body className="min-h-screen flex flex-col antialiased">
+                <a
+                    href="#main-content"
+                    className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-bg focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+                >
+                    Skip to main content
+                </a>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Header />
-                    <main className="flex-1">{children}</main>
+                    <main id="main-content" className="flex-1">{children}</main>
                     <Footer />
+                    <CookieBanner />
                 </NextIntlClientProvider>
                 <JsonLd locale={locale} />
                 <Analytics />

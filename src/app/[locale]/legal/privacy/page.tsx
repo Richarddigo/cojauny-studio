@@ -37,7 +37,7 @@ export default async function PrivacyPage({
             <H2>1. Controller</H2>
             <P>
                 The controller responsible for data processing on this website is:<br />
-                [Your full legal name], [Address] — <MailLink email="studio@cojauny.com" />
+                Cojauny Studio - Richard Díaz González — <MailLink email="studio@cojauny.com" />
             </P>
 
             <H2>2. Data we collect</H2>
@@ -100,7 +100,7 @@ export default async function PrivacyPage({
             </P>
 
             <P>
-                <span className="text-faint text-xs">{t("last_updated", { date: "2026-01-01" })}</span>
+                <span className="text-faint text-xs">{t("last_updated", { date: "2026-05-25" })}</span>
             </P>
         </LegalLayout>
     );

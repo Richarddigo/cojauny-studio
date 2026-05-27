@@ -77,7 +77,7 @@ export default async function DisclaimerPage({
             </P>
 
             <P>
-                <span className="text-faint text-xs">{t("last_updated", { date: "2026-01-01" })}</span>
+                <span className="text-faint text-xs">{t("last_updated", { date: "2026-05-25" })}</span>
             </P>
         </LegalLayout>
     );

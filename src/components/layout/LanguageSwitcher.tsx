@@ -175,7 +175,9 @@ export default function LanguageSwitcher({
                                         navigateToLocale(option.value);
                                         setOpen(false);
                                     }}
-                                    className={`flex w-full items-center justify-between gap-3 rounded-2xl px-3 py-2 text-left text-sm transition ${isActive ? "bg-white/10 text-white" : "text-white/80"
+                                    className={`group relative flex w-full items-center justify-between gap-3 rounded-2xl px-3 py-2 text-left text-sm transition ${isActive
+                                        ? "text-white [text-shadow:0_0_10px_rgba(255,255,255,0.55)]"
+                                        : "text-white/80 hover:text-white hover:[text-shadow:0_0_10px_rgba(255,255,255,0.55)]"
                                         }`}
                                 >
                                     <span className="flex items-center gap-3">
@@ -184,7 +186,13 @@ export default function LanguageSwitcher({
                                         </span>
                                         <span className="font-medium">{option.label}</span>
                                     </span>
-                                    {isActive ? <Icon name="check" className="h-4 w-4 text-brand-200" aria-hidden /> : null}
+                                    <span
+                                        className={`pointer-events-none absolute bottom-1 right-3 h-0.5 w-4 rounded-full bg-[var(--accent)] transition-all duration-200 ${isActive
+                                            ? "scale-x-100 opacity-100"
+                                            : "scale-x-50 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
+                                            }`}
+                                        aria-hidden
+                                    />
                                 </button>
                             );
                         })}

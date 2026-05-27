@@ -77,8 +77,7 @@ export default async function TermsPage({
 
             <H2>6. Governing law</H2>
             <P>
-                These terms are governed by German law. The exclusive place of jurisdiction is [City],
-                Germany.
+                These terms are governed by German law.
             </P>
 
             <H2>7. Changes</H2>
@@ -93,7 +92,7 @@ export default async function TermsPage({
             </P>
 
             <P>
-                <span className="text-faint text-xs">{t("last_updated", { date: "2026-01-01" })}</span>
+                <span className="text-faint text-xs">{t("last_updated", { date: "2026-05-25" })}</span>
             </P>
         </LegalLayout>
     );

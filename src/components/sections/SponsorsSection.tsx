@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import AnimateIn from "@/components/ui/AnimateIn";
 import Icon from "@/components/ui/Icon";
 import EspanolLogo from "@/components/ui/EspanolLogo";
+import { Link } from "@/i18n/navigation";
 
 
 export default function SponsorsSection() {
@@ -51,15 +52,16 @@ export default function SponsorsSection() {
                             </div>
                         </a>
 
-                        {/* Placeholder — hidden from assistive tech; purely decorative */}
-                        <div className="flex flex-col items-center gap-3 p-6 rounded-2xl opacity-25"
-                            aria-hidden="true"
+                        {/* Placeholder — links to contact */}
+                        <Link href="/contact"
+                            className="flex flex-col items-center gap-3 p-6 rounded-2xl opacity-25 hover:opacity-50 transition-opacity"
+                            aria-label="Become a sponsor"
                             style={{ border: "1px dashed rgba(255,255,255,0.12)" }}>
                             <div className="w-16 h-16 rounded-full flex items-center justify-center"
                                 style={{ background: "rgba(255,255,255,0.04)" }}>
                                 <Icon name="plus" size={20} className="text-faint" />
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </AnimateIn>
             </div>

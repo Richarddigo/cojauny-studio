@@ -10,10 +10,9 @@ export default function JsonLd({ locale }: { locale: string }) {
         "@type": "Organization",
         name: "Cojauny Studio",
         url: SITE_URL,
-        logo: `${SITE_URL}/icons/studio-logo.png`,
+        logo: `${SITE_URL}/studio-cojauny-white.svg`,
         sameAs: [
             "https://cojauny.com",
-            "https://github.com/cojauny",
         ],
         contactPoint: [
             {

@@ -38,9 +38,7 @@ export default async function ImpressumPage({
 
             <H2>Angaben gemäß § 5 TMG</H2>
             <P>
-                [Full legal name]<br />
-                [Street and house number]<br />
-                [Postal code] [City]<br />
+                Cojauny Studio - Richard Díaz González<br />
                 Germany
             </P>
 
@@ -56,8 +54,7 @@ export default async function ImpressumPage({
 
             <H2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</H2>
             <P>
-                [Full legal name]<br />
-                [Address as above]
+                Cojauny Studio - Richard Díaz González
             </P>
 
             <H2>EU-Streitschlichtung</H2>
@@ -81,7 +78,7 @@ export default async function ImpressumPage({
 
             <P>
                 <span className="text-faint text-xs">
-                    {t("last_updated", { date: "2026-01-01" })}
+                    {t("last_updated", { date: "2026-05-25" })}
                 </span>
             </P>
         </LegalLayout>

@@ -9,117 +9,74 @@ export default function Footer() {
     const t = useTranslations("footer");
     const locale = useLocale();
     const year = new Date().getFullYear();
+    const currentLocale = locale as Locale;
+
+    const ecosystemSectionLabel: Record<Locale, string> = {
+        es: "Ecosistema",
+        en: "Ecosystem",
+        de: "Ökosystem",
+        fr: "Écosystème",
+    };
+
+    const ecosystemDescription: Record<Locale, string> = {
+        es: "Cojauny Studio forma parte de un ecosistema de productos digitales en evolución.",
+        en: "Cojauny Studio is part of an evolving ecosystem of digital products.",
+        de: "Cojauny Studio ist Teil eines sich entwickelnden Ökosystems digitaler Produkte.",
+        fr: "Cojauny Studio fait partie d’un écosystème évolutif de produits numériques.",
+    };
 
     return (
-        <footer className="bg-bg mt-auto" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-            <div className="container-studio py-16">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
-                    {/* Brand */}
-                    <div className="md:col-span-1">
-                        <Link
-                            href="/"
-                            className="inline-flex items-center gap-2.5 mb-4 focus-ring rounded group"
-                            aria-label="Cojauny Studio"
-                        >
-                            <span className="text-accent transition-all duration-200 group-hover:drop-shadow-[0_0_8px_rgba(91,123,255,0.7)]">
-                                <StudioLogo size={150} />
+        <footer className="mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
+            <div className="mx-auto max-w-[1180px] px-[100px] py-16">
+                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
+
+                    <div className="flex flex-col gap-4">
+                        <Link href="/" className="flex items-center gap-2" aria-label="Cojauny Studio">
+                            <span className="text-accent">
+                                <StudioLogo size={132} />
                             </span>
-
                         </Link>
-                        <p className="text-muted text-sm leading-relaxed">{t("tagline")}</p>
-                        <a
-                            href="https://cojauny.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 mt-4 text-xs font-medium text-accent hover:text-accent-dim transition-colors focus-ring rounded"
-                        >
-                            {t("ecosystem_link")}
-                        </a>
+                        <p className="max-w-[18ch] text-sm leading-relaxed text-muted">{t("tagline")}</p>
                     </div>
 
-                    {/* Navigation */}
                     <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-widest text-faint mb-4">
-                            {t("nav_title")}
-                        </h3>
-                        <ul className="space-y-2.5">
-                            {(["home", "projects", "services", "contact"] as const).map((key) => {
-                                const hrefs: Record<string, "/" | "/projects" | "/services" | "/contact"> = {
-                                    home: "/",
-                                    projects: "/projects",
-                                    services: "/services",
-                                    contact: "/contact",
-                                };
-                                return (
-                                    <li key={key}>
-                                        <Link
-                                            href={hrefs[key]}
-                                            className="text-sm text-muted hover:text-text transition-colors focus-ring rounded"
-                                        >
-                                            {t(key)}
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent">{ecosystemSectionLabel[currentLocale]}</p>
+                        <p className="text-sm leading-relaxed text-muted">{ecosystemDescription[currentLocale]}</p>
                     </div>
 
-                    {/* Legal */}
                     <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-widest text-faint mb-4">
-                            {t("legal_title")}
-                        </h3>
-                        <ul className="space-y-2.5">
-                            {(
-                                [
-                                    ["impressum", "/legal/impressum"],
-                                    ["privacy", "/legal/privacy"],
-                                    ["cookies", "/legal/cookies"],
-                                    ["terms", "/legal/terms"],
-                                    ["disclaimer", "/legal/disclaimer"],
-                                ] as const
-                            ).map(([key, href]) => (
-                                <li key={key}>
-                                    <Link
-                                        href={href}
-                                        className="text-sm text-muted hover:text-text transition-colors focus-ring rounded"
-                                    >
-                                        {t(key)}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent">{t("nav_title")}</p>
+                        <nav className="flex flex-col gap-2">
+                            <Link href="/" className="text-sm text-muted transition-colors hover:text-text">{t("home")}</Link>
+                            <Link href="/projects" className="text-sm text-muted transition-colors hover:text-text">{t("projects")}</Link>
+                            <Link href="/services" className="text-sm text-muted transition-colors hover:text-text">{t("services")}</Link>
+                            <Link href="/contact" className="text-sm text-muted transition-colors hover:text-text">{t("contact")}</Link>
+                        </nav>
                     </div>
 
-                    {/* Contact */}
                     <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-widest text-faint mb-4">
-                            {t("contact_title")}
-                        </h3>
-                        <a
-                            href="mailto:studio@cojauny.com"
-                            className="text-sm text-muted hover:text-accent transition-colors focus-ring rounded"
-                        >
-                            studio@cojauny.com
-                        </a>
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent">{t("legal_title")}</p>
+                        <nav className="flex flex-col gap-2">
+                            <Link href="/legal/impressum" className="text-sm text-muted transition-colors hover:text-text">{t("impressum")}</Link>
+                            <Link href="/legal/privacy" className="text-sm text-muted transition-colors hover:text-text">{t("privacy")}</Link>
+                            <Link href="/legal/cookies" className="text-sm text-muted transition-colors hover:text-text">{t("cookies")}</Link>
+                            <Link href="/legal/terms" className="text-sm text-muted transition-colors hover:text-text">{t("terms")}</Link>
+                            <Link href="/legal/disclaimer" className="text-sm text-muted transition-colors hover:text-text">{t("disclaimer")}</Link>
+                        </nav>
                     </div>
 
-                    {/* Language */}
                     <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-widest text-faint mb-4">
-                            {t("language_title")}
-                        </h3>
-                        <LanguageSwitcher currentLocale={locale as Locale} dropdownDirection="up" />
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent">{t("language_title")}</p>
+                        <LanguageSwitcher currentLocale={currentLocale} dropdownDirection="up" />
                     </div>
                 </div>
 
-                {/* Bottom bar */}
-                <div className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-                    style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                    <p className="text-xs text-faint">
-                        {t("copyright", { year })}
-                    </p>
-                    <p className="text-xs text-faint">{t("made_in")}</p>
+                <div
+                    className="flex flex-col items-center justify-between gap-3 border-t border-[rgba(255,255,255,0.06)] sm:flex-row"
+                    style={{ marginTop: "3rem", paddingTop: "2rem" }}
+                >
+                    <p className="text-xs text-muted">{t("copyright", { year })}</p>
+                    <p className="text-xs text-muted">{t("made_in")}</p>
                 </div>
             </div>
         </footer>

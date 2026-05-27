@@ -6,7 +6,10 @@
         "contact": "Contacto",
         "cta": "Iniciar proyecto",
         "home_aria": "Cojauny Studio — Inicio",
-        "main_nav": "Navegación principal"
+        "main_nav": "Navegación principal",
+        "main_menu": "Menú principal",
+        "open_menu": "Abrir menú",
+        "close_menu": "Cerrar menú"
     },
     "hero": {
         "label": "Cojauny Studio",
@@ -240,9 +243,23 @@
             "subtitle": "Limitación de responsabilidad y responsabilidad del contenido."
         }
     },
+    "cookieBanner": {
+        "message": "Usamos cookies esenciales y de analítica para entender cómo se usa Cojauny Studio. Puedes aceptarlas o seguir navegando solo con las esenciales.",
+        "acceptAll": "Aceptar",
+        "reject": "Solo necesarias",
+        "moreInfo": "Más info",
+        "ariaLabel": "Consentimiento de cookies"
+    },
     "not_found": {
         "title": "Página no encontrada",
         "description": "La página que buscas no existe o ha sido movida.",
         "cta": "Ir al inicio"
+    },
+    "cookieBanner": {
+        "message": "Usamos cookies esenciales y de analítica para entender cómo se usa Cojauny Studio. Puedes aceptarlas o seguir navegando solo con las esenciales.",
+        "acceptAll": "Aceptar",
+        "reject": "Solo necesarias",
+        "moreInfo": "Más info",
+        "ariaLabel": "Consentimiento de cookies"
     }
 }
