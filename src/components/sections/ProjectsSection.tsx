@@ -13,23 +13,23 @@ interface ProjectItem {
     url: string;
 }
 
-function StatusBadge({ status, cardVariant = "dark" }: { status: ProjectItem["status"]; cardVariant?: "dark" | "light" }) {
+function StatusBadge({ status }: { status: ProjectItem["status"] }) {
     const t = useTranslations("projects");
     const config: Record<ProjectItem["status"], { label: string; className: string; dot: string }> = {
         live: {
             label: t("status_live"),
-            className: cardVariant === "light" ? "badge-live-light" : "badge-live",
-            dot: cardVariant === "light" ? "bg-[#166534]" : "bg-[#4ADE80]",
+            className: "badge-live",
+            dot: "bg-[#4ADE80]",
         },
         development: {
             label: t("status_development"),
-            className: cardVariant === "light" ? "badge-development-light" : "badge-development",
-            dot: cardVariant === "light" ? "bg-[#92400E]" : "bg-[#FCD34D]",
+            className: "badge-development",
+            dot: "bg-[#FCD34D]",
         },
         coming_soon: {
             label: t("status_coming_soon"),
-            className: cardVariant === "light" ? "badge-coming-soon-light" : "badge-coming-soon",
-            dot: cardVariant === "light" ? "bg-[#334155]" : "bg-[#94A3B8]",
+            className: "badge-coming-soon",
+            dot: "bg-[#94A3B8]",
         },
     };
     const { label, className, dot } = config[status];
@@ -44,18 +44,16 @@ function StatusBadge({ status, cardVariant = "dark" }: { status: ProjectItem["st
 function ProjectCard({
     item,
     index,
-    variant = "dark",
 }: {
     item: ProjectItem;
     index: number;
-    variant?: "dark" | "light";
 }) {
     const t = useTranslations("projects");
 
     return (
         <AnimateIn delay={index * 0.1} direction="up">
             <div
-                className={`${variant === "dark" ? "card-dark" : "card-light"} p-7 h-full flex flex-col gap-4 overflow-hidden`}
+                className="card-dark p-7 h-full flex flex-col gap-4 overflow-hidden"
             >
                 {/* Top colored accent line */}
                 <div
@@ -69,25 +67,25 @@ function ProjectCard({
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4">
                     <div>
-                        <p className={`text-xs font-semibold uppercase tracking-[0.1em] mb-1.5 ${variant === "dark" ? "text-faint" : "text-[#475569]"}`}>
+                        <p className="text-xs font-semibold uppercase tracking-[0.1em] mb-1.5 text-faint">
                             {item.category}
                         </p>
-                        <h3 className={`text-xl font-bold tracking-tight ${variant === "dark" ? "text-text" : "text-[#0F172A]"}`}>
+                        <h3 className="text-xl font-bold tracking-tight text-text">
                             {item.title}
                         </h3>
                     </div>
-                    <StatusBadge status={item.status} cardVariant={variant} />
+                    <StatusBadge status={item.status} />
                 </div>
 
                 {/* Description */}
-                <p className={`text-sm leading-relaxed flex-1 ${variant === "dark" ? "text-muted" : "text-[#475569]"}`}>
+                <p className="text-sm leading-relaxed flex-1 text-muted">
                     {item.description}
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5">
                     {item.tags.map((tag) => (
-                        <span key={tag} className={variant === "light" ? "tech-tag-light" : "tech-tag"}>{tag}</span>
+                        <span key={tag} className="tech-tag">{tag}</span>
                     ))}
                 </div>
 
@@ -96,7 +94,7 @@ function ProjectCard({
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit ${variant === "light" ? "text-[#2D3FC0] hover:text-[#1E3A8A]" : "text-[#93A8FF] hover:text-[#7B9EFF]"}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit text-[#93A8FF] hover:text-[#7B9EFF]"
                 >
                     {t("view_project")}
                     <Icon name="external-link" size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -111,14 +109,10 @@ export { ProjectCard };
 export default function ProjectsSection({ variant = "home" }: { variant?: "home" | "page" }) {
     const t = useTranslations("projects");
     const items = t.raw("items") as ProjectItem[];
-    const sectionVariant = variant === "home" ? "dark" : "light";
-    const sectionBg = variant === "home" ? "bg-surface" : "bg-light-bg";
-    const headingColor = variant === "home" ? "text-text" : "text-[#0F172A]";
-    const subColor = variant === "home" ? "text-muted" : "text-[#64748B]";
 
     return (
         <section
-            className={`section-padding ${sectionBg}`}
+            className="section-padding bg-surface"
             id="projects"
             aria-label="Projects"
         >
@@ -127,21 +121,18 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                     <div className="mb-14 max-w-xl">
                         <span
                             className="section-label"
-                            style={variant === "page" ? { color: "#2D3FC0" } : variant === "home" ? { color: "#93A8FF" } : undefined}
+                            style={{ color: "#93A8FF" }}
                         >{t("section_label")}</span>
                         {variant === "page" ? (
-                            <h1 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
+                            <h1 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 text-text">
                                 {t("title")}
                             </h1>
                         ) : (
-                            <h2 className={`text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 ${headingColor}`}>
+                            <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 text-text">
                                 {t("title")}
                             </h2>
                         )}
-                        <p
-                            className={`mt-4 text-lg leading-relaxed max-w-xl ${subColor}`}
-                            style={variant === "page" ? { color: "#475569" } : undefined}
-                        >{t("subtitle")}</p>
+                        <p className="mt-4 text-lg leading-relaxed max-w-xl text-muted">{t("subtitle")}</p>
                     </div>
                 </AnimateIn>
 
@@ -151,7 +142,6 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                             key={item.id}
                             item={item}
                             index={i}
-                            variant={sectionVariant}
                         />
                     ))}
                 </div>

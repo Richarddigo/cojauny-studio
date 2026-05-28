@@ -11,11 +11,6 @@
   --accent-dim: #3A59D9;
   --accent-glow: rgba(91, 123, 255, 0.18);
 
-  /* Light-section palette */
-  --light-bg: #F8FAFC;
-  --light-surface: #FFFFFF;
-  --light-border: #E2E8F0;
-
   /* Text */
   --text: #F1F5F9;
   --muted: #94A3B8;
@@ -54,10 +49,6 @@
   --color-muted: #94A3B8;
   --color-faint: #8B9DBF;
   /* raised for WCAG AA on card-dark (#1c2336): 6.0:1 */
-
-  /* Light palette */
-  --color-light-bg: #F8FAFC;
-  --color-light-card: #FFFFFF;
 
   /* Semantic */
   --color-success: #22C55E;
@@ -199,23 +190,6 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
-  .card-light {
-    background: var(--light-card, #fff);
-    border: 1px solid var(--light-border);
-    border-radius: var(--radius);
-    transition: border-color var(--duration) var(--ease),
-      transform var(--duration) var(--ease),
-      box-shadow var(--duration) var(--ease);
-  }
-
-  .card-light:hover {
-    border-color: #A5B4FC;
-    transform: translateY(-4px);
-    box-shadow:
-      0 16px 48px rgba(91, 123, 255, 0.12),
-      0 0 0 1px rgba(91, 123, 255, 0.1);
-  }
-
   /* Status badge */
   .badge {
     display: inline-flex;
@@ -264,39 +238,6 @@
     border: 1px solid rgba(91, 123, 255, 0.2);
     border-radius: 4px;
     font-family: var(--font-mono);
-  }
-
-  /* Tech tag on light card backgrounds (WCAG AA: #2D3FC0 on #EFF2FF = 6.6:1) */
-  .tech-tag-light {
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.2rem 0.55rem;
-    background: rgba(91, 123, 255, 0.08);
-    color: #2D3FC0;
-    border: 1px solid rgba(91, 123, 255, 0.15);
-    border-radius: 4px;
-    font-family: var(--font-mono);
-  }
-
-  /* Development badge on light card backgrounds (WCAG AA: #92400E on white = 6.4:1) */
-  .badge-development-light {
-    background: rgba(120, 80, 0, 0.08);
-    color: #92400E;
-    border: 1px solid rgba(120, 80, 0, 0.2);
-  }
-
-  /* Live badge on light card backgrounds (WCAG AA: #166534 on white = 6.8:1) */
-  .badge-live-light {
-    background: rgba(22, 163, 74, 0.08);
-    color: #166534;
-    border: 1px solid rgba(22, 163, 74, 0.2);
-  }
-
-  /* Coming-soon badge on light card backgrounds (WCAG AA: #334155 on white = 10.1:1) */
-  .badge-coming-soon-light {
-    background: rgba(100, 116, 139, 0.08);
-    color: #334155;
-    border: 1px solid rgba(100, 116, 139, 0.2);
   }
 }
 

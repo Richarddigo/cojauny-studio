@@ -8,8 +8,7 @@ export default function EcosystemBanner() {
 
     return (
         <section
-            className="section-padding"
-            style={{ background: "linear-gradient(180deg, #F1F5FF 0%, #F8FAFC 100%)" }}
+            className="section-padding bg-bg"
             aria-label="Ecosystem"
         >
             <div className="container-studio">

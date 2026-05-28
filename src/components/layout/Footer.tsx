@@ -41,6 +41,32 @@ export default function Footer() {
 
                     <div>
                         <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent">{ecosystemSectionLabel[currentLocale]}</p>
+                        <div className="mb-3 flex flex-col gap-2">
+                            <a
+                                href="https://cojauny.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
+                                style={{ background: 'rgba(28,35,54,0.9)', border: '1px solid rgba(91,123,255,0.22)' }}
+                            >
+                                <span>Cojauny</span>
+                                <svg className="h-3 w-3 opacity-50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://cuatrosotas.cojauny.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
+                                style={{ background: 'rgba(28,35,54,0.9)', border: '1px solid rgba(91,123,255,0.22)' }}
+                            >
+                                <span>Cuatro Sotas</span>
+                                <svg className="h-3 w-3 opacity-50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </a>
+                        </div>
                         <p className="text-sm leading-relaxed text-muted">{ecosystemDescription[currentLocale]}</p>
                     </div>
 
@@ -50,6 +76,7 @@ export default function Footer() {
                             <Link href="/" className="text-sm text-muted transition-colors hover:text-text">{t("home")}</Link>
                             <Link href="/projects" className="text-sm text-muted transition-colors hover:text-text">{t("projects")}</Link>
                             <Link href="/services" className="text-sm text-muted transition-colors hover:text-text">{t("services")}</Link>
+                            <Link href="/about" className="text-sm text-muted transition-colors hover:text-text">{t("about")}</Link>
                             <Link href="/contact" className="text-sm text-muted transition-colors hover:text-text">{t("contact")}</Link>
                         </nav>
                     </div>
