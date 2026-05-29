@@ -57,11 +57,7 @@ function ProjectCard({
             >
                 {/* Top colored accent line */}
                 <div
-                    className="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl"
-                    style={{
-                        background: "linear-gradient(90deg, #5B7BFF 0%, rgba(91,123,255,0) 100%)",
-                        opacity: item.status === "live" ? 1 : 0.4,
-                    }}
+                    className={`absolute top-0 left-0 right-0 h-0.5 rounded-t-xl bg-[linear-gradient(90deg,#5B7BFF_0%,rgba(91,123,255,0)_100%)] ${item.status === "live" ? "opacity-100" : "opacity-40"}`}
                 />
 
                 {/* Header */}
@@ -94,7 +90,7 @@ function ProjectCard({
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit text-[#93A8FF] hover:text-[#7B9EFF]"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all focus-ring rounded group mt-1 w-fit text-accent-light hover:text-[#7B9EFF]"
                 >
                     {t("view_project")}
                     <Icon name="external-link" size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -120,8 +116,7 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                 <AnimateIn>
                     <div className="mb-14 max-w-xl">
                         <span
-                            className="section-label"
-                            style={{ color: "#93A8FF" }}
+                            className="section-label text-accent-light"
                         >{t("section_label")}</span>
                         {variant === "page" ? (
                             <h1 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 text-text">
@@ -150,7 +145,7 @@ export default function ProjectsSection({ variant = "home" }: { variant?: "home"
                     <AnimateIn delay={0.35} className="mt-12">
                         <Link
                             href="/projects"
-                            className="inline-flex items-center gap-2.5 text-sm font-semibold text-[#93A8FF] hover:text-[#7B9EFF] transition-all focus-ring rounded group"
+                            className="inline-flex items-center gap-2.5 text-sm font-semibold text-accent-light hover:text-[#7B9EFF] transition-all focus-ring rounded group"
                         >
                             {t("cta")}
                             <Icon name="arrow-right" size={16} className="group-hover:translate-x-1 transition-transform duration-200" />

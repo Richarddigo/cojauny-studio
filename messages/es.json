@@ -98,10 +98,11 @@
                 "description": "Plataforma de coordinación de transporte compartido que conecta viajeros en el mismo vuelo. Producto full-stack construido desde cero.",
                 "status": "development",
                 "tags": [
-                    "React Native",
-                    "Next.js",
-                    "TypeScript",
-                    "Node.js"
+                    "Flutter",
+                    "Firebase",
+                    "Dart",
+                    "APIs de vuelo",
+                    "Google Cloud Platform (GCP)"
                 ],
                 "url": "https://cojauny.com"
             },
@@ -166,6 +167,7 @@
     },
     "contact": {
         "title": "Contacto",
+        "meta_title": "Contacta Cojauny Studio — Empieza tu proyecto",
         "subtitle": "Cuéntanos tu proyecto y te responderemos en menos de 48 horas.",
         "email": "studio@cojauny.com",
         "response_time_label": "Tiempo de respuesta",

@@ -110,7 +110,7 @@
                 "id": "cuatrosotas",
                 "title": "Cuatro Sotas",
                 "category": "Jeu mobile",
-                "description": "Jeu de cartes multijoueur en ligne basé sur le Guiñote espagnol traditionnel. Adversaires IA, multijugador Bluetooth et classements mondiaux.",
+                "description": "Jeu de cartes multijoueur en ligne basé sur le Guiñote espagnol traditionnel. Adversaires IA, multijoueur Bluetooth et classements mondiaux.",
                 "status": "coming_soon",
                 "tags": [
                     "Flutter",
@@ -127,7 +127,6 @@
                 "description": "Site web moderne multilingue pour un club de football espagnol basé à Karlsruhe, Allemagne. Trilingue, piloté par CMS et entièrement responsive.",
                 "status": "live",
                 "tags": [
-                    "React Native",
                     "Next.js",
                     "TypeScript",
                     "i18n",
@@ -168,6 +167,7 @@
     },
     "contact": {
         "title": "Nous contacter",
+        "meta_title": "Contacter Cojauny Studio — Lancez votre projet",
         "subtitle": "Parlez-nous de votre projet et nous vous répondrons sous 48 heures.",
         "email": "studio@cojauny.com",
         "response_time_label": "Délai de réponse",

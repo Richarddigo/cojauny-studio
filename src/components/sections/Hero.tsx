@@ -25,8 +25,7 @@ export default function Hero() {
 
             {/* Large mountain background art */}
             <div
-                className="absolute right-[-4%] top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block"
-                style={{ opacity: 0.038 }}
+                className="absolute right-[-4%] top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block opacity-[0.038]"
                 aria-hidden="true"
             >
                 <Icon name="mountain-white" size={480} className="text-accent" />
@@ -34,11 +33,7 @@ export default function Hero() {
 
             {/* Top-right geometric accent */}
             <div
-                className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
-                style={{
-                    background:
-                        "linear-gradient(135deg, rgba(91,123,255,0.07) 0%, transparent 60%)",
-                }}
+                className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none bg-[linear-gradient(135deg,rgba(91,123,255,0.07)_0%,transparent_60%)]"
                 aria-hidden="true"
             />
 
@@ -48,12 +43,7 @@ export default function Hero() {
                     {/* Label pill */}
                     <div className="mb-8">
                         <span
-                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-[0.14em]"
-                            style={{
-                                background: "rgba(91,123,255,0.12)",
-                                border: "1px solid rgba(91,123,255,0.28)",
-                                color: "#93A8FF",
-                            }}
+                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-[0.14em] bg-[rgba(91,123,255,0.12)] border border-[rgba(91,123,255,0.28)] text-accent-light"
                         >
                             <Icon name="mountain-white" size={24} className="text-accent" />
                             {t("label")}
@@ -69,8 +59,7 @@ export default function Hero() {
 
                     {/* Subheadline */}
                     <p
-                        className="mt-5 text-base md:text-[1.125rem] leading-[1.75] max-w-xl"
-                        style={{ color: "var(--muted)" }}
+                        className="mt-5 text-base md:text-[1.125rem] leading-[1.75] max-w-xl text-muted"
                     >
                         {t("subheadline")}
                     </p>
@@ -96,8 +85,7 @@ export default function Hero() {
                             href="https://cojauny.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2.5 text-sm focus-ring rounded group"
-                            style={{ color: "var(--faint)" }}
+                            className="inline-flex items-center gap-2.5 text-sm focus-ring rounded group text-faint"
                         >
                             <span className="hero-ecosystem-line" aria-hidden="true" />
                             <span className="group-hover:text-muted transition-colors">

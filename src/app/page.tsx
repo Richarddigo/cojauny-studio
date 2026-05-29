@@ -1,7 +1,4 @@
-import { redirect } from "next/navigation";
-
-// Fallback: middleware handles locale detection, but this catches any case
-// where the next-intl middleware hasn't redirected / to /[locale] yet.
+// Intentionally empty — middleware (localePrefix: 'as-needed') serves the default locale at / directly.
 export default function RootPage() {
-    redirect("/en");
+  return null;
 }

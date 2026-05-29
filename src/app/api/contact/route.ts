@@ -44,7 +44,11 @@ const ALLOWED_ORIGINS = new Set([
   "https://studio.cojauny.com",
   "https://www.studio.cojauny.com",
   ...(process.env.NODE_ENV !== "production"
-    ? ["http://localhost:3000", "http://127.0.0.1:3000"]
+    ? [
+        "http://localhost:3000", "http://127.0.0.1:3000",
+        "http://localhost:3001", "http://127.0.0.1:3001",
+        "http://localhost:3002", "http://127.0.0.1:3002",
+      ]
     : []),
 ]);
 
@@ -166,6 +170,22 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("[contact] Resend error:", err);
     return NextResponse.json({ error: "Failed to send email." }, { status: 502 });
+  }
+
+  // Add to Resend Contacts (studio-contact segment) if configured — non-fatal
+  const segmentId = process.env.RESEND_SEGMENT_STUDIO;
+  if (segmentId) {
+    try {
+      await resend.contacts.create({
+        email,
+        firstName: name.split(" ")[0] ?? name,
+        lastName: name.split(" ").slice(1).join(" ") || undefined,
+        unsubscribed: false,
+        segments: [{ id: segmentId }],
+      });
+    } catch (err) {
+      console.error("[contact] Resend contacts error:", err);
+    }
   }
 
   return NextResponse.json({ success: true }, { status: 200 });

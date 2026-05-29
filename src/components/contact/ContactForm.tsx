@@ -87,7 +87,7 @@ export default function ContactForm() {
                     <p className="text-muted text-sm">{t("form.success_body")}</p>
                     <button
                         onClick={() => setStatus("idle")}
-                        className="mt-6 text-xs text-accent hover:text-accent-dim transition-colors underline focus-ring rounded"
+                        className="mt-6 text-xs text-accent-light hover:text-accent-dim transition-colors underline focus-ring rounded"
                     >
                         {t("form.send_another")}
                     </button>

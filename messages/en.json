@@ -127,7 +127,6 @@
                 "description": "Modern multilingual website for a Spanish football club based in Karlsruhe, Germany. Trilingual, CMS-driven, and fully responsive.",
                 "status": "live",
                 "tags": [
-                    "React Native",
                     "Next.js",
                     "TypeScript",
                     "i18n",
@@ -168,6 +167,7 @@
     },
     "contact": {
         "title": "Get in touch",
+        "meta_title": "Contact Cojauny Studio — Start a Project",
         "subtitle": "Tell us about your project and we will get back to you within 48 hours.",
         "email": "studio@cojauny.com",
         "response_time_label": "Response time",

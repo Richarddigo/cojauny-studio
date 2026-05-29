@@ -11,16 +11,22 @@ type LangMap = Record<string, string>;
  * @param path   Path WITHOUT the locale prefix and without trailing slash,
  *               e.g. "/services". Use "" for the locale home.
  */
+function localeUrl(l: string, cleanPath: string) {
+  return l === routing.defaultLocale
+    ? `${SITE_URL}${cleanPath || "/"}`
+    : `${SITE_URL}/${l}${cleanPath}`;
+}
+
 export function buildAlternates(locale: string, path: string) {
   const cleanPath = path === "/" ? "" : path;
   const languages: LangMap = {};
   for (const l of routing.locales) {
-    languages[l] = `${SITE_URL}/${l}${cleanPath}`;
+    languages[l] = localeUrl(l, cleanPath);
   }
-  languages["x-default"] = `${SITE_URL}/${routing.defaultLocale}${cleanPath}`;
+  languages["x-default"] = localeUrl(routing.defaultLocale, cleanPath);
 
   return {
-    canonical: `${SITE_URL}/${locale}${cleanPath}`,
+    canonical: localeUrl(locale, cleanPath),
     languages,
   };
 }

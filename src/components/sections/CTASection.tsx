@@ -8,21 +8,15 @@ export default function CTASection() {
 
     return (
         <section
-            className="section-padding relative overflow-hidden"
-            style={{ background: "linear-gradient(180deg, #111827 0%, #0C1120 100%)" }}
+            className="section-padding relative overflow-hidden bg-[linear-gradient(180deg,#111827_0%,#0C1120_100%)]"
             aria-label="Call to action"
         >
             {/* Background glow blobs */}
             <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background:
-                        "radial-gradient(ellipse 70% 70% at 50% 110%, rgba(91,123,255,0.18) 0%, transparent 65%)",
-                }}
+                className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_70%_at_50%_110%,rgba(91,123,255,0.18)_0%,transparent_65%)]"
             />
             <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 pointer-events-none"
-                style={{ background: "linear-gradient(180deg, rgba(91,123,255,0.5) 0%, transparent 100%)" }}
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 pointer-events-none bg-[linear-gradient(180deg,rgba(91,123,255,0.5)_0%,transparent_100%)]"
             />
 
             <div className="container-studio relative z-10">
@@ -30,12 +24,7 @@ export default function CTASection() {
                     <div className="text-center max-w-2xl mx-auto">
                         {/* Pill label */}
                         <span
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] mb-8"
-                            style={{
-                                background: "rgba(91,123,255,0.12)",
-                                border: "1px solid rgba(91,123,255,0.25)",
-                                color: "#93A8FF",
-                            }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] mb-8 bg-[rgba(91,123,255,0.12)] border border-[rgba(91,123,255,0.25)] text-accent-light"
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow" />
                             {t("pill")}

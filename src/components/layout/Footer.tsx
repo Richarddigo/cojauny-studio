@@ -46,8 +46,7 @@ export default function Footer() {
                                 href="https://cojauny.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
-                                style={{ background: 'rgba(28,35,54,0.9)', border: '1px solid rgba(91,123,255,0.22)' }}
+                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text bg-[rgba(28,35,54,0.9)] border border-[rgba(91,123,255,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
                             >
                                 <span>Cojauny</span>
                                 <svg className="h-3 w-3 opacity-50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -58,8 +57,7 @@ export default function Footer() {
                                 href="https://cuatrosotas.cojauny.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
-                                style={{ background: 'rgba(28,35,54,0.9)', border: '1px solid rgba(91,123,255,0.22)' }}
+                                className="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-text bg-[rgba(28,35,54,0.9)] border border-[rgba(91,123,255,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(91,123,255,0.25)]"
                             >
                                 <span>Cuatro Sotas</span>
                                 <svg className="h-3 w-3 opacity-50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -99,8 +97,7 @@ export default function Footer() {
                 </div>
 
                 <div
-                    className="flex flex-col items-center justify-between gap-3 border-t border-[rgba(255,255,255,0.06)] sm:flex-row"
-                    style={{ marginTop: "3rem", paddingTop: "2rem" }}
+                    className="mt-12 pt-8 flex flex-col items-center justify-between gap-3 border-t border-[rgba(255,255,255,0.06)] sm:flex-row"
                 >
                     <p className="text-xs text-muted">{t("copyright", { year })}</p>
                     <p className="text-xs text-muted">{t("made_in")}</p>

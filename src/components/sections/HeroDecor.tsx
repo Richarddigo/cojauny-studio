@@ -16,44 +16,17 @@ export default function HeroDecor() {
         <>
             {/* Animated gradient orbs */}
             <div
-                className="absolute pointer-events-none hero-orb hero-orb-1"
-                style={{
-                    top: "10%",
-                    left: "60%",
-                    width: 640,
-                    height: 640,
-                    background: "radial-gradient(circle, rgba(91,123,255,0.14) 0%, transparent 65%)",
-                    filter: "blur(60px)",
-                    borderRadius: "50%",
-                }}
+                className="absolute pointer-events-none hero-orb hero-orb-1 top-[10%] left-[60%] w-[640px] h-[640px] rounded-full bg-[radial-gradient(circle,rgba(91,123,255,0.14)_0%,transparent_65%)] blur-[60px]"
                 aria-hidden="true"
             />
             <div
-                className="absolute pointer-events-none hero-orb hero-orb-2"
-                style={{
-                    top: "50%",
-                    left: "15%",
-                    width: 400,
-                    height: 400,
-                    background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 65%)",
-                    filter: "blur(50px)",
-                    borderRadius: "50%",
-                }}
+                className="absolute pointer-events-none hero-orb hero-orb-2 top-[50%] left-[15%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.08)_0%,transparent_65%)] blur-[50px]"
                 aria-hidden="true"
             />
 
             {/* Subtle dot grid */}
             <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    backgroundImage:
-                        "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)",
-                    backgroundSize: "44px 44px",
-                    maskImage:
-                        "radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%)",
-                    WebkitMaskImage:
-                        "radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%)",
-                }}
+                className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:44px_44px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_20%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_20%,transparent_100%)]"
                 aria-hidden="true"
             />
 

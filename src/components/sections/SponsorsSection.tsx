@@ -10,8 +10,7 @@ export default function SponsorsSection() {
 
     return (
         <section
-            className="section-padding bg-bg"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+            className="section-padding bg-bg border-t border-[rgba(255,255,255,0.06)]"
             aria-label="Partners and Sponsors"
         >
             <div className="container-studio">
@@ -32,11 +31,7 @@ export default function SponsorsSection() {
                             href="https://fc-espanol.de"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col items-center gap-3 p-6 rounded-2xl focus-ring hover-lift hover-lift-sponsor"
-                            style={{
-                                background: "rgba(255,255,255,0.03)",
-                                border: "1px solid rgba(255,255,255,0.07)",
-                            }}
+                            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] focus-ring hover-lift hover-lift-sponsor"
                             aria-label={`FC Español Karlsruhe — ${(t.raw("items") as { description: string }[])[0].description}`}
                         >
                             {/* <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl"
@@ -54,11 +49,9 @@ export default function SponsorsSection() {
 
                         {/* Placeholder — links to contact */}
                         <Link href="/contact"
-                            className="flex flex-col items-center gap-3 p-6 rounded-2xl opacity-25 hover:opacity-50 transition-opacity"
-                            aria-label="Become a sponsor"
-                            style={{ border: "1px dashed rgba(255,255,255,0.12)" }}>
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center"
-                                style={{ background: "rgba(255,255,255,0.04)" }}>
+                            className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-dashed border-[rgba(255,255,255,0.12)] opacity-25 hover:opacity-50 transition-opacity"
+                            aria-label="Become a sponsor">
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.04)]">
                                 <Icon name="plus" size={20} className="text-faint" />
                             </div>
                         </Link>
