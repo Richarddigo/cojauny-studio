@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import CookieBanner from "@/components/CookieBannerLazy";
+import CookieBanner from "@/components/CookieBanner";
 import JsonLd from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
