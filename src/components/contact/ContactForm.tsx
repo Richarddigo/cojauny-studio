@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -25,6 +25,7 @@ type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
     const t = useTranslations("contact");
+    const locale = useLocale();
     const [status, setStatus] = useState<Status>("idle");
     const [errorMsg, setErrorMsg] = useState("");
     const [turnstileToken, setTurnstileToken] = useState("");
@@ -55,7 +56,7 @@ export default function ContactForm() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...data, cfTurnstileResponse: turnstileToken }),
+                body: JSON.stringify({ ...data, locale, cfTurnstileResponse: turnstileToken }),
             });
             if (!res.ok) throw new Error("server error");
             setStatus("success");
