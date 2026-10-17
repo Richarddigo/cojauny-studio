@@ -1,0 +1,7 @@
+---
+description: GitHub jobs require explicit prior owner permission for every execution
+alwaysApply: true
+---
+
+Follow [the canonical policy](../../AGENTS.md). Never start, retry, enable or
+indirectly trigger GitHub jobs without explicit permission for that execution.
