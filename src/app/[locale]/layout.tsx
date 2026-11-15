@@ -2,8 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { Analytics } from "@vercel/analytics/react";
+import {
+    getMessages,
+    getTranslations,
+    setRequestLocale,
+} from "next-intl/server";
+import ConsentAnalytics from "@/components/ConsentAnalytics";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -23,7 +27,7 @@ export async function generateStaticParams() {
 }
 
 export const viewport: Viewport = {
-    themeColor: "#0C1120",
+    themeColor: "#f0f1f2",
     width: "device-width",
     initialScale: 1,
 };
@@ -38,7 +42,7 @@ export async function generateMetadata({
 
     return {
         title: {
-            default: "Cojauny Studio — We build software that matters.",
+            default: t("meta_title"),
             template: "%s | Cojauny Studio",
         },
         description: t("subheadline"),
@@ -46,7 +50,7 @@ export async function generateMetadata({
         openGraph: {
             type: "website",
             siteName: "Cojauny Studio",
-            title: "Cojauny Studio — We build software that matters.",
+            title: t("meta_title"),
             description: t("subheadline"),
             locale,
         },
@@ -86,10 +90,7 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html
-            lang={locale}
-            className={inter.variable}
-        >
+        <html lang={locale} className={inter.variable}>
             <body className="min-h-screen flex flex-col antialiased">
                 <a
                     href="#main-content"
@@ -99,12 +100,14 @@ export default async function LocaleLayout({
                 </a>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Header />
-                    <main id="main-content" className="flex-1">{children}</main>
+                    <main id="main-content" className="flex-1">
+                        {children}
+                    </main>
                     <Footer />
                     <CookieBanner />
+                    <ConsentAnalytics />
                 </NextIntlClientProvider>
                 <JsonLd locale={locale} />
-                <Analytics />
             </body>
         </html>
     );

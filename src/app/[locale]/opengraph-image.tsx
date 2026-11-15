@@ -1,27 +1,33 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Cojauny Studio — We build software that matters.";
+export const alt = "Cojauny Studio — Independent software engineering";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const COPY: Record<string, { kicker: string; title: string; tagline: string }> = {
-    en: {
-        kicker: "COJAUNY STUDIO",
-        title: "We build software that matters.",
-        tagline: "Apps · Web · Technical consulting",
-    },
-    es: {
-        kicker: "COJAUNY STUDIO",
-        title: "Construimos software que importa.",
-        tagline: "Apps · Web · Consultoría técnica",
-    },
-    de: {
-        kicker: "COJAUNY STUDIO",
-        title: "Wir entwickeln Software, die zählt.",
-        tagline: "Apps · Web · Technische Beratung",
-    },
-};
+const COPY: Record<string, { kicker: string; title: string; tagline: string }> =
+    {
+        en: {
+            kicker: "COJAUNY STUDIO",
+            title: "Software, with intention.",
+            tagline: "Apps · Web · Technical consulting",
+        },
+        es: {
+            kicker: "COJAUNY STUDIO",
+            title: "Software, con criterio.",
+            tagline: "Apps · Web · Consultoría técnica",
+        },
+        fr: {
+            kicker: "COJAUNY STUDIO",
+            title: "Du logiciel, avec exigence.",
+            tagline: "Apps · Web · Conseil technique",
+        },
+        de: {
+            kicker: "COJAUNY STUDIO",
+            title: "Software, mit Haltung.",
+            tagline: "Apps · Web · Technische Beratung",
+        },
+    };
 
 export default async function OpengraphImage({
     params,
@@ -32,90 +38,86 @@ export default async function OpengraphImage({
     const copy = COPY[locale] ?? COPY.en;
 
     return new ImageResponse(
-        (
+        <div
+            style={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: "80px",
+                background: "#f0f1f2",
+                color: "#202b33",
+                fontFamily: "system-ui, sans-serif",
+            }}
+        >
             <div
                 style={{
-                    width: "100%",
-                    height: "100%",
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    padding: "80px",
-                    background:
-                        "linear-gradient(135deg, #0C1120 0%, #1C2336 60%, #111827 100%)",
-                    color: "#F1F5F9",
-                    fontFamily: "system-ui, sans-serif",
+                    alignItems: "center",
+                    gap: 16,
+                    color: "#98452f",
+                    fontSize: 22,
+                    letterSpacing: "0.18em",
+                    fontWeight: 700,
                 }}
             >
                 <div
                     style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 16,
-                        color: "#5B7BFF",
-                        fontSize: 22,
-                        letterSpacing: "0.18em",
-                        fontWeight: 700,
+                        width: 14,
+                        height: 14,
+                        borderRadius: 0,
+                        background: "#98452f",
                     }}
-                >
-                    <div
-                        style={{
-                            width: 14,
-                            height: 14,
-                            borderRadius: 999,
-                            background: "#5B7BFF",
-                            boxShadow: "0 0 24px #5B7BFF",
-                        }}
-                    />
-                    {copy.kicker}
-                </div>
+                />
+                {copy.kicker}
+            </div>
 
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 24,
+                    maxWidth: 980,
+                }}
+            >
                 <div
                     style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 24,
-                        maxWidth: 980,
+                        fontSize: 88,
+                        fontWeight: 800,
+                        letterSpacing: "-0.03em",
+                        lineHeight: 1.05,
+                        color: "#202b33",
                     }}
                 >
-                    <div
-                        style={{
-                            fontSize: 88,
-                            fontWeight: 800,
-                            letterSpacing: "-0.03em",
-                            lineHeight: 1.05,
-                            color: "#F1F5F9",
-                        }}
-                    >
-                        {copy.title}
-                    </div>
-                    <div
-                        style={{
-                            fontSize: 30,
-                            color: "#94A3B8",
-                            letterSpacing: "-0.01em",
-                        }}
-                    >
-                        {copy.tagline}
-                    </div>
+                    {copy.title}
                 </div>
-
                 <div
                     style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        color: "#64748B",
-                        fontSize: 22,
+                        fontSize: 30,
+                        color: "#52616a",
+                        letterSpacing: "-0.01em",
                     }}
                 >
-                    <span>studio.cojauny.com</span>
-                    <span style={{ color: "#5B7BFF", fontWeight: 700 }}>
-                        {locale.toUpperCase()}
-                    </span>
+                    {copy.tagline}
                 </div>
             </div>
-        ),
-        { ...size }
+
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    color: "#52616a",
+                    fontSize: 22,
+                }}
+            >
+                <span>studio.cojauny.com</span>
+                <span style={{ color: "#98452f", fontWeight: 700 }}>
+                    {locale.toUpperCase()}
+                </span>
+            </div>
+        </div>,
+        { ...size },
     );
 }

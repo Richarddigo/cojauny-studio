@@ -24,7 +24,10 @@ const languageLabels: Record<Locale, string> = {
     fr: "Français",
 };
 
-const languageFlags: Record<Locale, React.ComponentType<{ className?: string }>> = {
+const languageFlags: Record<
+    Locale,
+    React.ComponentType<{ className?: string }>
+> = {
     es: SpainFlag,
     en: UKFlag,
     de: GermanyFlag,
@@ -69,7 +72,7 @@ export default function LanguageSwitcher({
                 flag: languageFlags[value],
                 code: languageCodes[value],
             })),
-        []
+        [],
     );
 
     const navigateToLocale = (nextLocale: Locale) => {
@@ -113,7 +116,7 @@ export default function LanguageSwitcher({
                 return;
             }
             const focusables = Array.from(
-                el.querySelectorAll<HTMLElement>("button[role='menuitem']")
+                el.querySelectorAll<HTMLElement>("button[role='menuitem']"),
             );
             if (!focusables.length) return;
             const active = document.activeElement as HTMLElement | null;
@@ -124,7 +127,9 @@ export default function LanguageSwitcher({
                 focusables[(idx + 1) % focusables.length].focus();
             } else if (e.key === "ArrowUp") {
                 e.preventDefault();
-                focusables[(idx - 1 + focusables.length) % focusables.length].focus();
+                focusables[
+                    (idx - 1 + focusables.length) % focusables.length
+                ].focus();
             }
         };
         document.addEventListener("keydown", onKey);
@@ -134,15 +139,22 @@ export default function LanguageSwitcher({
     }, [open]);
 
     return (
-        <div className={fullWidth ? "relative w-full text-center" : "relative inline-block text-left"} ref={menuRef}>
+        <div
+            className={
+                fullWidth
+                    ? "relative w-full text-center"
+                    : "relative inline-block text-left"
+            }
+            ref={menuRef}
+        >
             <button
                 ref={buttonRef}
                 type="button"
                 aria-haspopup="menu"
                 aria-expanded={open}
-                aria-label={buttonAriaLabel}
+                aria-label={`${buttonAriaLabel}: ${buttonLabel}`}
                 onClick={() => setOpen((v) => !v)}
-                className={`${fullWidth ? "mx-auto" : ""} inline-flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white shadow-soft-glow transition hover:border-brand-200 hover:bg-white/10 focus:outline-none focus-visible:border-brand-200 focus-visible:ring-2 focus-visible:ring-brand-200/50`}
+                className={`${fullWidth ? "mx-auto" : ""} language-trigger`}
             >
                 <span aria-hidden className="flex items-center">
                     {FlagComp ? (
@@ -152,15 +164,18 @@ export default function LanguageSwitcher({
                     )}
                 </span>
                 <span className="inline">{buttonLabel}</span>
-                <Icon name="chevron-down" className="h-4 w-4 text-white/60" aria-hidden />
+                <Icon name="chevron-down" className="h-4 w-4" aria-hidden />
             </button>
 
             {open && (
                 <div
                     role="menu"
                     aria-label="Language selector"
-                    className={`absolute z-50 left-1/2 transform -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 min-w-max w-auto overflow-hidden rounded-3xl border border-white/10 bg-slate-900/95 p-2 shadow-soft-glow backdrop-blur ${dropdownDirection === "up" ? "bottom-full mb-2 origin-bottom-right" : "mt-2 origin-top-right"
-                        }`}
+                    className={`language-menu ${
+                        dropdownDirection === "up"
+                            ? "bottom-full mb-2 origin-bottom-right"
+                            : "mt-2 origin-top-right"
+                    }`}
                 >
                     <div className="max-h-[40vh] overflow-y-auto">
                         {options.map((option) => {
@@ -175,22 +190,25 @@ export default function LanguageSwitcher({
                                         navigateToLocale(option.value);
                                         setOpen(false);
                                     }}
-                                    className={`group relative flex w-full items-center justify-between gap-3 rounded-2xl px-3 py-2 text-left text-sm transition ${isActive
-                                        ? "text-white [text-shadow:0_0_10px_rgba(255,255,255,0.55)]"
-                                        : "text-white/80 hover:text-white hover:[text-shadow:0_0_10px_rgba(255,255,255,0.55)]"
-                                        }`}
+                                    className={`language-option ${isActive ? "is-active" : ""}`}
                                 >
                                     <span className="flex items-center gap-3">
-                                        <span aria-hidden className="flex h-8 w-8 items-center justify-center">
+                                        <span
+                                            aria-hidden
+                                            className="flex h-8 w-8 items-center justify-center"
+                                        >
                                             <FlagComponent className="h-6 w-6 rounded-sm" />
                                         </span>
-                                        <span className="font-medium">{option.label}</span>
+                                        <span className="font-medium">
+                                            {option.label}
+                                        </span>
                                     </span>
                                     <span
-                                        className={`pointer-events-none absolute bottom-1 right-3 h-0.5 w-4 rounded-full bg-[var(--accent)] transition-all duration-200 ${isActive
-                                            ? "scale-x-100 opacity-100"
-                                            : "scale-x-50 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
-                                            }`}
+                                        className={`pointer-events-none absolute bottom-1 right-3 h-0.5 w-4 rounded-full bg-[var(--accent)] transition-all duration-200 ${
+                                            isActive
+                                                ? "scale-x-100 opacity-100"
+                                                : "scale-x-50 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
+                                        }`}
                                         aria-hidden
                                     />
                                 </button>

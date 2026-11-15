@@ -13,27 +13,16 @@
         "close_menu": "Fermer le menu"
     },
     "hero": {
-        "label": "Cojauny Studio",
-        "headline_1": "Nous développons des logiciels",
-        "headline_2": "qui comptent.",
-        "subheadline": "Un studio de développement orienté produit. Nous créons des applications, des plateformes web et accompagnons les entreprises européennes sur les enjeux technologiques.",
+        "label": "Studio de développement indépendant",
+        "headline_1": "Du logiciel,",
+        "headline_2": "avec exigence.",
+        "subheadline": "Nous concevons des apps, des sites web et les systèmes qui les font fonctionner. Un petit studio européen, à vos côtés des premières questions à un produit utile et maintenable.",
         "cta_primary": "Démarrer un projet",
         "cta_secondary": "Voir nos réalisations",
         "ecosystem_label": "Membre de l'écosystème Cojauny",
-        "stats": [
-            {
-                "value": "3+",
-                "label": "Produits en ligne"
-            },
-            {
-                "value": "EU",
-                "label": "Basé en Europe"
-            },
-            {
-                "value": "100%",
-                "label": "Orienté résultats"
-            }
-        ]
+        "studio_note": "Ingénierie / Design / Europe",
+        "index_label": "Des idées propres. Du travail concret.",
+        "meta_title": "Cojauny Studio — Ingénierie logicielle indépendante"
     },
     "services": {
         "section_label": "Ce que nous faisons",
@@ -84,7 +73,7 @@
     "projects": {
         "section_label": "Réalisations sélectionnées",
         "title": "Projets",
-        "subtitle": "Une sélection de produits que nous avons construits et livrés.",
+        "subtitle": "Nos produits et nos projets pour les autres. Des contextes différents, le même soin du détail.",
         "cta": "Voir tous les projets",
         "status_live": "En ligne",
         "status_development": "En développement",
@@ -204,7 +193,7 @@
         }
     },
     "footer": {
-        "tagline": "Développons des logiciels qui comptent.",
+        "tagline": "Apps, sites web et ingénierie produit.",
         "ecosystem_link": "Produit principal : Cojauny →",
         "nav_title": "Navigation",
         "legal_title": "Mentions légales",
@@ -232,11 +221,23 @@
         },
         "privacy": {
             "title": "Politique de confidentialité",
-            "subtitle": "Comment nous collectons, utilisons et protégeons vos données."
+            "subtitle": "Comment nous collectons, utilisons et protégeons vos données.",
+            "analytics_facts": "Vercel Web Analytics ne se charge qu’après acceptation dans le bandeau. Sans choix ou en cas de refus, il ne se charge pas. Modifier le choix en bas de page bloque les événements futurs via le filtre du SDK ; cela ne rappelle pas les requêtes déjà envoyées.",
+            "preference_facts": "Le navigateur enregistre le choix de mesure sous cojauny-studio-consent dans localStorage. La navigation linguistique peut définir un cookie de préférence NEXT_LOCALE. Vous pouvez revoir le choix via le pied de page."
         },
         "cookies": {
             "title": "Politique de cookies",
-            "subtitle": "Comment nous utilisons les cookies et technologies similaires."
+            "subtitle": "Comment nous utilisons les cookies et technologies similaires.",
+            "content": {
+                "heading": "Vos préférences de navigateur",
+                "choice": "Mesure facultative",
+                "choice_body": "Cojauny Studio affiche un bandeau de préférences. Sans choix ou en cas de refus, le script de mesure ne se charge pas. Accepter charge Vercel Web Analytics. Vous pouvez revoir ou retirer votre choix dans le pied de page ; les événements futurs seront alors bloqués. Les requêtes déjà envoyées ne peuvent pas être rappelées.",
+                "storage": "Préférences enregistrées",
+                "storage_body": "L’entrée localStorage cojauny-studio-consent enregistre l’acceptation ou le refus dans ce navigateur. Si le stockage est indisponible, le choix ne vaut que pour l’onglet courant. La navigation linguistique peut aussi définir le cookie de préférence NEXT_LOCALE.",
+                "services": "Services de contact",
+                "services_body": "Le formulaire utilise notre serveur et Resend pour transmettre les demandes. Si Cloudflare Turnstile est configuré, son widget de protection peut aussi être chargé. Ces services de contact sont distincts de la mesure facultative.",
+                "questions": "Des questions ?"
+            }
         },
         "terms": {
             "title": "Conditions d'utilisation",
@@ -253,13 +254,13 @@
         "cta": "Retour à l'accueil"
     },
     "cookieBanner": {
-        "message": "Nous utilisons des cookies essentiels et d'analyse pour comprendre l'utilisation de Cojauny Studio. Vous pouvez les accepter ou continuer avec les essentiels uniquement.",
+        "message": "Nous enregistrons votre choix dans ce navigateur. La mesure facultative ne se charge que si vous acceptez. Vous pouvez modifier votre choix en bas de page.",
         "acceptAll": "Accepter",
         "reject": "Nécessaires seulement",
         "moreInfo": "Politique de cookies",
-        "ariaLabel": "Consentement aux cookies"
-    }
-,
+        "ariaLabel": "Consentement aux cookies",
+        "manage": "Préférences de mesure"
+    },
     "about": {
         "title": "À propos de Cojauny Studio",
         "description": "Nous sommes un studio logiciel axé sur le produit, construisant des produits numériques pour le marché européen.",

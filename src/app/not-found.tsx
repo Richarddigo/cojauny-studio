@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  * Root-level 404 page.
  *
@@ -13,8 +15,8 @@ export default function RootNotFound() {
                     margin: 0,
                     fontFamily:
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-                    background: "#0C1120",
-                    color: "#fff",
+                    background: "#f0f1f2",
+                    color: "#202b33",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -31,10 +33,7 @@ export default function RootNotFound() {
                         fontWeight: 900,
                         lineHeight: 1,
                         margin: 0,
-                        background:
-                            "linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
+                        color: "#98452f",
                     }}
                 >
                     404
@@ -48,16 +47,17 @@ export default function RootNotFound() {
                 >
                     Page not found
                 </h1>
-                <p style={{ color: "#9CA3AF", margin: 0, maxWidth: "24rem" }}>
-                    The page you are looking for doesn&apos;t exist or has been moved.
+                <p style={{ color: "#52616a", margin: 0, maxWidth: "24rem" }}>
+                    The page you are looking for doesn&apos;t exist or has been
+                    moved.
                 </p>
-                <a
+                <Link
                     href="/en"
                     style={{
                         marginTop: "8px",
                         padding: "10px 28px",
-                        background: "#3B82F6",
-                        borderRadius: "8px",
+                        background: "#98452f",
+                        borderRadius: "2px",
                         color: "#fff",
                         textDecoration: "none",
                         fontWeight: 600,
@@ -65,7 +65,7 @@ export default function RootNotFound() {
                     }}
                 >
                     Go home
-                </a>
+                </Link>
             </body>
         </html>
     );
