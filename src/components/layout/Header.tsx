@@ -1,7 +1,7 @@
 "use client";
 
 import { createPortal } from "react-dom";
-import StudioWordmark from "@/components/ui/StudioWordmark";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -111,7 +111,14 @@ export default function Header() {
                             className="group -m-1.5 flex items-center gap-2 p-1.5 sm:gap-3"
                             aria-label={t("home_aria")}
                         >
-                            <StudioWordmark />
+                            <Image
+                                src="/studio-cojauny-white.svg"
+                                alt="Cojauny Studio"
+                                width={180}
+                                height={36}
+                                className="studio-brand-logo"
+                                priority
+                            />
                         </a>
                     </div>
 

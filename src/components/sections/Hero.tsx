@@ -26,7 +26,7 @@ export default function Hero() {
                             </Button>
                             <Link className="text-link" href="/projects">
                                 {t("cta_secondary")}
-                                <span aria-hidden="true">↗</span>
+                                <Icon name="external-link" size={16} />
                             </Link>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default function Hero() {
                         rel="noopener noreferrer"
                     >
                         {t("ecosystem_label")}
-                        <span aria-hidden="true">↗</span>
+                        <Icon name="external-link" size={16} />
                     </a>
                 </div>
             </div>

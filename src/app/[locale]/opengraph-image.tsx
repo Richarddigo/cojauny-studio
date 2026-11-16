@@ -46,8 +46,8 @@ export default async function OpengraphImage({
                 flexDirection: "column",
                 justifyContent: "space-between",
                 padding: "80px",
-                background: "#f0f1f2",
-                color: "#202b33",
+                background: "#0C1120",
+                color: "#F1F5F9",
                 fontFamily: "system-ui, sans-serif",
             }}
         >
@@ -56,7 +56,7 @@ export default async function OpengraphImage({
                     display: "flex",
                     alignItems: "center",
                     gap: 16,
-                    color: "#98452f",
+                    color: "#5B7BFF",
                     fontSize: 22,
                     letterSpacing: "0.18em",
                     fontWeight: 700,
@@ -67,7 +67,7 @@ export default async function OpengraphImage({
                         width: 14,
                         height: 14,
                         borderRadius: 0,
-                        background: "#98452f",
+                        background: "#5B7BFF",
                     }}
                 />
                 {copy.kicker}
@@ -87,7 +87,7 @@ export default async function OpengraphImage({
                         fontWeight: 800,
                         letterSpacing: "-0.03em",
                         lineHeight: 1.05,
-                        color: "#202b33",
+                        color: "#F1F5F9",
                     }}
                 >
                     {copy.title}
@@ -95,7 +95,7 @@ export default async function OpengraphImage({
                 <div
                     style={{
                         fontSize: 30,
-                        color: "#52616a",
+                        color: "#94A3B8",
                         letterSpacing: "-0.01em",
                     }}
                 >
@@ -108,12 +108,12 @@ export default async function OpengraphImage({
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    color: "#52616a",
+                    color: "#94A3B8",
                     fontSize: 22,
                 }}
             >
                 <span>studio.cojauny.com</span>
-                <span style={{ color: "#98452f", fontWeight: 700 }}>
+                <span style={{ color: "#5B7BFF", fontWeight: 700 }}>
                     {locale.toUpperCase()}
                 </span>
             </div>

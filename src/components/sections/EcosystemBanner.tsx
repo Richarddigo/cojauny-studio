@@ -1,4 +1,6 @@
+import Icon from "@/components/ui/Icon";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 export default function EcosystemBanner() {
     const t = useTranslations("ecosystem");
     return (
@@ -15,11 +17,16 @@ export default function EcosystemBanner() {
                         className="text-link"
                     >
                         {t("cta")}
-                        <span aria-hidden="true">↗</span>
+                        <Icon name="external-link" size={16} />
                     </a>
                 </div>
                 <span className="ecosystem-signature" aria-hidden="true">
-                    C↗
+                    <Image
+                        src="/cojauny-white.svg"
+                        width={150}
+                        height={30}
+                        alt=""
+                    />
                 </span>
             </div>
         </section>

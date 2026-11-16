@@ -1,3 +1,4 @@
+import Icon from "@/components/ui/Icon";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import ProjectVisual from "./ProjectVisual";
@@ -48,7 +49,7 @@ export function ProjectCard({
                         rel="noopener noreferrer"
                     >
                         {item.title}
-                        <span aria-hidden="true">↗</span>
+                        <Icon name="external-link" size={16} />
                     </a>
                 </h3>
                 <p>{item.description}</p>
@@ -96,7 +97,7 @@ export default function ProjectsSection({
                     <div className="section-end">
                         <Link href="/projects" className="text-link">
                             {t("cta")}
-                            <span aria-hidden="true">↗</span>
+                            <Icon name="external-link" size={16} />
                         </Link>
                     </div>
                 )}

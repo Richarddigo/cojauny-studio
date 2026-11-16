@@ -15,8 +15,8 @@ export default function RootNotFound() {
                     margin: 0,
                     fontFamily:
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-                    background: "#f0f1f2",
-                    color: "#202b33",
+                    background: "#0C1120",
+                    color: "#F1F5F9",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -33,7 +33,7 @@ export default function RootNotFound() {
                         fontWeight: 900,
                         lineHeight: 1,
                         margin: 0,
-                        color: "#98452f",
+                        color: "#5B7BFF",
                     }}
                 >
                     404
@@ -47,7 +47,7 @@ export default function RootNotFound() {
                 >
                     Page not found
                 </h1>
-                <p style={{ color: "#52616a", margin: 0, maxWidth: "24rem" }}>
+                <p style={{ color: "#94A3B8", margin: 0, maxWidth: "24rem" }}>
                     The page you are looking for doesn&apos;t exist or has been
                     moved.
                 </p>
@@ -56,9 +56,9 @@ export default function RootNotFound() {
                     style={{
                         marginTop: "8px",
                         padding: "10px 28px",
-                        background: "#98452f",
+                        background: "#5B7BFF",
                         borderRadius: "2px",
-                        color: "#fff",
+                        color: "#0C1120",
                         textDecoration: "none",
                         fontWeight: 600,
                         fontSize: "0.95rem",

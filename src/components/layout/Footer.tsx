@@ -1,7 +1,8 @@
+import Icon from "@/components/ui/Icon";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import ConsentPreferences from "@/components/ConsentPreferences";
-import StudioWordmark from "@/components/ui/StudioWordmark";
+import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import type { Locale } from "@/locales/config";
 export default function Footer() {
@@ -13,14 +14,21 @@ export default function Footer() {
                 <div className="footer-layout">
                     <div className="footer-brand">
                         <Link href="/" aria-label="Cojauny Studio">
-                            <StudioWordmark />
+                            <Image
+                                src="/studio-cojauny-white.svg"
+                                alt="Cojauny Studio"
+                                width={180}
+                                height={36}
+                                className="studio-brand-logo"
+                            />
                         </Link>
                         <p>{t("tagline")}</p>
                         <a
                             href="mailto:studio@cojauny.com"
                             className="text-link"
                         >
-                            studio@cojauny.com<span aria-hidden="true">↗</span>
+                            studio@cojauny.com
+                            <Icon name="external-link" size={16} />
                         </a>
                     </div>
                     <div>
@@ -75,14 +83,15 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Cojauny ↗
+                                Cojauny <Icon name="external-link" size={12} />
                             </a>
                             <a
                                 href="https://cuatrosotas.cojauny.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Cuatro Sotas ↗
+                                Cuatro Sotas{" "}
+                                <Icon name="external-link" size={12} />
                             </a>
                         </div>
                     </div>

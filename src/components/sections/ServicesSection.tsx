@@ -1,3 +1,4 @@
+import Icon from "@/components/ui/Icon";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -43,7 +44,7 @@ export default function ServicesSection({
                     <div className="section-end">
                         <Link href="/services" className="text-link">
                             {t("cta")}
-                            <span aria-hidden="true">↗</span>
+                            <Icon name="external-link" size={16} />
                         </Link>
                     </div>
                 )}

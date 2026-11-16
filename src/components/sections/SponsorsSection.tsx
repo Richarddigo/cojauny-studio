@@ -1,3 +1,4 @@
+import Icon from "@/components/ui/Icon";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -32,11 +33,11 @@ export default function SponsorsSection() {
                         <strong>{item.name}</strong>
                         <small>{item.description}</small>
                     </span>
-                    <span aria-hidden="true">↗</span>
+                    <Icon name="external-link" size={16} />
                 </a>
                 <Link href="/contact" className="text-link">
                     {c("title")}
-                    <span aria-hidden="true">↗</span>
+                    <Icon name="external-link" size={16} />
                 </Link>
             </div>
         </section>

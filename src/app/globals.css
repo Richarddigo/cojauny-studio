@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f0f1f2;
-  --surface: #e3e6e8;
-  --surface-2: #d5dade;
-  --surface-3: #c6cdd2;
-  --accent: #98452f;
-  --accent-dim: #773321;
-  --accent-glow: #98452f20;
-  --text: #202b33;
-  --muted: #52616a;
-  --faint: #5c6971;
-  --border: #bfc7cd;
-  --border-light: #9eabb5;
-  --signal: #d8e3ec;
+  --bg: #0c1120;
+  --surface: #1c2336;
+  --surface-2: #2a3550;
+  --surface-3: #333f60;
+  --accent: #5b7bff;
+  --accent-dim: #3a59d9;
+  --accent-glow: rgba(91, 123, 255, 0.18);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --faint: #8b9dbf;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.12);
+  --signal: var(--surface-2);
   --radius-sm: 2px;
   --radius: 2px;
   --radius-lg: 3px;
@@ -23,18 +23,18 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
-  --color-bg: #f0f1f2;
-  --color-surface: #e3e6e8;
-  --color-surface-2: #d5dade;
-  --color-surface-3: #c6cdd2;
-  --color-accent: #98452f;
-  --color-accent-dim: #773321;
-  --color-accent-light: #98452f;
-  --color-text: #202b33;
-  --color-muted: #52616a;
-  --color-faint: #5c6971;
-  --color-success: #296440;
-  --color-error: #a83224;
+  --color-bg: #0c1120;
+  --color-surface: #1c2336;
+  --color-surface-2: #2a3550;
+  --color-surface-3: #333f60;
+  --color-accent: #5b7bff;
+  --color-accent-dim: #3a59d9;
+  --color-accent-light: #93a8ff;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-faint: #8b9dbf;
+  --color-success: #22c55e;
+  --color-error: #ef4444;
 }
 @layer base {
   *,
@@ -138,7 +138,7 @@
     font-weight: 500;
   }
   .section-label {
-    color: var(--accent);
+    color: var(--color-accent-light);
     font-family: var(--font-mono);
     font-size: 11px;
     text-transform: uppercase;
@@ -178,7 +178,7 @@
     text-decoration: underline;
   }
   .text-link > span:last-child {
-    font-size: 19px;
+    flex-shrink: 0;
   }
   .section-end {
     display: flex;
@@ -204,11 +204,12 @@
   }
   .studio-button-primary {
     background: var(--accent);
-    color: #fff;
+    color: var(--bg);
     border: 1px solid var(--accent);
   }
   .studio-button-primary:hover {
     background: var(--accent-dim);
+    color: var(--text);
   }
   .studio-button-secondary,
   .studio-button-outline {
@@ -224,7 +225,7 @@
     color: var(--text);
   }
 }
-/* A masthead, rather than a floating navigation pill. */
+/* Fixed masthead with the original Studio logo. */
 .studio-header {
   position: fixed;
   inset: 0 0 auto;
@@ -237,26 +238,10 @@
   height: 100%;
   padding-block: 0;
 }
-.studio-wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text);
-  font-size: 20px;
-  line-height: 1.05;
-  font-weight: 600;
-  letter-spacing: -0.055em;
-}
-.studio-wordmark svg {
-  flex: 0 0 34px;
-}
-.wordmark-studio {
+.studio-brand-logo {
   display: block;
-  font-size: 12px;
-  letter-spacing: 0.13em;
-  font-weight: 400;
-  margin-top: 4px;
-  text-transform: uppercase;
+  width: 180px;
+  height: auto;
 }
 .studio-nav-link {
   padding: 14px 16px;
@@ -313,9 +298,6 @@
   font-size: 12px;
   background: transparent;
   border: 1px solid var(--border);
-}
-.language-trigger > span:first-child {
-  display: none;
 }
 .language-trigger svg {
   color: currentColor;
@@ -482,90 +464,27 @@
   align-items: center;
   justify-content: center;
 }
-.project-art-travel {
-  background: #1f493a;
-  color: #dbefb1;
+.project-art-original {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 32px;
 }
-.art-corner,
-.art-caption {
-  position: absolute;
-  left: 22px;
-  font-size: 9px;
-  font-family: var(--font-mono);
-  letter-spacing: 0.06em;
-}
-.art-corner {
-  top: 21px;
-}
-.art-caption {
-  bottom: 20px;
-}
-.route-drawing {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-}
-.travel-wordmark {
-  font-size: clamp(38px, 4.5vw, 65px);
-  font-weight: 500;
-  letter-spacing: -0.075em;
-  z-index: 1;
-}
-.travel-wordmark > span {
-  font-family: Georgia, serif;
-  font-size: 0.7em;
-  margin-left: 8px;
-}
-.project-art-cards {
-  background: #d8b5a1;
-  color: #5a282b;
-}
-.playing-cards {
-  position: relative;
-  display: flex;
-  padding: 20px 0 0 20px;
-  transform: rotate(-8deg);
-}
-.playing-card {
-  background: #f4ebd8;
-  width: 66px;
-  height: 112px;
-  border: 1px solid #8f7167;
-  border-radius: 3px;
-  margin-left: -18px;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  font-family: Georgia, serif;
-}
-.playing-card svg {
-  height: 60px;
-  width: 30px;
-  margin: auto;
-}
-.playing-card small {
-  align-self: end;
-  font-size: 10px;
-}
-.playing-card-1 {
-  transform: translateY(-8px) rotate(7deg);
-}
-.playing-card-2 {
-  transform: translateY(-9px) rotate(15deg);
-}
-.playing-card-3 {
-  transform: translateY(-1px) rotate(23deg);
-}
-.project-art-club {
-  background: #dbe4e9;
-  color: #344358;
-}
-.project-art-club img {
-  height: 140px;
-  width: 120px;
+.project-art-original img {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+  max-height: 150px;
   object-fit: contain;
+}
+.project-art-original.project-art-club img {
+  width: 120px;
+}
+.project-art-title {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: -0.04em;
 }
 .project-details {
   padding-top: 23px;
@@ -636,8 +555,8 @@
 }
 .ecosystem-note {
   padding-block: 70px;
-  background: #283f50;
-  color: #f0f3f5;
+  background: var(--bg);
+  color: var(--text);
 }
 .ecosystem-layout {
   display: grid;
@@ -657,10 +576,14 @@
   margin-top: 22px;
 }
 .ecosystem-signature {
-  font-size: 60px;
-  letter-spacing: -0.08em;
-  text-align: right;
-  color: #edbaa7;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+.ecosystem-signature img {
+  width: 150px;
+  height: auto;
+  max-width: none;
 }
 .partners-note {
   padding-block: 42px;
@@ -714,7 +637,7 @@
 .cta-register {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #96aab9;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 22px;
 }
 .cta-register > span {
@@ -824,7 +747,7 @@
 }
 .cookie-accept {
   background: var(--accent);
-  color: white;
+  color: var(--bg);
 }
 .cookie-reject {
   background: transparent;
@@ -879,7 +802,7 @@
 }
 .contact-form-sheet {
   border: 1px solid var(--border-light);
-  background: #f8f9fa;
+  background: var(--bg);
   padding: 36px;
 }
 .contact-form-sheet form > div > input,
@@ -1081,9 +1004,6 @@
   }
   .project-entry-top {
     padding-block: 14px;
-  }
-  .travel-wordmark {
-    font-size: 62px;
   }
   .process-list {
     grid-template-columns: 1fr 1fr;

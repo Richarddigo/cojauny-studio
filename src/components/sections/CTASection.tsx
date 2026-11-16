@@ -1,3 +1,4 @@
+import Icon from "@/components/ui/Icon";
 import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 export default function CTASection() {
@@ -7,7 +8,7 @@ export default function CTASection() {
             <div className="container-studio">
                 <div className="cta-register">
                     <p className="eyebrow">{t("pill")}</p>
-                    <span aria-hidden="true">↗</span>
+                    <Icon name="external-link" size={16} />
                 </div>
                 <div className="cta-layout">
                     <h2 id="cta-heading">{t("title")}</h2>
@@ -15,7 +16,7 @@ export default function CTASection() {
                         <p>{t("description")}</p>
                         <Button href="/contact">
                             {t("button")}
-                            <span aria-hidden="true">↗</span>
+                            <Icon name="external-link" size={16} />
                         </Button>
                         <small>{t("note")}</small>
                     </div>

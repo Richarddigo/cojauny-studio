@@ -1,3 +1,4 @@
+import Icon from "@/components/ui/Icon";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactForm from "@/components/contact/ContactForm";
@@ -45,7 +46,7 @@ export default async function ContactPage({
                                     className="text-link"
                                 >
                                     {t("email")}
-                                    <span aria-hidden="true">↗</span>
+                                    <Icon name="external-link" size={16} />
                                 </a>
                             </dd>
                         </div>
