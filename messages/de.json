@@ -13,27 +13,16 @@
         "close_menu": "Menü schließen"
     },
     "hero": {
-        "label": "Cojauny Studio",
-        "headline_1": "Wir entwickeln Software,",
-        "headline_2": "die zählt.",
-        "subheadline": "Ein produktorientiertes Entwicklungsstudio. Wir bauen Apps, Web-Plattformen und beraten Unternehmen in ganz Europa zu technologischen Fragen.",
+        "label": "Unabhängiges Entwicklungsstudio",
+        "headline_1": "Software,",
+        "headline_2": "mit Haltung.",
+        "subheadline": "Wir gestalten und entwickeln Apps, Websites und die Systeme dahinter. Ein kleines europäisches Studio, das Sie von den ersten Fragen bis zu einem nutzbaren, wartbaren Produkt begleitet.",
         "cta_primary": "Projekt starten",
         "cta_secondary": "Unsere Projekte",
         "ecosystem_label": "Teil des Cojauny-Ökosystems",
-        "stats": [
-            {
-                "value": "3+",
-                "label": "Aktive Produkte"
-            },
-            {
-                "value": "EU",
-                "label": "Sitz in Europa"
-            },
-            {
-                "value": "100%",
-                "label": "Ergebnisorientiert"
-            }
-        ]
+        "studio_note": "Entwicklung / Design / Europa",
+        "index_label": "Eigenständig denken. Praktisch arbeiten.",
+        "meta_title": "Cojauny Studio — Unabhängige Softwareentwicklung"
     },
     "services": {
         "section_label": "Was wir tun",
@@ -64,19 +53,19 @@
             "steps": [
                 {
                     "title": "Entdeckung",
-                    "description": "Wir verstehen Ihre Ziele, Einschr\u00e4nkungen und Benutzer. Keine Annahmen."
+                    "description": "Wir verstehen Ihre Ziele, Einschränkungen und Benutzer. Keine Annahmen."
                 },
                 {
                     "title": "Architektur",
-                    "description": "Wir entwerfen das richtige System f\u00fcr Ihren Anwendungsfall \u2014 nicht f\u00fcr den n\u00e4chsten."
+                    "description": "Wir entwerfen das richtige System für Ihren Anwendungsfall — nicht für den nächsten."
                 },
                 {
                     "title": "Entwicklung",
-                    "description": "Sauberer, typisierter, getesteter Code. Regelm\u00e4\u00dfige Lieferungen. Volle Transparenz."
+                    "description": "Sauberer, typisierter, getesteter Code. Regelmäßige Lieferungen. Volle Transparenz."
                 },
                 {
                     "title": "Lieferung & Support",
-                    "description": "Deployment, Dokumentation und \u00dcbergabe. Wir sind auch danach noch da."
+                    "description": "Deployment, Dokumentation und Übergabe. Wir sind auch danach noch da."
                 }
             ]
         }
@@ -84,7 +73,7 @@
     "projects": {
         "section_label": "Ausgewählte Projekte",
         "title": "Projekte",
-        "subtitle": "Eine Auswahl der Produkte, die wir gebaut und veröffentlicht haben.",
+        "subtitle": "Eigene Produkte und Projekte für andere. Unterschiedliche Aufgaben, dieselbe Sorgfalt.",
         "cta": "Alle Projekte ansehen",
         "status_live": "Live",
         "status_development": "In Entwicklung",
@@ -204,7 +193,7 @@
         }
     },
     "footer": {
-        "tagline": "Software entwickeln, die zählt.",
+        "tagline": "Apps, Websites und Produktentwicklung.",
         "ecosystem_link": "Hauptprodukt: Cojauny →",
         "nav_title": "Navigation",
         "legal_title": "Rechtliches",
@@ -232,11 +221,23 @@
         },
         "privacy": {
             "title": "Datenschutzerklärung",
-            "subtitle": "Wie wir Ihre Daten erheben, verwenden und schützen."
+            "subtitle": "Wie wir Ihre Daten erheben, verwenden und schützen.",
+            "analytics_facts": "Vercel Web Analytics wird erst nach Zustimmung im Auswahlhinweis geladen. Ohne Auswahl oder bei Ablehnung wird es nicht geladen. Eine Änderung im Footer blockiert zukünftige Ereignisse über den SDK-Filter; bereits gesendete Anfragen werden nicht zurückgerufen.",
+            "preference_facts": "Der Browser speichert die Analyse-Auswahl unter cojauny-studio-consent im localStorage. Die Sprachnavigation kann das Präferenz-Cookie NEXT_LOCALE setzen. Über die Einstellungen im Footer können Sie die Analyse-Auswahl prüfen."
         },
         "cookies": {
             "title": "Cookie-Richtlinie",
-            "subtitle": "Wie wir Cookies und ähnliche Technologien verwenden."
+            "subtitle": "Wie wir Cookies und ähnliche Technologien verwenden.",
+            "content": {
+                "heading": "Ihre Browser-Einstellungen",
+                "choice": "Optionale Analyse",
+                "choice_body": "Cojauny Studio zeigt einen Auswahlhinweis. Ohne Auswahl oder bei Ablehnung wird das Analyse-Skript nicht geladen. Bei Zustimmung wird Vercel Web Analytics geladen. Über die Einstellungen im Footer können Sie die Auswahl prüfen oder widerrufen; zukünftige Ereignisse werden dann blockiert. Bereits gesendete Anfragen können nicht zurückgerufen werden.",
+                "storage": "Gespeicherte Einstellungen",
+                "storage_body": "Der localStorage-Eintrag cojauny-studio-consent speichert Zustimmung oder Ablehnung in diesem Browser. Ist der Speicher nicht verfügbar, gilt die Auswahl nur für den aktuellen Tab. Die Sprachnavigation kann außerdem das Präferenz-Cookie NEXT_LOCALE setzen.",
+                "services": "Kontakt-Dienste",
+                "services_body": "Das Kontaktformular verwendet unseren Server und Resend zur Zustellung Ihrer Anfrage. Wenn Cloudflare Turnstile konfiguriert ist, kann dessen Missbrauchsschutz-Widget geladen werden. Diese Kontakt-Dienste sind von der optionalen Analyse getrennt.",
+                "questions": "Fragen?"
+            }
         },
         "terms": {
             "title": "Nutzungsbedingungen",
@@ -253,13 +254,13 @@
         "cta": "Zur Startseite"
     },
     "cookieBanner": {
-        "message": "Wir verwenden essenzielle und optionale Analyse-Cookies, um zu verstehen, wie Cojauny Studio genutzt wird. Sie k\u00f6nnen diese akzeptieren oder nur mit den essenziellen fortfahren.",
+        "message": "Wir speichern Ihre Auswahl in diesem Browser. Optionale Analyse wird nur nach Ihrer Zustimmung geladen. Sie können die Auswahl im Footer ändern.",
         "acceptAll": "Akzeptieren",
         "reject": "Nur notwendige",
         "moreInfo": "Cookie-Richtlinie",
-        "ariaLabel": "Cookie-Einwilligung"
-    }
-,
+        "ariaLabel": "Cookie-Einwilligung",
+        "manage": "Analyse-Einstellungen"
+    },
     "about": {
         "title": "Über Cojauny Studio",
         "description": "Wir sind ein produktfokussiertes Software-Studio, das digitale Produkte für den europäischen Markt entwickelt.",

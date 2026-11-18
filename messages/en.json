@@ -13,27 +13,16 @@
         "close_menu": "Close menu"
     },
     "hero": {
-        "label": "Cojauny Studio",
-        "headline_1": "We build software",
-        "headline_2": "that matters.",
-        "subheadline": "A product-focused development studio. We build apps, web platforms, and consult on technology for European businesses.",
+        "label": "Independent development studio",
+        "headline_1": "Software,",
+        "headline_2": "with intention.",
+        "subheadline": "We design and build apps, websites and the systems behind them. A small European studio, working with you from the first questions to a product you can use and maintain.",
         "cta_primary": "Start a project",
         "cta_secondary": "See our work",
         "ecosystem_label": "Part of the Cojauny ecosystem",
-        "stats": [
-            {
-                "value": "3+",
-                "label": "Live products"
-            },
-            {
-                "value": "EU",
-                "label": "Based in Europe"
-            },
-            {
-                "value": "100%",
-                "label": "Outcome-focused"
-            }
-        ]
+        "studio_note": "Engineering / Design / Europe",
+        "index_label": "Independent thinking. Practical work.",
+        "meta_title": "Cojauny Studio — Independent software engineering"
     },
     "services": {
         "section_label": "What we do",
@@ -68,7 +57,7 @@
                 },
                 {
                     "title": "Architecture",
-                    "description": "We design the right system for your use case \u2014 not for the next one."
+                    "description": "We design the right system for your use case — not for the next one."
                 },
                 {
                     "title": "Development",
@@ -84,7 +73,7 @@
     "projects": {
         "section_label": "Selected work",
         "title": "Projects",
-        "subtitle": "A selection of products we have built and shipped.",
+        "subtitle": "Our own products and work for others. Different contexts, the same attention to detail.",
         "cta": "View all projects",
         "status_live": "Live",
         "status_development": "In development",
@@ -204,7 +193,7 @@
         }
     },
     "footer": {
-        "tagline": "Building software that matters.",
+        "tagline": "Apps, websites and product engineering.",
         "ecosystem_link": "Main product: Cojauny →",
         "nav_title": "Navigation",
         "legal_title": "Legal",
@@ -232,11 +221,23 @@
         },
         "privacy": {
             "title": "Privacy Policy",
-            "subtitle": "How we collect, use, and protect your data."
+            "subtitle": "How we collect, use, and protect your data.",
+            "analytics_facts": "Vercel Web Analytics loads only after acceptance in the preference banner. Unknown and rejected choices prevent loading. Changing the choice in the footer blocks future events through the SDK event filter; it does not recall requests already sent.",
+            "preference_facts": "The browser stores the analytics choice under cojauny-studio-consent in localStorage. Language routing may set a NEXT_LOCALE preference cookie. You can review the analytics choice using the preferences control in the footer."
         },
         "cookies": {
             "title": "Cookie Policy",
-            "subtitle": "How we use cookies and similar technologies."
+            "subtitle": "How we use cookies and similar technologies.",
+            "content": {
+                "heading": "Your browser preferences",
+                "choice": "Optional analytics",
+                "choice_body": "Cojauny Studio shows a preference banner. Unknown or rejected choices do not load the analytics script. Accepting loads Vercel Web Analytics. You can review or withdraw that choice using Analytics preferences in the footer; future events are then blocked. Requests already sent cannot be recalled.",
+                "storage": "What is stored",
+                "storage_body": "The cojauny-studio-consent localStorage entry records accepted or rejected in this browser. If storage is unavailable, the choice applies only to the current tab. Language routing can also set the NEXT_LOCALE preference cookie.",
+                "services": "Contact services",
+                "services_body": "The contact form uses our server and Resend to deliver enquiries. A deployment with Cloudflare Turnstile configured can also load its anti-abuse widget. These contact services are separate from optional analytics.",
+                "questions": "Questions?"
+            }
         },
         "terms": {
             "title": "Terms of Service",
@@ -253,11 +254,12 @@
         "cta": "Go home"
     },
     "cookieBanner": {
-        "message": "We use essential and optional analytics cookies to understand how Cojauny Studio is used. You can accept them or keep browsing with only essentials.",
+        "message": "We store your preference in this browser. Optional analytics loads only if you accept. You can change your choice in the footer.",
         "acceptAll": "Accept",
         "reject": "Reject",
         "moreInfo": "Cookie Policy",
-        "ariaLabel": "Cookie consent"
+        "ariaLabel": "Cookie consent",
+        "manage": "Analytics preferences"
     },
     "about": {
         "title": "About Cojauny Studio",

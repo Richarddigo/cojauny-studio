@@ -30,7 +30,6 @@ export default async function ProjectsPage({
     setRequestLocale(locale);
     return (
         <>
-            <div className="pt-24" />
             <ProjectsSection variant="page" />
             <CTASection />
         </>

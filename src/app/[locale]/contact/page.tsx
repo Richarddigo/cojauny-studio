@@ -1,8 +1,7 @@
+import Icon from "@/components/ui/Icon";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import AnimateIn from "@/components/ui/AnimateIn";
 import ContactForm from "@/components/contact/ContactForm";
-import Icon from "@/components/ui/Icon";
 import { buildAlternates } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -32,70 +31,39 @@ export default async function ContactPage({
     const t = await getTranslations({ locale, namespace: "contact" });
 
     return (
-        <div className="bg-bg min-h-screen">
-            <div className="pt-32 pb-24">
-                <div className="container-studio">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                        {/* Left — info */}
-                        <AnimateIn>
-                            <span className="section-label">
-                                <span className="w-5 h-0.5 bg-accent inline-block mr-2 rounded" />
-                                {t("title")}
-                            </span>
-                            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-text tracking-tight mt-2 leading-tight">
-                                {t("title")}
-                            </h1>
-                            <p className="mt-5 text-muted text-lg leading-relaxed max-w-md">
-                                {t("subtitle")}
-                            </p>
-
-                            <div className="mt-10 space-y-5">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <Icon name="mail" size={16} className="text-muted" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-faint uppercase tracking-wider">Email</p>
-                                        <a
-                                            href="mailto:studio@cojauny.com"
-                                            className="text-sm font-medium text-text hover:text-accent transition-colors focus-ring rounded"
-                                        >
-                                            {t("email")}
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <Icon name="clock" size={16} className="text-muted" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-faint uppercase tracking-wider">{t("response_time_label")}</p>
-                                        <p className="text-sm font-medium text-text">{t("response_time_value")}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-surface flex items-center justify-center border border-[var(--border)] shrink-0">
-                                        <Icon name="user" size={16} className="text-muted" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-faint uppercase tracking-wider">{t("location_label")}</p>
-                                        <p className="text-sm font-medium text-text">{t("location_value")}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </AnimateIn>
-
-                        {/* Right — form */}
-                        <AnimateIn delay={0.15}>
-                            <div className="card-dark p-8">
-                                <ContactForm />
-                            </div>
-                        </AnimateIn>
-                    </div>
+        <section className="contact-page" aria-labelledby="contact-heading">
+            <div className="container-studio contact-layout">
+                <div className="contact-copy">
+                    <p className="eyebrow">Cojauny Studio / {t("title")}</p>
+                    <h1 id="contact-heading">{t("title")}</h1>
+                    <p>{t("subtitle")}</p>
+                    <dl className="contact-info">
+                        <div>
+                            <dt>Email</dt>
+                            <dd>
+                                <a
+                                    href="mailto:studio@cojauny.com"
+                                    className="text-link"
+                                >
+                                    {t("email")}
+                                    <Icon name="external-link" size={16} />
+                                </a>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>{t("response_time_label")}</dt>
+                            <dd>{t("response_time_value")}</dd>
+                        </div>
+                        <div>
+                            <dt>{t("location_label")}</dt>
+                            <dd>{t("location_value")}</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div className="contact-form-sheet">
+                    <ContactForm />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-16",
+  "scope": "Studio only — restore original brand assets and principal color palette while preserving the panoramic composition and behavior",
+  "baseline": "e501b2e28f256ecfa6780cc89e0fc7a280398f4d",
+  "previousLocalCommit": "378c5312265bb10a476bdb4a13c041f4042207b7",
+  "branch": "codex/studio-workbench-identity",
+  "deployment": {
+    "gitDeploymentEnabled": false,
+    "config": "vercel.json",
+    "pushed": false,
+    "pullRequestCreated": false,
+    "merged": false,
+    "deployed": false,
+    "externalProjectSettingsChanged": false
+  },
+  "changes": [
+    "Restored the original 24 brand color tokens, including navy background and original blue accent, dim and light variants. Hex case is normalized by the formatter; numeric values are unchanged.",
+    "Restored the original studio-cojauny-white.svg logo in header/footer; original Cojauny and FC Español assets identify projects. Removed the invented StudioWordmark, route illustration and playing-card artwork. Cuatro Sotas retains its existing project title without a new mark.",
+    "Restored original icon assets for links and visible original locale flags. Preserved the panoramic hero, project index, service register, responsive menu and all existing destinations/statuses.",
+    "Button contrast uses original navy text on the original blue accent; hover uses original light text on original dim blue. Contact sheet uses original navy so existing error labels keep contrast.",
+    "Consent store, analytics beforeSend, banner hidden behavior, contact component/API, and privacy fixes are unchanged from the approved local implementation."
+  ],
+  "baselineChecks": {
+    "baseline": "e501b2e28f256ecfa6780cc89e0fc7a280398f4d",
+    "brandColorTokensEqual": 24,
+    "originalPublicAssets": [
+      {
+        "path": "public/cojauny-white.svg",
+        "gitBlob": "8b76f15bd019941d971645b5ffa3d6912eb81e6a",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "1ada2e531b8500d22351035a5e5862b6eb7bb1fd00da9542870994991a31a4b4"
+      },
+      {
+        "path": "public/fc-espanol-logo.svg",
+        "gitBlob": "b439ad983abf84000f20c54e9131abd90dade4b4",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "07b913affb13335ea5e5ab88cd843b7239d7fd0305835dae7d1d31d22c9c86c4"
+      },
+      {
+        "path": "public/file.svg",
+        "gitBlob": "004145cddf3f9db91b57b9cb596683c8eb420862",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": true,
+        "checkoutSha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4"
+      },
+      {
+        "path": "public/globe.svg",
+        "gitBlob": "567f17b0d7c7fb662c16d4357dd74830caf2dccb",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": true,
+        "checkoutSha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf"
+      },
+      {
+        "path": "public/icons/arrow-right.svg",
+        "gitBlob": "4f42f18391476a2e561801d66755b2e580f478da",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "a50a5d7cfffe5cbd1b05833ffb17fbc1a0a94ae28e40e2facd7fb3340d654f0f"
+      },
+      {
+        "path": "public/icons/check-success.svg",
+        "gitBlob": "b48bf6ee0e2c5f3fb1f3c476ca4e6cfff865cc44",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "34f762ffec77dbfd52fcc53cf083f86a86d9581b48d28f021b44ed76c2db43ac"
+      },
+      {
+        "path": "public/icons/check.svg",
+        "gitBlob": "090358c9f9e0bf93d232bb912042dd4836395564",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "9619922e05bf0d5e408da5e1175be477b1b93a261f0e00aad38e3ccd8c0695de"
+      },
+      {
+        "path": "public/icons/chevron-down.svg",
+        "gitBlob": "9c0ba011fbccea1d380cee6f800866318698391d",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "359bd30ea8e6543cd24723e0021093c5462b40e9a669b5b55ba09368cb09be12"
+      },
+      {
+        "path": "public/icons/clock.svg",
+        "gitBlob": "1bfeaaf59b2417ea8c0478cbdd90e5518b3f0fbf",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "5ab40088d35f3a5311c517fb6fe34dc35bd83fba90062e808466b58655b9e59c"
+      },
+      {
+        "path": "public/icons/close.svg",
+        "gitBlob": "769bd6828948e50b21f6c08ae53e6d05164fd72f",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "289e0c718651ca79ad5972fc6896446fbd7d7b9989d417c2719a201969c97dd7"
+      },
+      {
+        "path": "public/icons/external-link.svg",
+        "gitBlob": "ae26d2232f5de6b9666d3636ca6df7f9819b0a5b",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "1be2186942bfe5a2e05937eb2a2b2015bd47ce662bf6e935823b521156aa702d"
+      },
+      {
+        "path": "public/icons/hamburger.svg",
+        "gitBlob": "07427c992c49a134d4f3f72aa78e6d06e090f18a",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "3c6fb9912426ee4490096afc76496569bd10ecdd4e10a1fd0124fbdb2d6e2b3d"
+      },
+      {
+        "path": "public/icons/mail.svg",
+        "gitBlob": "d662a8a08d1fa382743ce09e5ade898d22bbf1cf",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "b83ca8a4c1829cf0389eb1215d9287468a50bd78eb45a0ff755a38a0d6d9b56b"
+      },
+      {
+        "path": "public/icons/mountain-black.svg",
+        "gitBlob": "a5be93b160a8172c3d85bbd22f06dec4f00915e7",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "35a17622ea2f8b2113d9dcc414b6299b2cb31f7f096ee34219a4183c404f27fe"
+      },
+      {
+        "path": "public/icons/mountain-white.svg",
+        "gitBlob": "cd914041a8fe68b3f632f3a4a675ffcc3eb58fc8",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "8635b32dedfc68b0965a4fb3498b9f9bb91773ef2d898401f7255922926c7907"
+      },
+      {
+        "path": "public/icons/plus.svg",
+        "gitBlob": "3111ea0276eebc625448b264c37188014df10fed",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "4f0d76b3c9d81d73875033d1e24718f119bc81d36f1a249b77bfc1fd3d12646e"
+      },
+      {
+        "path": "public/icons/user.svg",
+        "gitBlob": "64132627c7684ad00cd5ae2ab86588897ca427fa",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "19aa6c684946815dd9f0e0c55164cd6525c999f3e935975df20f687764a2d6d0"
+      },
+      {
+        "path": "public/logo.svg",
+        "gitBlob": "a5be93b160a8172c3d85bbd22f06dec4f00915e7",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "35a17622ea2f8b2113d9dcc414b6299b2cb31f7f096ee34219a4183c404f27fe"
+      },
+      {
+        "path": "public/next.svg",
+        "gitBlob": "5174b28c565c285e3e312ec5178be64fbeca8398",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": true,
+        "checkoutSha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc"
+      },
+      {
+        "path": "public/studio-cojauny-white.svg",
+        "gitBlob": "151822226fd74d993f31b7dae952802fa02337a2",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": false,
+        "checkoutSha256": "d0c018b034a0e0355340a2d470952c84d98efad015c25d37292985c194e928cc"
+      },
+      {
+        "path": "public/vercel.svg",
+        "gitBlob": "77053960334e2e34dc584dea8019925c3b4ccca9",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": true,
+        "checkoutSha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4"
+      },
+      {
+        "path": "public/window.svg",
+        "gitBlob": "b2b2a44f6ebc70c450043c05a002e7a93ba5d651",
+        "baselineBlobEqual": true,
+        "rawBytesEqual": true,
+        "checkoutSha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
+      }
+    ],
+    "lineEndings": "Git checkout CRLF can differ from LF blobs. Track original-blob identity separately from raw checkout SHA.",
+    "rawByteEqualCount": 5,
+    "vercel": {
+      "git": {
+        "deploymentEnabled": false
+      }
+    },
+    "privacySourceChanges": ""
+  },
+  "validation": {
+    "runtime": {
+      "node": "24.22.3",
+      "next": "16.4.6",
+      "browser": "Installed Google Chrome via Playwright channel chrome",
+      "workers": 1
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    "typecheck": {
+      "command": "npx tsc --noEmit",
+      "exitCode": 0
+    },
+    "unit": {
+      "command": "npm run test:consent",
+      "exitCode": 0,
+      "passed": 2,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "generatedPages": 47
+    },
+    "browser": {
+      "command": "PLAYWRIGHT_BASE_URL=http://localhost:3002 PLAYWRIGHT_CHANNEL=chrome npx playwright test --workers=1 --reporter=json",
+      "exitCode": 0,
+      "stats": {
+        "startTime": "2026-11-16T05:53:53.864Z",
+        "duration": 46751.200000000004,
+        "expected": 48,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "scope": "48 cases across desktop/mobile: 12 axe, smoke/routes/locales, causal consent/privacy, intercepted contact validation/retry, focus/locale html.lang, overflow/reduced motion"
+    },
+    "captureSummary": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "brand": {
+          "background": "rgb(12, 17, 32)",
+          "accent": "#5b7bff",
+          "logo": "/studio-cojauny-white.svg",
+          "width": 1440
+        },
+        "pageErrors": []
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "brand": {
+          "background": "rgb(12, 17, 32)",
+          "accent": "#5b7bff",
+          "logo": "/studio-cojauny-white.svg",
+          "width": 390
+        },
+        "pageErrors": []
+      }
+    ]
+  },
+  "logs": [
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restore-static-final-20261116.log",
+      "sha256": "a62bd7a83c5eea65461877567ab5e961f1fc567530ac08b8cf63f0ea6ea0f5df"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restore-build-20261116.log",
+      "sha256": "c8c6c1101c5ae0b8ed224d4b77b29e8b7ab1bb5e73a8b71f2a74ae87f5195720"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restore-e2e-20261116.json",
+      "sha256": "23241997bc2c89cdcf77534bf7c5fe448e6a8c212fd5c64553b6e095811ccb47"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restore-e2e-stderr-20261116.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restore-baseline-20261116.json",
+      "sha256": "cd387993f2ee627b5d2079e7b473bb3d139bcbbe9f6272d671b7fb366ed3d7dc"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/home.png",
+      "sha256": "d00df087dd92908032f9a3531a30320d13c7c10730a6e96193b2fdf405959d55"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/home-full.png",
+      "sha256": "09c8930e1c4e5c30dceabdf9df6ab5d04982534d6b3c37c7765024a3473144c7"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/first-visit.png",
+      "sha256": "97acac28e4b568d749169b8788ea7aaf66f0cdadd5584093ace8dbca20732461"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/projects.png",
+      "sha256": "2f4817a19926160a2f3d3061f8e198ca9145578439f50d9db146f7b4bd221065"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/services.png",
+      "sha256": "874e31715ad9cdf3209de10c9d549e222a18708e209238ce45e3bc1a571f35ea"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/desktop/contact.png",
+      "sha256": "856316b9ce91ea7d8a4a26c8c2003ddf0af518016eb83670b163908308e3806a"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/home.png",
+      "sha256": "29da278f1fd14e2c910f58e69f592471af1a51c33d446d244db3417672816972"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/home-full.png",
+      "sha256": "b96f8a2d37f9e43e5271fb967222973d7a5b9ad61437ffa265e50b0b9f9e7cf0"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/first-visit.png",
+      "sha256": "5574739c86a9e63b959a2f065da6934d4518b8a55bb0840dcef864d9dfb1d770"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/projects.png",
+      "sha256": "12c9df7f1b549bfb522f948e715d1ddff2482bc2e5e1f0b8fdd7016735a9541e"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/services.png",
+      "sha256": "321ba702d0bef7833ebbba6b64237d6973440f65644995f6c5c9895ea40ff27b"
+    },
+    {
+      "path": "C:/Users/richa/AppData/Local/Temp/cojauny-studio-brand-restored-20261116/mobile/contact.png",
+      "sha256": "b141e96f27ff9a44129ef1d401b23b397b40bdc6dfe6d11ddab5c56931af165f"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "b9cfc1007f61b11ad1313ee51bf469dd8bef1f5f9b0cda1ff5fe8bf74254ddc7"
+    },
+    {
+      "path": "src/app/[locale]/contact/page.tsx",
+      "sha256": "db7b583f2102d766c53ca91b7c9a7ce8235b8e48961e1b3ad3aec4209f25dd44"
+    },
+    {
+      "path": "src/app/[locale]/layout.tsx",
+      "sha256": "5ccc9c9bac577ed289757a983897df9f6bceba30a4debc29888687d7a5bfea7b"
+    },
+    {
+      "path": "src/app/[locale]/opengraph-image.tsx",
+      "sha256": "17a898f5b7ab697866fa29ce52389b4bfc19a82d1147ffd8c9cec838e0c99313"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "47d3193203bfa820987916570af0dc4839f8fef9bc5483609c1c5f6b352a8b7a"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "sha256": "6ae5a252b4beefae7db4c610324652c7c077c55151106350332eed66828e1110"
+    },
+    {
+      "path": "src/components/layout/Footer.tsx",
+      "sha256": "41399b425777883689354870202fe48735662d9d4be7d8f16d2089eff776b851"
+    },
+    {
+      "path": "src/components/layout/Header.tsx",
+      "sha256": "29f9d245674b8ff118e34431e1111aa4ef589dce520c099bae88b0c42f4283c4"
+    },
+    {
+      "path": "src/components/sections/CTASection.tsx",
+      "sha256": "9e96a0b7795385d7a232ac1712fd8b11da8d9ea58c1302772e5dac429c1b1b0e"
+    },
+    {
+      "path": "src/components/sections/EcosystemBanner.tsx",
+      "sha256": "a54d2ca497497a756c52596491d7851a07f540531ac9de31530b1a3377384fbf"
+    },
+    {
+      "path": "src/components/sections/Hero.tsx",
+      "sha256": "d5420fe31d54155f6c296b64c77eb77617a705d2283bb9abcc5d6d6ba012fad4"
+    },
+    {
+      "path": "src/components/sections/ProjectVisual.tsx",
+      "sha256": "8ea0eadfa9e199a1664a163c7da7d8808eea8e7e183f6249bb4695eaa2c18093"
+    },
+    {
+      "path": "src/components/sections/ProjectsSection.tsx",
+      "sha256": "e7b49000cfe7bffa361fe11289465a4e602d06fb79494138be230ae68c52ce4b"
+    },
+    {
+      "path": "src/components/sections/ServicesSection.tsx",
+      "sha256": "a94f157debede55d4363effabe0d1b9ba1a2a66320ee41b85871f3fa5e55ab11"
+    },
+    {
+      "path": "src/components/sections/SponsorsSection.tsx",
+      "sha256": "38012a677785596eb281db4e14043f9fa05cf8d185c62aa3e391c3e19ce1f7ac"
+    },
+    {
+      "path": "src/components/ui/StudioWordmark.tsx",
+      "status": "deleted"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "d8209115a448d5e218f94369a0a9703c7213cf26d71c967565b341d104100ea7"
+    }
+  ],
+  "limits": [
+    "Local preview only. No Vercel project mutation or deployment occurred. git.deploymentEnabled:false disables Git-triggered deployments once this configuration is present on the remote; no claim is made about deployment settings of existing remote revisions.",
+    "Package manifests and locks are unchanged from 378c531. Prior full audit retains seven moderate development findings; prior production-only audit zero does not mean a clean full audit. No fresh audit was needed for this presentation-only change.",
+    "Analytics and contact submissions are intercepted during browser tests; no real email or analytics traffic was sent. No cancellation of previously emitted requests or legal certification is claimed.",
+    "Original public assets have identical Git blob IDs to baseline. Checkout CRLF means 17 raw checkout files differ from LF Git blobs; raw-byte equality and Git content identity are explicitly distinguished.",
+    "The earlier studio-identity-local-20261116.json records the prior mineral/oxide design checkpoint; this receipt supersedes that visual direction. Existing Edge Runtime and Node module-type warnings remain nonblocking."
+  ]
+}
