@@ -18,14 +18,10 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const variantStyles: Record<Variant, string> = {
-    primary:
-        "bg-accent-dim text-white hover:bg-[#2A49C9] active:scale-[0.97] shadow-[0_0_28px_rgba(91,123,255,0.35)] hover:shadow-[0_0_40px_rgba(91,123,255,0.5)] group",
-    secondary:
-        "bg-[rgba(255,255,255,0.06)] text-text border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.2)]",
-    ghost:
-        "text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)]",
-    outline:
-        "border border-[var(--border-light)] text-text hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(91,123,255,0.15)]",
+    primary: "studio-button-primary group",
+    secondary: "studio-button-secondary",
+    ghost: "studio-button-ghost",
+    outline: "studio-button-outline",
 };
 
 const sizeStyles: Record<Size, string> = {
@@ -36,7 +32,7 @@ const sizeStyles: Record<Size, string> = {
 
 function baseClasses(variant: Variant, size: Size, disabled: boolean) {
     return [
-        "inline-flex items-center justify-center font-semibold rounded-[var(--radius)] transition-all duration-200 ease-out cursor-pointer focus-ring whitespace-nowrap",
+        "studio-button inline-flex items-center justify-center cursor-pointer focus-ring",
         variantStyles[variant],
         sizeStyles[size],
         disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "",
@@ -106,7 +102,12 @@ export default function Button({
     }
 
     return (
-        <button type={type} onClick={onClick} disabled={disabled || loading} className={classes}>
+        <button
+            type={type}
+            onClick={onClick}
+            disabled={disabled || loading}
+            className={classes}
+        >
             {children}
         </button>
     );

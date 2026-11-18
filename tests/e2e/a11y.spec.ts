@@ -1,10 +1,19 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-const pages = ["/en", "/en/services", "/en/projects", "/en/contact"];
+const pages = [
+    "/en",
+    "/en/services",
+    "/en/projects",
+    "/en/contact",
+    "/en/about",
+    "/en/legal/cookies",
+];
 
 for (const path of pages) {
-    test(`a11y — ${path} has no critical/serious axe violations`, async ({ page }) => {
+    test(`a11y — ${path} has no critical/serious axe violations`, async ({
+        page,
+    }) => {
         // Disable animations so AnimateIn opacity:0 elements don't skew contrast checks
         await page.emulateMedia({ reducedMotion: "reduce" });
         await page.goto(path);
@@ -13,7 +22,7 @@ for (const path of pages) {
             .analyze();
 
         const blocking = results.violations.filter((v) =>
-            ["critical", "serious"].includes(v.impact ?? "")
+            ["critical", "serious"].includes(v.impact ?? ""),
         );
 
         if (blocking.length > 0) {

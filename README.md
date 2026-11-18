@@ -19,7 +19,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 — the middleware redirects `/` to the negotiated locale.
+Open http://localhost:3000. English uses `/`; Spanish, German and French use `/es`, `/de` and `/fr`. Locale detection is disabled. For production previews use matching bind and request hosts, e.g. `npm run start -- --hostname localhost --port 3002` and `http://localhost:3002`; mixing an IP bind with locale rewrites can create a local redirect loop.
 
 ### Environment variables
 
@@ -87,7 +87,7 @@ src/
 ├── i18n/                 # next-intl routing + request config
 ├── lib/                  # seo, email, ratelimit helpers
 ├── locales/
-└── messages/             # en.json · es.json · de.json
+└── messages/             # en.json · es.json · de.json · fr.json
 tests/e2e/                # Playwright specs
 ```
 
@@ -104,3 +104,31 @@ curl.exe https://studio.cojauny.com/api/health
 Should return `200 OK` with `{"status":"ok",...}`.
 
 See [AUDIT.md](AUDIT.md) for the architectural audit and [AUDIT2.md](AUDIT2.md) for the remaining backlog (split between automatable and manual actions).
+
+
+## Studio visual identity and local review
+
+The studio retains its original navy, blue and purple brand palette and original local logo/icon assets. A panoramic sans-serif brief leads into an index of the three existing projects, a service register and the working process. The project index uses the original Cojauny and FC Español logo assets; Cuatro Sotas is identified by its title rather than an invented mark. Development/coming-soon statuses and existing project destinations are retained; promotional counters have been removed.
+
+The contact validation, Turnstile integration, server origin/rate limits and email API remain unchanged. `tests/e2e/studio.spec.ts` intercepts every form submission and analytics endpoint; it sends no real email or analytics. The consent store shares changes across components/tabs. Analytics loads only after acceptance, and the official `beforeSend` callback reads the current choice for each future event. Footer preferences withdraw the current choice before opening the banner. A failed write/removal keeps that tab's newer choice ahead of stale readable storage; a successful write or external storage event reconciles it. No unmount-based SDK cleanup or cancellation of already-sent requests is claimed.
+
+Local checks:
+
+```powershell
+npm run lint
+npx tsc --noEmit
+npm run test:consent
+npm run build
+# In another terminal, after the production server above is ready:
+$env:PLAYWRIGHT_BASE_URL = 'http://localhost:3002'
+$env:PLAYWRIGHT_CHANNEL = 'chrome' # Optional installed official Chrome; default is Playwright Chromium.
+npm run test:e2e -- --workers=1
+```
+
+Next.js, its bundle analyzer and ESLint config are aligned at the official stable 16.4.6 release. Compatible ranges were refreshed without overrides or force; remaining development audit findings must be reported separately from the production-only audit. No deployment or production configuration is established by the local preview.
+
+Local validation on 2026-11-16: lint, TypeScript, two consent unit cases, production build (47 generated pages), and all 48 Playwright checks passed with one worker across desktop and mobile. All four localized social-image routes returned PNG/200. The complete npm audit retains seven moderate development-package findings; the production-only audit reports zero. This is local evidence, not a deployed-state or legal certification. See [the scoped receipt](docs/evidence/studio-identity-local-20261116.json).
+
+Git-triggered Vercel deployments are explicitly disabled in `vercel.json` (`git.deploymentEnabled: false`). This repository change does not modify Vercel project settings or deploy a site.
+
+The original brand restoration also passed lint, TypeScript, both consent unit tests, the 47-page production build and all 48 browser checks on 2026-11-16. See [the original-brand receipt](docs/evidence/studio-original-brand-local-20261116.json) for baseline color/asset comparisons and refreshed desktop/mobile captures.

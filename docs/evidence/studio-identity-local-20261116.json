@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "task": "Cojauny Studio visual identity and functioning local preview",
+  "localDate": "2026-11-16",
+  "timezone": "Europe/Berlin",
+  "recordedAtUtc": "2026-11-15T23:26:23.9738872Z",
+  "repository": "Richarddigo/cojauny-studio",
+  "baseline": "e501b2e28f256ecfa6780cc89e0fc7a280398f4d",
+  "branch": "codex/studio-workbench-identity",
+  "delivery": "LOCAL_ONLY; resulting local commit is reported separately; no push, PR, merge, deployment or Vercel mutation",
+  "preview": "http://localhost:3002",
+  "implementation": [
+    "Cool mineral/charcoal/oxide identity, panoramic sans hero and a register of the three existing real projects; no decorative dashboard, unsupported product counters or external artwork",
+    "Shared navigation, keyboard/inert menu, four locales, contact validation/API policies and all original destinations retained",
+    "Optional Analytics mounts only for acceptance; official beforeSend reads the live shared consent snapshot for every future event even after React unmount",
+    "Write/removal failure has a current-tab override ahead of stale readable storage; successful writes and external storage notifications reconcile it; readable missing/corrupt state stays unknown",
+    "Cookie preferences allow withdrawal; factual cookie/analytics explanations and localized metadata/social images match behavior without legal certification",
+    "Official Next/ESLint config/bundle analyzer16.4.6 plus compatible resolved ranges; no force, overrides, modified SDK/vendor sources or original checkout env copies"
+  ],
+  "checks": {
+    "productionBuild": "PASS_47_GENERATED_PAGES",
+    "typeScript": "PASS",
+    "browser": {
+      "rawSHA256": "21058d243fbb694e80d9910df5cd0dc2782a9a0bff7a3acdc2e18416b932b6a6",
+      "stats": {
+        "startTime": "2026-11-15T23:23:16.716Z",
+        "duration": 42501.171,
+        "expected": 48,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "command": "PLAYWRIGHT_BASE_URL=http://localhost:3002 PLAYWRIGHT_CHANNEL=chrome playwright test --workers=1 --reporter=json",
+      "coverage": "12 axe checks; locale/routing/health; five privacy interaction families; validation/error/success retry with intercepted mail; keyboard and HTML lang;320/390/768/1440 overflow/reduced motion. These are test instances across two projects, not unique end-user scenarios.",
+      "rawFileName": "cojauny-studio-e2e-final-20261116.json"
+    },
+    "localizedOg": "PASS_4_OF_4_PNG_200",
+    "contactApiRateLimitMailHandlersAndNextSecurityHeaders": "UNCHANGED_FROM_BASELINE",
+    "diffCheck": "PASS",
+    "lint": "PASS",
+    "consentUnit": "PASS_2_OF_2"
+  },
+  "audits": [
+    {
+      "profile": "all",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 7,
+        "high": 0,
+        "critical": 0,
+        "total": 7
+      },
+      "rawFileName": "cojauny-studio-npm-audit-all-final-20261116.json",
+      "rawSHA256": "0284242aeffd50b47bdc23b987d12184f155756189fe6f2ac3630b5e540d4e90"
+    },
+    {
+      "profile": "production",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "rawFileName": "cojauny-studio-npm-audit-production-final-20261116.json",
+      "rawSHA256": "8d6777e56875c1cbde26dfdd05cb7af8e214e90fe0b9ca9ad8967d2df2b7ab72"
+    }
+  ],
+  "remaining": "Seven moderate development package entries remain in TypeScript-ESLint/minimatch; no complete-audit-clean or production/deployed security certification is claimed.",
+  "screenshots": {
+    "directoryLabel": "cojauny-studio-design-final-20261116 in local TEMP",
+    "files": [
+      {
+        "file": "desktop-first-visit.png",
+        "bytes": 102234,
+        "sha256": "cb5fc0fab2b15c156d7f358f5bb63ac1b55c928e14265786a379a78181ae35fd"
+      },
+      {
+        "file": "desktop-home.png",
+        "bytes": 91421,
+        "sha256": "cc25d5a389eeaf7ae864f795c897dcba90fd6d138e7e9cb169ffcd082dd96790"
+      },
+      {
+        "file": "desktop-home-full.png",
+        "bytes": 440234,
+        "sha256": "006c62155915fb17adb99734de583332d8478519716db696611ba641079a8a57"
+      },
+      {
+        "file": "desktop-services.png",
+        "bytes": 203966,
+        "sha256": "7960d59dd17efd598235e53f2e8f34d7ebeb926d1c3b326ba9a8258a14b0977f"
+      },
+      {
+        "file": "desktop-contact.png",
+        "bytes": 90974,
+        "sha256": "ae781f8149201d5b1285ae558813e5944a574c4925fc84504ec5ea22736bbb15"
+      },
+      {
+        "file": "mobile-first-visit.png",
+        "bytes": 47097,
+        "sha256": "7bfcc5af5b302d161ee7c0085af3eacfd136659ad6264590ece1203de58d5c3d"
+      },
+      {
+        "file": "mobile-home.png",
+        "bytes": 44070,
+        "sha256": "ca48cc25b11ebbe8f729fbe2930b7ad71d949f69e08c4e616bf4059d6d681f60"
+      },
+      {
+        "file": "mobile-home-full.png",
+        "bytes": 340187,
+        "sha256": "ba4e97d2d43e0e8a13ca5c7ae25dbc15139d396f4c6bbbeaa2beb77a644c2734"
+      },
+      {
+        "file": "mobile-services.png",
+        "bytes": 160657,
+        "sha256": "8a5d95aeefb10ae7c0546cb34e71bb2ede7b133d48fb549f4f2a0fa3876a4e55"
+      },
+      {
+        "file": "mobile-contact.png",
+        "bytes": 75645,
+        "sha256": "b98360721881bdac5e4ca30a9ae2c22deebda9514290fdc68c4b09e0a7c76e9c"
+      }
+    ],
+    "results": [
+      {
+        "device": "desktop",
+        "width": 1440,
+        "documentWidth": 1440,
+        "pageErrors": [],
+        "closedBannerHidden": true
+      },
+      {
+        "device": "mobile",
+        "width": 390,
+        "documentWidth": 390,
+        "pageErrors": [],
+        "closedBannerHidden": true
+      }
+    ]
+  },
+  "executionHistory": [
+    "Initial inherited Next16.2.6 graph audit:19 findings, including1critical/9high; after the official compatible upgrade:7moderate development entries and production-only0",
+    "Local redirect loop under IP bind was a harness mismatch: exact same build serves default locale200 when both bind and request use localhost; as-needed routes, SEO and security policies were not bypassed",
+    "A build-output removal was automatically rejected before execution. The safer non-destructive alternative preserved only this worktree own generated.next output in TEMP; no SDK/package-cache content was edited",
+    "First Playwright attempt:2 API health checks passed,46 browser bodies could not start because official ffmpeg1013 was missing. Installed only the stock official Playwright FFmpeg using its public installer; video/timeout/assertions were preserved",
+    "Next browser run:29pass/19fail; actual accessible-name and banner visibility defects fixed; two fixture locators corrected to target their exact form/control rather than Next announcer or inert background.19 failure contexts remain in local TEMP",
+    "Final pre-footer run48pass; after the final footer spacing/copy refinement a fresh production build and the same complete48-case run passed again"
+  ],
+  "limitations": [
+    "Contact requests and analytics SDK delivery are intercepted fixtures; no real email, analytics or cloud request is credited",
+    "beforeSend blocks future events; no cancellation of requests already sent or SDK unload cleanup is claimed",
+    "Storage-write denial can preserve a current-tab choice only; persistence across reload cannot be guaranteed when the browser refuses writes",
+    "Browser QA uses local production Next with installed official Chrome, desktop/Pixel7 emulation and isolated contexts; no real-device or deployed-state signoff"
+  ],
+  "sources": [
+    "https://github.com/vercel/next.js/releases/tag/v16.4.6",
+    "https://next-intl.dev/docs/routing/middleware",
+    "Installed official @vercel/analytics public AnalyticsProps/BeforeSend API and the current package lock"
+  ],
+  "sourceHashQualification": "Raw working-tree bytes before the local commit; this receipt excludes itself to avoid a circular digest.",
+  "sourceHashes": [
+    {
+      "path": "messages/de.json",
+      "sha256": "0beecfdfbed47beb0c772eecb94d8a5d2d37dca5de5240c5038a326e82ea4c1a"
+    },
+    {
+      "path": "messages/en.json",
+      "sha256": "aa3119a985027285544cfe18af4f170495f350a1af609e447963daf9cefbb7f9"
+    },
+    {
+      "path": "messages/es.json",
+      "sha256": "1ee839d85a8934987d61dd941f37dece387e237af201368ad0b34e4b5d0abecc"
+    },
+    {
+      "path": "messages/fr.json",
+      "sha256": "03326c87dfdc7fcd790db9e7ec10afff1c0ca7fb98f90c9b516c3c9f9d083ea6"
+    },
+    {
+      "path": "middleware.ts",
+      "state": "REMOVED_OR_RENAMED"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "250c1f7c9bcb386c8f8802e3b303ee06a42288514850f18d315f04496db51139"
+    },
+    {
+      "path": "package.json",
+      "sha256": "17988b4c3d37f3951739582e4c2ce788246c5ed54eccecd2e5743e30f8d1f93c"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "2e1d9bda25ead88baa2cc4257896e4440b7b66da7fa2888ff54c2cea8b47626c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a6d83e53ab036e7bc495652a1077cdefcf252309a84ec0a73fb8af4b664967a5"
+    },
+    {
+      "path": "src/app/[locale]/about/page.tsx",
+      "sha256": "5b2c85efe60b69d8a8f685db084a1080657e448a5059c8c9eaf266785eacd143"
+    },
+    {
+      "path": "src/app/[locale]/contact/page.tsx",
+      "sha256": "a9e5d72225864171986cc28078390af6bd35ee57a4fb790b537cc5ac9dccb2f3"
+    },
+    {
+      "path": "src/app/[locale]/layout.tsx",
+      "sha256": "26b9f781ff32ee5263b4b40563fb75d33999960ac8de21f0dd9b99f0837d5217"
+    },
+    {
+      "path": "src/app/[locale]/legal/cookies/page.tsx",
+      "sha256": "1709f36a64cb3d7a1a7c9701cf6dcbce29c55a0feabcec46769baf825b728261"
+    },
+    {
+      "path": "src/app/[locale]/legal/privacy/page.tsx",
+      "sha256": "032434bafd2ddfc62e01452b1d736bd7db743ad125ed5bd9af7513198e858930"
+    },
+    {
+      "path": "src/app/[locale]/opengraph-image.tsx",
+      "sha256": "6f6fb6707013fd893139cef0ba364093baee4894d2cbd40523abd62128b1ee0c"
+    },
+    {
+      "path": "src/app/[locale]/page.tsx",
+      "sha256": "178ae61d6f6db9069f1f73e91c537fa0614bf71cc240ea2c38299e4e0bb13880"
+    },
+    {
+      "path": "src/app/[locale]/projects/page.tsx",
+      "sha256": "9eed7a4f27c15aa51520a24a8763db90a257803f34594d583efb63c3a8fc5d7a"
+    },
+    {
+      "path": "src/app/[locale]/services/page.tsx",
+      "sha256": "f5b87b6d34ed94a5908717a2eda614f53bb003acfcbd0ac89dc633a49812aa28"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "5cbbe8ce89d6171c57942fabd6ca84cec67a05db6ce4ff6ea7574cc5920052f7"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "sha256": "2ad8e40d0032b8a676f52d89185a3050f45381d42fc449fe993ca549474872f6"
+    },
+    {
+      "path": "src/components/ConsentAnalytics.tsx",
+      "sha256": "5c0d878d6a69f3e7a8fd41d5b2ba370bdc6c0bffa44d5f50a797df43d37e5848"
+    },
+    {
+      "path": "src/components/ConsentPreferences.tsx",
+      "sha256": "86315a5acc64ffdf73bcf91e4d30fc331179af5d4418215097be447b2cee6c34"
+    },
+    {
+      "path": "src/components/CookieBanner.tsx",
+      "sha256": "139764835e75fe01303c437c482278360d11422d2b58303eb440077f9f651937"
+    },
+    {
+      "path": "src/components/layout/Footer.tsx",
+      "sha256": "048e934911fc92956fc53fcef7808fbf0f8cbd12896a5770767bcf90a79b1195"
+    },
+    {
+      "path": "src/components/layout/Header.tsx",
+      "sha256": "9d4a4fe044d0eb24d57b6a88a0852b78199e81bcf092038572f2360554bd20cf"
+    },
+    {
+      "path": "src/components/layout/LanguageSwitcher.tsx",
+      "sha256": "0ca8e13daf00527f9ebb87e06828679f6e9346a98647e60a10e847ed53b21765"
+    },
+    {
+      "path": "src/components/sections/CTASection.tsx",
+      "sha256": "eac5c67e8e16c9caa530889bb6896f83a3aea68c5ddf4ed5ade83b80707c3663"
+    },
+    {
+      "path": "src/components/sections/EcosystemBanner.tsx",
+      "sha256": "3ac0abfa5531ceb999a882ade2cfacd88a3da1e3b2b5b0ff968d9d280f759826"
+    },
+    {
+      "path": "src/components/sections/Hero.tsx",
+      "sha256": "46e59f176283c86bfd12937ebceadd0fee2c2dc841587dfd07ffe29d26a1b4ed"
+    },
+    {
+      "path": "src/components/sections/ProcessSection.tsx",
+      "sha256": "74b08e3a9a071da5498726f014d8e2d5c17655c70cc2cc0228a263787bb1af3b"
+    },
+    {
+      "path": "src/components/sections/ProjectsSection.tsx",
+      "sha256": "69334ad954184345c6425b9c31206e8410123e454a444663ccb4fee3721906d3"
+    },
+    {
+      "path": "src/components/sections/ProjectVisual.tsx",
+      "sha256": "6856b2e681dbcf23e2d26625c059f3a199f6407c9819710a01d5055dffcc943e"
+    },
+    {
+      "path": "src/components/sections/ServicesSection.tsx",
+      "sha256": "76f825b4e2aad5f70924e14f64bfef2d8ad70a1b882b7bcc7d9c72136955bd3b"
+    },
+    {
+      "path": "src/components/sections/SponsorsSection.tsx",
+      "sha256": "49dbd5a110f16e365e017c7ee336d24068b6e9f3c9d17adaa091910e618418d2"
+    },
+    {
+      "path": "src/components/ui/Button.tsx",
+      "sha256": "b22e463b98643fe44635eaa5812821a07c448c2cdb54330752324d921c951066"
+    },
+    {
+      "path": "src/components/ui/StudioWordmark.tsx",
+      "sha256": "00110da57641d21024b01f8aba2051307b8dcd201295c35448cdd24379b5e647"
+    },
+    {
+      "path": "src/hooks/useConsent.ts",
+      "sha256": "bc3b9e0ec3b2baaed84770cb743d28abc4063b5fcf702567bc788fd082307fdd"
+    },
+    {
+      "path": "src/proxy.ts",
+      "sha256": "94965c511a79c0f19f741dc385b333bb2c721382318bb2e56cc8c4ea5ee24164"
+    },
+    {
+      "path": "tests/consent.test.mjs",
+      "sha256": "a7f4ab4f7b27afe69405660e9a302b6f856935057c28b4549ff9c8a498afa3a2"
+    },
+    {
+      "path": "tests/e2e/a11y.spec.ts",
+      "sha256": "0ff09b7551d2a604327130c6d8c91237d388bb9a8c342b2c2bdd36b40d38a2b1"
+    },
+    {
+      "path": "tests/e2e/smoke.spec.ts",
+      "sha256": "827a550046094ee646f2f801e736de0bdfe13422c7c79519196ae8b19231c8ce"
+    },
+    {
+      "path": "tests/e2e/studio.spec.ts",
+      "sha256": "1b46708f3f29e77767cf638410744fe741cc8a8ec8f3f4dec37ab3c04f789e20"
+    }
+  ]
+}

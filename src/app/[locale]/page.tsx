@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import ProcessSection from "@/components/sections/ProcessSection";
 import Hero from "@/components/sections/Hero";
 import ServicesSection from "@/components/sections/ServicesSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
@@ -22,7 +23,7 @@ export async function generateMetadata({
         alternates: buildAlternates(locale, "/"),
         openGraph: {
             url: `${SITE_URL}/${locale}`,
-            title: "Cojauny Studio — We build software that matters.",
+            title: t("meta_title"),
             description: t("subheadline"),
         },
     };
@@ -38,8 +39,9 @@ export default async function HomePage({
     return (
         <>
             <Hero />
-            <ServicesSection variant="home" />
             <ProjectsSection variant="home" />
+            <ServicesSection variant="home" />
+            <ProcessSection />
             <EcosystemBanner />
             <SponsorsSection />
             <CTASection />

@@ -9,11 +9,14 @@ export default defineConfig({
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 2 : undefined,
-    reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
+    reporter: process.env.CI
+        ? [["github"], ["html", { open: "never" }]]
+        : "list",
     timeout: 30_000,
     expect: { timeout: 5_000 },
     use: {
         baseURL: BASE_URL,
+        channel: process.env.PLAYWRIGHT_CHANNEL,
         trace: "on-first-retry",
         screenshot: "only-on-failure",
         video: "retain-on-failure",
@@ -25,9 +28,9 @@ export default defineConfig({
     webServer: process.env.PLAYWRIGHT_BASE_URL
         ? undefined
         : {
-            command: "npm run build && npm run start",
-            url: BASE_URL,
-            timeout: 180_000,
-            reuseExistingServer: !process.env.CI,
-        },
+              command: "npm run build && npm run start",
+              url: BASE_URL,
+              timeout: 180_000,
+              reuseExistingServer: !process.env.CI,
+          },
 });
